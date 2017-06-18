@@ -36,31 +36,34 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication
+##### Week 1 (T, W): 2 days
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Rooms Model, API, and components
+##### Week 1 (Th, F): 2 days
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Rooms can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Maps
+##### Week 2 (M, T): 2 days
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** SearchRoomsContainer displays good maps properly with search results.
 
-### Phase 4: Tags (1 day)
+### Phase 4:
+##### Week 2 (W, Th): 2 day
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Allow users to leave create, read, update, delete reviews on RoomDetailPage.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 5: Styling
+##### Week 2 (F): 1 day
 
-**Objective:** Allow rich text editing of notes.
+**Objective:** Finishing touches on css.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**Objective:** Add infinite scroll to Notes Index
 
 ### Bonus Features (TBD)
+- [ ] Filtering
 - [ ] Messaging
 - [ ] User/host profiles
