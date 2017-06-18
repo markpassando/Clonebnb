@@ -29,7 +29,10 @@
         - BookingForm
         - Booking Info
 
-
+**TripsContainer**
+ - TripsContainer
+    - TripsIndex
+        - TripsItem
 
 ## Routes
 
@@ -40,3 +43,4 @@
 | "/" | "HomeContainer" |
 | "/s/:searchParams" | "SearchIndexContainer" |
 | "/home/:homeId" | "HomeItemContainer" |
+| "/trips/:userId" | "TripsContainer" |
