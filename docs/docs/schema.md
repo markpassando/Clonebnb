@@ -30,8 +30,6 @@ bedrooms    | integer   | not null
 beds    | integer   | not null
 amenities    | boolean   | not null, default false (Wireless Internet, Gym, Heating, TV, Fireplace, etc.)
 
-## room_bookings
-dates room is booked?
 ## room_pics
 possible pictures?
 

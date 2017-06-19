@@ -27,6 +27,15 @@
 - `GET /api/rooms/:id`
 - `PATCH /api/rooms/:id`
 - `DELETE /api/rooms/:id`
+- `GET /api/rooms/:id/reviews`
+
+### Reviews
+
+- `GET /api/reviews`
+- `POST /api/reviews`
+- `GET /api/reviews/:id`
+- `PATCH /api/reviews/:id`
+- `DELETE /api/reviews/:id`
 
 ### Trips
 
