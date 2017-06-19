@@ -16,7 +16,9 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
-adress |string| not null
+address |string| not null
+long: |float| not null
+lat: |float| not null
 rules | text      | not null
 host_id   | integer   | not null, foreign key (references users), indexed
 trip_id | integer   | not null, foreign key (references notebooks), indexed
@@ -29,9 +31,9 @@ beds    | integer   | not null
 amenities    | boolean   | not null, default false (Wireless Internet, Gym, Heating, TV, Fireplace, etc.)
 
 ## room_bookings
-dates room is booked
+dates room is booked?
 ## room_pics
-possible pictures
+possible pictures?
 
 ## trips
 column name | data type | details
@@ -50,4 +52,4 @@ user_id   | integer   | not null, foreign key (references users), indexed
 room_id       | integer    | not null, foreign key (references users), indexed
 trip_id |integer| not null, foreign key (references users), indexed
 body | text| not null
-rating | integer      | not null
+rating | integer | not null

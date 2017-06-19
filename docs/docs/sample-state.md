@@ -15,6 +15,8 @@
         id: 1,
         title: "Wayne Manor",
         price: "1500",
+        long: "1.23123",
+        lat: "1.324234234",
         room_type: "Entire home/apt",
         rating: 5,
         num_rating: 324

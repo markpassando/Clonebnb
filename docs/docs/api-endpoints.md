@@ -21,7 +21,7 @@
 ### Rooms
 
 - `GET /api/rooms`
-  - Rooms index/search
+  - `Rooms index/search`
   - Possible filters, will accept query params `location, checkIn, checkOut, guests`
 - `POST /api/rooms`
 - `GET /api/rooms/:id`

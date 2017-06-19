@@ -3,25 +3,30 @@
 **AuthFormContainer**
  - AuthForm
 
+**NavContainer**
+ - SearchBarContainer
+ - NavLinks
+  - LoginContainer
+  
 **HomeContainer**
  - Home
  - SearchBar
- - HomesIndex
-    - HomeItem
+ - RoomIndex
+    - RoomItem
 
-**SearchHomesContainer**
- - SearchHomeIndexContainer
+**SearchRoomsContainer**
+ - SearchRoomsIndexContainer
     - FilterContainer
-    - HomesIndex
-        - HomeItem
+    - RoomsIndex
+        - RoomItem
 - MapContainer
 
-**HomeItemContainer**
- - HomeImageContainer
+**RoomItemContainer**
+ - RoomImageContainer
     - ImageSlider
-- HomeDetailContainer
-    - HomeDetail
-        - HomeInfo
+- RoomDetailContainer
+    - RoomDetail
+        - RoomInfo
         - ReviewContainer
             - Review Index
             - Review Form
@@ -42,5 +47,5 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/" | "HomeContainer" |
 | "/s/:searchParams" | "SearchIndexContainer" |
-| "/home/:homeId" | "HomeItemContainer" |
+| "/rooms/:roomId" | "RoomItemContainer" |
 | "/trips/:userId" | "TripsContainer" |
