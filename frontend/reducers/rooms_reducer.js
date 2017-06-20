@@ -19,10 +19,10 @@ const roomReducer = (state = defaultState, action) => {
     case RECEIVE_ROOMS:
       return merge(newState, { entities: action.rooms });
 
-    case (RECEIVE_ROOM):
+    case RECEIVE_ROOM:
       return merge( newState,{
-        entities: { [room.id]: room },
-        currentUser: room.id
+        entities: { [action.room.id]: action.room },
+        currentRoom: action.room.id
       });
 
     default:
