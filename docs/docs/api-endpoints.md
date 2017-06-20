@@ -11,7 +11,7 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users`
+- `PATCH /api/users/:id`
 
 ### Session
 
@@ -28,10 +28,10 @@
 - `PATCH /api/rooms/:id`
 - `DELETE /api/rooms/:id`
 - `GET /api/rooms/:id/reviews`
+- `Get /api/rooms/trips`
 
 ### Reviews
 
-- `GET /api/reviews`
 - `POST /api/reviews`
 - `GET /api/reviews/:id`
 - `PATCH /api/reviews/:id`

@@ -21,7 +21,7 @@ long: |float| not null
 lat: |float| not null
 rules | text      | not null
 host_id   | integer   | not null, foreign key (references users), indexed
-trip_id | integer   | not null, foreign key (references notebooks), indexed
+trip_id | integer   | not null, foreign key (references trips), indexed
 price    | integer   | not null
 prop_type    | string   | not null
 room_type    | string   | not null
@@ -39,6 +39,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id   | integer   | not null, foreign key (references users), indexed
 room_id       | string    | not null, foreign key (references users), indexed
+status |string| not null, default pending
 check_in | date    | not null
 check_out | date    | not null
 

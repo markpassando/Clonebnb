@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+$font-stack:'Nunito Sans', sans-serif;
+
+$pink: #FF5A5F;
+$teal: #008489;
+$dark-gray: #484848;
+$gray: #767676;
