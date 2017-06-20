@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -18,3 +17,4 @@
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/core.scss";
+@import "components/header.scss";

@@ -15,6 +15,7 @@ import SessionFormContainer from './session_form/SessionFormContainer';
 const App = () => (
   <div>
     <header>
+      <Link to={"/"} className="logo">Home</Link>
       <h1>Clonebnb</h1>
       <GreetingContainer />
     </header>

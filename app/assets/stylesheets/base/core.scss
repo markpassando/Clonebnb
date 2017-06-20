@@ -1,0 +1,16 @@
+body {
+  color: $dark-gray;
+  font-family: $font-stack;
+}
+
+a {
+  color: $teal;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  font-size: 14px;
+}
