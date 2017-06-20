@@ -1,5 +1,5 @@
 import React from 'react';
-import RoomDetailContainer from './RoomDetailContainer';
+import RoomDetailContainer from './detail/RoomDetailContainer';
 
 class RoomPage extends React.Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class RoomPage extends React.Component {
       <article>
         <div>Big ass picture goes here</div>
         <RoomDetailContainer room={room}/>
+        <div>Reviews go here</div>
       </article>
     );
   }
