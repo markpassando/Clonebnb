@@ -13,20 +13,23 @@ export const receiveBench = room => ({
   room
 });
 
-export const fetchRooms = filters => dispatch => (
-  APIUtil.fetchRooms(filters).then(rooms => (
-    dispatch(receiveRooms(rooms))
+export const fetchRooms = () => dispatch => (
+  APIUtil.fetchRooms().then(rooms => (
+    dispatch(receiveRooms(rooms)),
+    console.error
   ))
 );
 
 export const fetchBench = id => dispatch => (
   APIUtil.fetchBench(id).then(room => (
-    dispatch(receiveBench(room))
+    dispatch(receiveBench(room)),
+    console.error
   ))
 );
 
 export const createBench = room => dispatch => (
   APIUtil.createBench(room).then(room => (
-    dispatch(receiveBench(room))
+    dispatch(receiveBench(room)),
+    console.error
   ))
 );
