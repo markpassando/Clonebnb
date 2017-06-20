@@ -9,17 +9,16 @@ import {
 } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import GreetingContainer from './greeting/GreetingContainer';
 import SessionFormContainer from './session_form/SessionFormContainer';
 import RoomIndexContainer from './room/RoomIndexContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
+import NavBar from './NavBar';
 
 const App = () => (
   <div>
     <header>
-      <Link to={"/"} className="logo">Home</Link>
+      <NavBar />
       <h1>Clonebnb</h1>
-      <GreetingContainer />
     </header>
     <Route exact path="/" component={RoomIndexContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />

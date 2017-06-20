@@ -3,6 +3,11 @@
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
+
+  window.images = {
+    logo: "<%= image_path('clonebnb-logo.png') %>",
+  }
+
 </script>
 
 <main id="root"></main>
