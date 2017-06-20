@@ -41,7 +41,7 @@ const RoomDetail = ({ room }) => {
         <h3>Prices</h3>
         <ul>
           <li>Extra people: <strong>No Charge</strong></li>
-          <li>Weekly Discount: <strong>{Math.floor(Math.random() * 10) + 5  }%</strong></li>
+          <li>Weekly Discount: <strong>10%</strong></li>
           <li>Cleaning Fee: <strong>${ Math.floor(room.price / 8) }</strong></li>
         </ul>
         <strong>Always communicate through Clonebnb</strong>
