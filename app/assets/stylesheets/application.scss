@@ -14,10 +14,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-$font-stack:'Nunito Sans', sans-serif;
-
-$pink: #FF5A5F;
-$teal: #008489;
-$dark-gray: #484848;
-$gray: #767676;
+@import "vendor/normalize.css";
+@import "base/colors.scss";
+@import "base/fonts.scss";
+@import "base/core.scss";
