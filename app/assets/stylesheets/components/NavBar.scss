@@ -35,6 +35,26 @@
     justify-content: flex-end;
     width: 50%;
 
+    button {
+      background-color: $white;
+      border: 0;
+      padding: 0;
+      margin: 0 10px;
+      padding-bottom: 5px;
+      font-size: 14px;
+      color: $dark-gray;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $dark-gray;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
     a {
       margin: 0 10px;
       padding-bottom: 5px;
