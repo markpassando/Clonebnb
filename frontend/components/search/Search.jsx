@@ -4,10 +4,11 @@ import React from 'react';
 import RoomIndex from '../room/RoomIndex';
 import RoomMap from './../room/map/RoomMap';
 
-const Search = ({ rooms, fetchRooms }) => (
+const Search = ({ rooms, fetchRooms, updateFilter }) => (
   <div className="user-pane">
       <RoomMap
         rooms={rooms}
+        updateFilter={updateFilter}
       />
     <RoomIndex
       rooms={rooms}

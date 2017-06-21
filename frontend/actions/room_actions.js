@@ -15,8 +15,8 @@ export const receiveRoom = room => ({
   room
 });
 
-export const fetchRooms = () => dispatch => (
-  APIUtil.fetchRooms().then(rooms => (
+export const fetchRooms = (filters) => dispatch => (
+  APIUtil.fetchRooms(filters).then(rooms => (
     dispatch(receiveRooms(rooms)),
     console.error
   ))

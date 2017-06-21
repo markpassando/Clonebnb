@@ -1,6 +1,11 @@
 class Api::RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    if params[:bounds]
+      @rooms = Room.in_bounds(params[:bounds])
+    else
+      @rooms = Room.all
+    end
+
     render :index
   end
 
@@ -19,7 +24,7 @@ class Api::RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:host_id, :title, :address, :lat, :lng, :price, :num_guests,
+    params.require(:room).permit(:bounds, :host_id, :title, :address, :lat, :lng, :price, :num_guests,
     :bedrooms, :beds, :bathrooms, :description, :rules, :prop_type, :room_type,
     :wifi, :kitchen, :ac, :tv)
   end

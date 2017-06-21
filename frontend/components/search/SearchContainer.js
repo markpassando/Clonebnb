@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Search from './Search';
 import { fetchRooms } from '../../actions/room_actions';
 import { selectAllRooms } from '../../reducers/selectors';
+import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchRooms: () => dispatch(fetchRooms())
+    fetchRooms: () => dispatch(fetchRooms()),
+    updateFilter: (bounds) => dispatch(updateFilter(bounds))
   });
 };
 
