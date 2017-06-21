@@ -18,7 +18,6 @@ const App = () => (
   <div>
     <header>
       <NavBar />
-      <h1>Clonebnb</h1>
     </header>
     <Route exact path="/" component={RoomIndexContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />

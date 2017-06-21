@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  attr_reader :password
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "placeholder_user.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	validates :username, :password_digest, :session_token, presence: true
 	validates :username, uniqueness: true
@@ -8,6 +10,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  attr_reader :password
   def password= password
 		self.password_digest = BCrypt::Password.create(password)
 		@password = password
@@ -45,5 +48,5 @@ class User < ActiveRecord::Base
 			self.session_token = new_session_token
 		end
 	end
-  
+
 end

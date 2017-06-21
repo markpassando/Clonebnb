@@ -1,6 +1,12 @@
 body {
   color: $dark-gray;
   font-family: $font-stack;
+  font-weight: lighter;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
 }
 
 a {
@@ -18,4 +24,9 @@ p {
 
 button {
   font-family: $font-stack;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
 }

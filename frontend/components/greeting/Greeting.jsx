@@ -11,6 +11,7 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
 	<div className="login-signup">
     <button className="header-button" onClick={logout}>Log Out</button>
+    <img src={currentUser.avatar_url} alt="User Avatar" />
     <p className="header-name">{currentUser.username}</p>
 	</div>
 );
