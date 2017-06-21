@@ -2,27 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
-// import MarkerManager from '../../util/marker_manager';
-
-const getCoordsObj = latLng => ({
-  lat: latLng.lat(),
-  lng: latLng.lng()
-});
-
-const mapOptions = {
-  center: {
-    lat: 37.773972,
-    lng: -122.431297
-  }, // San Francisco coords
-  zoom: 13
-};
+import MarkerManager from '../../../util/marker_manager';
 
 class RoomMap extends React.Component {
+  componentDidMount() {
+    // set the map to show SF
+    const mapOptions = {
+      center: { lat: 40.745267, lng: -73.993979 }, // this is SF
+      zoom: 13
+    };
 
+    // wrap the mapDOMNode in a Google Map
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers(this.props.rooms);
+  }
+
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers(this.props.rooms);
+  }
 
   render() {
     return (
-      <div id="map-container" className="map" ref="map">
+      <div id="map-container" className="map" ref={ map => this.mapNode = map }>
         Map
       </div>
     );

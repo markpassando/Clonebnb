@@ -17,7 +17,7 @@ const RoomDetail = ({ room }) => {
         <h3>The space</h3>
         <ul>
           <li>Accommodates: <strong>{room.num_guests}</strong></li>
-          <li>Bathrooms: <strong>ADD TO DB</strong></li>
+          <li>Bathrooms: <strong>{room.bathrooms}</strong></li>
           <li>Bedrooms: <strong>{room.bedrooms}</strong></li>
           <li>Beds: <strong>{room.beds}</strong></li>
           <li>Check In: <strong>ADD TO DB</strong></li>

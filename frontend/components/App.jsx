@@ -11,7 +11,7 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/SessionFormContainer';
 import RoomIndexContainer from './room/RoomIndexContainer';
-import SearchContainer from './room/SearchContainer';
+import SearchContainer from './search/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
 import NavBar from './NavBar';
 

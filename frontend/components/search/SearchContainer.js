@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
+import Search from './Search';
 import { fetchRooms } from '../../actions/room_actions';
-import RoomIndex from './RoomIndex';
 import { selectAllRooms } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoomIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

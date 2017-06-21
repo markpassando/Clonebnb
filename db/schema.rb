@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621135019) do
+ActiveRecord::Schema.define(version: 20170621192328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20170621135019) do
     t.boolean  "tv",          default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "bathrooms",                   null: false
+    t.float    "lat",                         null: false
+    t.float    "lng",                         null: false
   end
 
   add_index "rooms", ["host_id"], name: "index_rooms_on_host_id", using: :btree
