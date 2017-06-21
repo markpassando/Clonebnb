@@ -11,6 +11,7 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/SessionFormContainer';
 import RoomIndexContainer from './room/RoomIndexContainer';
+import SearchContainer from './room/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
 import NavBar from './NavBar';
 
@@ -20,6 +21,7 @@ const App = () => (
       <NavBar />
     </header>
     <Route exact path="/" component={RoomIndexContainer} />
+    <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
