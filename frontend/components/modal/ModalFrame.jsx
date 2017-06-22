@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import { hideModal } from '../../actions/modal_actions';
 
-const ModalFrame = ({ hideModal, visible, content }) => {debugger; return(
-  <div className={ visible ? 'modal-frame' : 'modal-frame hidden' } onClick={() => hideModal}>
-    <div className='modal-contents' onClick={(e) => e.stopPropagation()}>
+const ModalFrame = ({ hideModal, visible, content }) => (
+  <div className={ visible ? 'modal-frame' : 'modal-frame hidden' } onClick={hideModal}>
+    <span className='modal-contents' onClick={(e) => e.stopPropagation()}>
       { content }
-    </div>
+    </span>
   </div>
-)}
+)
 
 const mSTP = ({modal: { visible, content }}) => ({
   visible,

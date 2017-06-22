@@ -20,12 +20,13 @@ class Greeting extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
-    debugger
+    // debugger
     const sessionLinks = () => (
       <div className="login-signup">
         <button onClick={this.handleDemoClick}>Demo Account</button>
-        <a href="#" onClick={this.props.showSignUp}>Sign Up</a>
-        <Link to="/login">Log In</Link>
+        <button onClick={this.props.showSignUp}>Sign Up</button>
+        <button onClick={this.props.showLogIn}>Log In</button>
+      
       </div>
     );
 
@@ -46,7 +47,8 @@ class Greeting extends React.Component {
 }
 
 const mDTP = (dispatch) => ({
-  showSignUp: () => dispatch(showModal(<SessionForm formType={'signup'}/>))
+  showSignUp: () => dispatch(showModal(<SessionForm formType={'signup'}/>)),
+  showLogIn: () => dispatch(showModal(<SessionForm formType={'login'}/>))
 })
 
 export default connect(null, mDTP)(Greeting);
