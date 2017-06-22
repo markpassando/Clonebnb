@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.8'
 gem 'rails_12factor'
 gem 'paperclip'
+gem 'figaro'
+gem 'aws-sdk'
 # gem 'font-awesome-sass'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'

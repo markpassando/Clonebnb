@@ -1,4 +1,16 @@
 #map-container {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 700px;
+}
+
+.search-page {
+  display: flex;
+
+  &:first-child {
+    flex: 1;
+  }
+
+  &:nth-child(2) {
+    width: 70%;
+  }
 }

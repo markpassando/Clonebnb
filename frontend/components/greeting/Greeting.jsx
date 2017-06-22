@@ -11,13 +11,17 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
 	<div className="login-signup">
     <button className="header-button" onClick={logout}>Log Out</button>
-    <img src={currentUser.avatar_url} alt="User Avatar" />
+    <div>
+      <img src={currentUser.avatar_url} alt="User Avatar" />
+    </div>
     <p className="header-name">{currentUser.username}</p>
 	</div>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+const Greeting = ({ currentUser, logout }) => {
+  return (
+    currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  );
+}
 
 export default Greeting;

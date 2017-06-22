@@ -74,6 +74,11 @@
 
 .login-signup {
   display: flex;
+
+  img {
+    border-radius: 30px;
+        max-width: 35px;
+  }
 }
 
 .logo {
