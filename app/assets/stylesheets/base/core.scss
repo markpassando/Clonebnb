@@ -52,3 +52,22 @@ button {
       padding: 0 15px;
   }
 }
+
+.btn {
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  border-radius: $border-radius;
+  padding: 14px 0;
+  margin-top: 16px;
+  color: #fff;
+  cursor: pointer;
+
+  &.teal {
+    background-color: $teal;
+  }
+
+  &.pink {
+    background-color: $pink;
+  }
+}

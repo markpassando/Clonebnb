@@ -5,9 +5,7 @@ import { hideModal } from '../../actions/modal_actions';
 
 const ModalFrame = ({ hideModal, visible, content }) => (
   <div className={ visible ? 'modal-frame' : 'modal-frame hidden' } onClick={hideModal}>
-    <span className='modal-contents' onClick={(e) => e.stopPropagation()}>
       { content }
-    </span>
   </div>
 )
 

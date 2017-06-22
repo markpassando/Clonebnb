@@ -53,6 +53,18 @@
         border-bottom: 2px solid $dark-gray;
         text-decoration: none;
       }
+
+      &:focus {
+        border-bottom: 2px solid $teal;
+        outline: none;
+      }
+
+      &.demo {
+        border-bottom-color: $pink;
+        &:hover {
+          border-bottom-color: $dark-gray;
+        }
+      }
     }
 
     p {

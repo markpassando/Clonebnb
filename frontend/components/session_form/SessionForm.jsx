@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   renderDemo() {
     if (this.props.formType === 'login') {
       return (
-        <button onClick={this.handleDemoClick}>Demo Account</button>
+        <button className="btn teal" onClick={this.handleDemoClick}>Demo Account</button>
       );
     }
   }
@@ -49,34 +49,36 @@ class SessionForm extends React.Component {
       return (
         <div className="other-link">
           <p>Don’t have an account?</p>
-          <Link to="/signup">Sign up</Link>
+          <button onClick={this.props.showSignUp}>Sign Up</button>
         </div>
       );
     } else {
       return (
         <div className="other-link">
           <p>Already have an account?</p>
-          <Link to="/login">Log in</Link>
+          <button onClick={this.props.showLogIn}>Log In</button>
         </div>
       );
     }
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="login-form-container" onClick={(e) => e.stopPropagation()}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}
           <div className="login-form">
@@ -104,7 +106,7 @@ class SessionForm extends React.Component {
 
             <br/>
 
-            <input className="login-button" type="submit" value={this.props.formType === 'login' ? "Log in" : "Sign up"} />
+            <input className="btn pink" type="submit" value={this.props.formType === 'login' ? "Log in" : "Sign up"} />
           </div>
         </form>
 
