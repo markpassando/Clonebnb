@@ -1,0 +1,57 @@
+.login-form-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 550px;
+  padding: 32px;
+  background-color: $white;
+
+  .side-icon {
+      float: right;
+      margin-right: 15px;
+      margin-top: -40px;
+      position: relative;
+      z-index: 2;
+      color: $gray;
+  }
+
+  .login-input {
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid $light-gray;
+    color: $gray;
+    background-color: $yellow;
+
+   &:focus {
+     outline: none;
+     border-color: teal;
+   }
+
+  }
+
+  .login-button {
+    background-color: $pink;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    border-radius: $border-radius;
+    padding: 14px 0;
+    margin-top: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .other-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    border-top: 1px solid $light-gray;
+
+    p, a {
+      font-size: 18px;
+    }
+  }
+}

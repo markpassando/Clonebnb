@@ -22,8 +22,18 @@ p {
   font-size: 14px;
 }
 
-button {
+p, h2, h3, h4 {
   font-family: $font-stack;
+  font-weight: lighter;
+}
+
+button, input {
+  font-family: $font-stack;
+  font-weight: lighter;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {

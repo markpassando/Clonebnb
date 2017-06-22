@@ -29,11 +29,21 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink() {
+  otherLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return (
+        <div className="other-link">
+          <p>Don’t have an account?</p>
+          <Link to="/signup">Sign up</Link>
+        </div>
+      );
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return (
+        <div className="other-link">
+          <p>Already have an account?</p>
+          <Link to="/login">Log in</Link>
+        </div>
+      );
     }
   }
 
@@ -53,31 +63,37 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BenchBnB!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Username:
+            <label>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
+                placeholder="Email Address"
                 className="login-input"
               />
+            <i className="fa fa-envelope-o fa-lg side-icon" aria-hidden="true"></i>
             </label>
+
             <br/>
-            <label>Password:
+
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
+                placeholder="Password"
                 className="login-input"
               />
             </label>
+            <i className="fa fa-lock fa-lg side-icon" aria-hidden="true"></i>
+
             <br/>
-            <input type="submit" value="Submit" />
+
+            <input className="login-button" type="submit" value={this.props.formType === 'login' ? "Log in" : "Sign up"} />
           </div>
         </form>
+
+        {this.otherLink()}
       </div>
     );
   }
