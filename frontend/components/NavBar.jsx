@@ -11,7 +11,7 @@ const NavBar = (props) => {
           <Link to={"/"} ><img src={ window.images.logo } alt="Airbnb Logo" /></Link>
         </div>
         <div className="search-container">
-          <input className="search-bar" value="Search Bar Will Go Here"/>
+          <input className="search-bar" placeholder="Search..."/>
         </div>
       </div>
 

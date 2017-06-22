@@ -18,6 +18,8 @@ user8 = User.create({ username: "BruceWayne", password: "123456"})
 user9 = User.create({ username: "JessicaJones", password: "123456"})
 user10 = User.create({ username: "AceVentura", password: "123456"})
 user11 = User.create({ username: "CharlesXavier", password: "123456"})
+user12 = User.create({ username: "AuntMay", password: "123456"})
+user13 = User.create({ username: "TonyStark", password: "123456"})
 
 Room.destroy_all
 room1 = Room.create({
@@ -31,7 +33,7 @@ room1 = Room.create({
   bedrooms: 4,
   bathrooms: 3,
   beds: 50,
-  description: "The new space features hardwood floors and brick walls for a modern technology space with an aura for learning.",
+  description: "The new space features hardwood floors and brick walls for a modern technology space with an aura for learning. App Academy is a twelve-week intensive computer programming school founded by Ned Ruggeri and Kush Patel.",
   rules: "Wipe down your stations, no food or cups should be left in the sink. Date the food you store in the fridge.",
   prop_type: "Apartment",
   room_type: "Entire Home",
@@ -74,7 +76,7 @@ room3 = Room.create({
   bedrooms: 1,
   beds: 1,
   bathrooms: 1,
-  description: "Very spacious loft located in Hell's Kitchen. Large windows allow for great sunlight. There is access to the roof.",
+  description: "Very spacious loft located in Hell's Kitchen. Large windows allow for great sunlight. There is access to the roof. Hell's Kitchen, also known as Clinton, is a neighborhood on the West Side of Midtown Manhattan in New York City. It is traditionally considered to be bordered by 34th Street to the south, 59th Street to the north, Eighth Avenue to the east, and the Hudson River to the west. The area provides transport, medical, and warehouse-infrastructure support to Midtown's business district.",
   rules: "Noise must be kept to a minimum",
   prop_type: "Apartment",
   room_type: "Entire Home",
@@ -96,10 +98,52 @@ room4 = Room.create({
   bedrooms: 100,
   beds: 1,
   bathrooms: 30,
-  description: "The Xavier Institute for Mutant Education and Outreach",
+  description: "It is the base of operations and training site of the X-Men and the location of a school for mutant teenagers, and sometimes older aged mutants, the Xavier Institute for Higher Learning, formerly Xavier's School for Gifted Youngsters. The X-Mansion is also the worldwide headquarters of the X-Corporation.",
   rules: "No rules",
   prop_type: "House",
   room_type: "Private Room",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true
+})
+
+room5 = Room.create({
+  host_id: user12.id,
+  title: "Aunt May's House",
+  address: "20 Ingram St Forest Hills, NY 11375",
+  lat: 40.712950,
+  lng: -73.843212,
+  price: 80,
+  num_guests: 1,
+  bedrooms: 3,
+  beds: 1,
+  bathrooms: 2,
+  description: "The Parker residence located in Forest Hills, Queens. Forest Hills has a great tradition of tennis, with Forest Hills Stadium having hosted the U.S. Open until 1978 and the West Side Tennis Club offering pristine grass courts for its members. Bustling Austin Street bisects Forest Hills and boasts lots of restaurants and chain stores. Forest Hills is bordered by Flushing Meadows–Corona Park and Forest Park.",
+  rules: "Bedtime 10pm",
+  prop_type: "House",
+  room_type: "Private Room",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true
+})
+
+room6 = Room.create({
+  host_id: user13.id,
+  title: "Stark Tower",
+  address: "200 Park Ave, New York, NY 10166",
+  lat: 40.753434,
+  lng: -73.976689,
+  price: 3000,
+  num_guests: 30,
+  bedrooms: 10,
+  beds: 10,
+  bathrooms: 14,
+  description: "Stark Tower (Avengers Tower) is a 93-story skyscraper with the Main Tower flanked by a 35-story South Building and 55-story North Building. Stark Tower serves as the headquarters for Stark Industries and houses the primary penthouse condominium residence of Tony Stark.",
+  rules: "None",
+  prop_type: "Apartment",
+  room_type: "Entire House",
   wifi: true,
   kitchen: true,
   ac: true,
