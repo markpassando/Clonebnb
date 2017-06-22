@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,6 +28,19 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+  }
+
+  handleDemoClick(e) {
+    e.preventDefault();
+    this.props.processForm({ user: {username: "RonBurgundy", password: "123456"} });
+  }
+
+  renderDemo() {
+    if (this.props.formType === 'login') {
+      return (
+        <button onClick={this.handleDemoClick}>Demo Account</button>
+      );
+    }
   }
 
   otherLink() {
@@ -93,6 +107,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
 
+        {this.renderDemo()}
         {this.otherLink()}
       </div>
     );
