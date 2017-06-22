@@ -14,12 +14,14 @@ import HomePage from './home/HomePage';
 import SearchContainer from './search/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
 import NavBar from './NavBar';
+import ModalFrame from './modal/ModalFrame';
 
 const App = () => (
   <div>
     <header>
       <NavBar />
     </header>
+    <ModalFrame />
     <Route exact path="/" component={HomePage} />
     <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />

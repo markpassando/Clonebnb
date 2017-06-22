@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { showModal } from '../../actions/modal_actions';
+import SessionForm from '../session_form/SessionFormContainer';
+
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -7,7 +12,7 @@ class Greeting extends React.Component {
 
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
-  
+
   handleDemoClick(e) {
     e.preventDefault();
     this.props.login({ user: {username: "RonBurgundy", password: "123456"} });
@@ -15,11 +20,11 @@ class Greeting extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
-
+    debugger
     const sessionLinks = () => (
       <div className="login-signup">
         <button onClick={this.handleDemoClick}>Demo Account</button>
-        <Link to="/signup">Sign Up</Link>
+        <a href="#" onClick={this.props.showSignUp}>Sign Up</a>
         <Link to="/login">Log In</Link>
       </div>
     );
@@ -40,4 +45,8 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+const mDTP = (dispatch) => ({
+  showSignUp: () => dispatch(showModal(<SessionForm formType={'signup'}/>))
+})
+
+export default connect(null, mDTP)(Greeting);
