@@ -17,7 +17,8 @@ const roomReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_ROOMS:
-      return merge(newState, { entities: action.rooms });
+      // return merge(newState, { entities: action.rooms });
+      return merge({}, defaultState, { entities: action.rooms })
 
     case RECEIVE_ROOM:
       return merge( newState,{
