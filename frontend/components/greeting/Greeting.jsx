@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { showModal } from '../../actions/modal_actions';
-import SessionForm from '../session_form/SessionFormContainer';
+import SessionFormContainer from '../session_form/SessionFormContainer';
+import LogInFormContainer from '../session_form/LogInFormContainer';
+import SignUpFormContainer from '../session_form/SignUpFormContainer';
 
 
 class Greeting extends React.Component {
@@ -47,8 +49,8 @@ class Greeting extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  showSignUp: () => dispatch(showModal(<SessionForm formType={'signup'}/>)),
-  showLogIn: () => dispatch(showModal(<SessionForm formType={'login'}/>))
+  showSignUp: () => dispatch(showModal(<SignUpFormContainer formType={'signup'}/>)),
+  showLogIn: () => dispatch(showModal(<LogInFormContainer formType={'login'}/>))
 })
 
 export default connect(null, mapDispatchToProps)(Greeting);
