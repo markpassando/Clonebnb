@@ -16,12 +16,13 @@ export const fetchTrip = (id) => {
   );
 };
 
-export const createTrip = (room) => {
+export const createTrip = (trip) => {
+  debugger
   return (
     $.ajax({
       method: 'POST',
       url: '/api/trips',
-      data: room
+      data: trip
     })
   );
 };

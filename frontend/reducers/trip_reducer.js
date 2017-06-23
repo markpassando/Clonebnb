@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_TRIPS,
-  RECEIVE_TRIP
+  RECEIVE_TRIP,
+  RECEIVE_ERRORS
 } from '../actions/trip_actions';
 
 const defaultState = {
@@ -24,6 +25,12 @@ const tripReducer = (state = defaultState, action) => {
       return merge( newState,{
         entities: { [action.trip.id]: action.trip },
         currentTrip: action.trip.id
+      });
+
+    case RECEIVE_ERRORS:
+      const errors = action.errors;
+      return merge({}, nullUser, {
+        errors
       });
 
     default:

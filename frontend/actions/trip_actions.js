@@ -15,6 +15,11 @@ export const receiveTrip = trip => ({
   trip
 });
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
+
 export const fetchTrips = () => dispatch => (
   APIUtil.fetchTrips().then(trips => (
     dispatch(receiveTrips(trips)),
@@ -32,6 +37,6 @@ export const fetchTrip = id => dispatch => (
 export const createTrip = trip => dispatch => (
   APIUtil.createTrip(trip).then(trip => (
     dispatch(receiveTrip(trip)),
-    console.error
+    err => dispatch(receiveErrors(err.responseJSON))
   ))
 );

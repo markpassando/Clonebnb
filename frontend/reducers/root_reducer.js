@@ -8,7 +8,7 @@ import tripReducer from './trip_reducer';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  trips: tripsReducer,
+  trips: tripReducer,
   rooms: roomsReducer,
   filters: filtersReducer,
   modal: modalReducer

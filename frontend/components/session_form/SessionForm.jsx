@@ -32,7 +32,6 @@ class SessionForm extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    debugger
     this.props.processForm({ user: {username: "RonBurgundy", password: "123456"} });
   }
 
