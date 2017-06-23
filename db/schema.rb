@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623134025) do
+ActiveRecord::Schema.define(version: 20170623173756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20170623134025) do
   end
 
   add_index "rooms", ["host_id"], name: "index_rooms_on_host_id", using: :btree
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "user_id",                        null: false
+    t.integer  "room_id",                        null: false
+    t.string   "status",     default: "Pending"
+    t.date     "check_in"
+    t.date     "check_out"
+    t.integer  "num_guests",                     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",            null: false

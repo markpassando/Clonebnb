@@ -11,6 +11,8 @@ class Room < ActiveRecord::Base
     class_name: 'User',
     foreign_key: :host_id
 
+  has_many :trips
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
         .where("lat > ?", bounds[:southWest][:lat])
