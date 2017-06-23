@@ -7,21 +7,35 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-user1 = User.create({ username: "RonBurgundy", password: "123456"})
+user1 = User.create({ username: "RonBurgundy", password: "123456",
+  avatar: File.open('app/assets/images/users/ron.jpg'),
+})
 user2 = User.create({ username: "BrianFantana", password: "123456"})
 user3 = User.create({ username: "BrickTamland", password: "123456"})
 user4 = User.create({ username: "ChampKind", password: "123456"})
 user5 = User.create({ username: "VeronicaCorningstone", password: "123456"})
-user6 = User.create({ username: "MathewMurdock", password: "123456"})
+user6 = User.create({ username: "MathewMurdock", password: "123456",
+  avatar: File.open('app/assets/images/users/matthew-murdock.jpg'),
+})
 user7 = User.create({ username: "PeterParker", password: "123456"})
 user8 = User.create({ username: "BruceWayne", password: "123456"})
 user9 = User.create({ username: "JessicaJones", password: "123456"})
 user10 = User.create({ username: "AceVentura", password: "123456"})
-user11 = User.create({ username: "CharlesXavier", password: "123456"})
-user12 = User.create({ username: "AuntMay", password: "123456"})
-user13 = User.create({ username: "TonyStark", password: "123456"})
-user14 = User.create({ username: "WilsonFisk", password: "123456"})
-user15 = User.create({ username: "DrStephenStrange", password: "123456"})
+user11 = User.create({ username: "CharlesXavier", password: "123456",
+  avatar: File.open('app/assets/images/users/prof-x.jpg'),
+})
+user12 = User.create({ username: "AuntMay", password: "123456",
+  avatar: File.open('app/assets/images/users/aunt-may.png'),
+})
+user13 = User.create({ username: "TonyStark", password: "123456",
+  avatar: File.open('app/assets/images/users/tony-stark.png'),
+})
+user14 = User.create({ username: "WilsonFisk", password: "123456",
+  avatar: File.open('app/assets/images/users/fisk.jpg'),
+})
+user15 = User.create({ username: "DrStephenStrange", password: "123456",
+  avatar: File.open('app/assets/images/users/dr-strange.jpg'),
+})
 
 Room.destroy_all
 room1 = Room.create({
@@ -69,6 +83,7 @@ room2 = Room.create({
 
 room3 = Room.create({
   host_id: user6.id,
+  main_pic: File.open('app/assets/images/rooms/daredevil-apt.png'),
   title: "Hell's Kitchen Loft with Room Access",
   address: "480 W 42nd St, New York, NY 10036",
   lat: 40.759228,
@@ -91,6 +106,7 @@ room3 = Room.create({
 
 room4 = Room.create({
   host_id: user11.id,
+  main_pic: File.open('app/assets/images/rooms/x-men-mansion.jpg'),
   title: "Xavier's School For Gifted Youngsters",
   address: "1407 Graymalkin Lane, Salem Center",
   lat: 41.336532,
@@ -112,6 +128,7 @@ room4 = Room.create({
 
 room5 = Room.create({
   host_id: user12.id,
+  main_pic: File.open('app/assets/images/rooms/aunt-mays.jpg'),
   title: "Aunt May's House",
   address: "20 Ingram St Forest Hills, NY 11375",
   lat: 40.712950,
@@ -134,6 +151,7 @@ room5 = Room.create({
 room6 = Room.create({
   host_id: user13.id,
   title: "Stark Tower",
+  main_pic: File.open('app/assets/images/rooms/stark-tower.jpg'),
   address: "200 Park Ave, New York, NY 10166",
   lat: 40.753434,
   lng: -73.976689,
@@ -154,6 +172,7 @@ room6 = Room.create({
 
 room7 = Room.create({
   host_id: user14.id,
+  main_pic: File.open('app/assets/images/rooms/fisk-tower.png'),
   title: "Fisk Towers",
   address: "439 West 38th Street, New York, NY 10018",
   lat: 40.756446,
@@ -175,6 +194,7 @@ room7 = Room.create({
 
 room8 = Room.create({
   host_id: user15.id,
+  main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
   title: "Sanctum Sanctorum",
   address: "177A Bleecker Street, New York City, NY 10012-1406",
   lat: 40.729076,

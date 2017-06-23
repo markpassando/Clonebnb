@@ -11,32 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621192328) do
+ActiveRecord::Schema.define(version: 20170623134025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rooms", force: :cascade do |t|
-    t.integer  "host_id",                     null: false
-    t.string   "title",                       null: false
-    t.integer  "price",                       null: false
-    t.integer  "num_guests",                  null: false
-    t.integer  "bedrooms",                    null: false
-    t.integer  "beds",                        null: false
-    t.text     "description",                 null: false
-    t.string   "address",                     null: false
-    t.text     "rules",                       null: false
-    t.string   "prop_type",                   null: false
-    t.string   "room_type",                   null: false
-    t.boolean  "wifi",        default: false
-    t.boolean  "kitchen",     default: false
-    t.boolean  "ac",          default: false
-    t.boolean  "tv",          default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "bathrooms",                   null: false
-    t.float    "lat",                         null: false
-    t.float    "lng",                         null: false
+    t.integer  "host_id",                               null: false
+    t.string   "title",                                 null: false
+    t.integer  "price",                                 null: false
+    t.integer  "num_guests",                            null: false
+    t.integer  "bedrooms",                              null: false
+    t.integer  "beds",                                  null: false
+    t.text     "description",                           null: false
+    t.string   "address",                               null: false
+    t.text     "rules",                                 null: false
+    t.string   "prop_type",                             null: false
+    t.string   "room_type",                             null: false
+    t.boolean  "wifi",                  default: false
+    t.boolean  "kitchen",               default: false
+    t.boolean  "ac",                    default: false
+    t.boolean  "tv",                    default: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "bathrooms",                             null: false
+    t.float    "lat",                                   null: false
+    t.float    "lng",                                   null: false
+    t.string   "main_pic_file_name"
+    t.string   "main_pic_content_type"
+    t.integer  "main_pic_file_size"
+    t.datetime "main_pic_updated_at"
   end
 
   add_index "rooms", ["host_id"], name: "index_rooms_on_host_id", using: :btree

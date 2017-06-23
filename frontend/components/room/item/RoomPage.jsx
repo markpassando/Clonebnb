@@ -1,5 +1,6 @@
 import React from 'react';
 import RoomDetailContainer from './detail/RoomDetailContainer';
+import RoomImageContainer from './image/RoomImageContainer';
 
 class RoomPage extends React.Component {
   componentDidMount() {
@@ -12,10 +13,12 @@ class RoomPage extends React.Component {
 
     return(
       <article>
-        <div>Big ass picture goes here</div>
+        <div>
+          <RoomImageContainer room={room} />
+        </div>
         <div className="container room-page">
           <div className="room-detail">
-            <RoomDetailContainer room={room}/>
+            <RoomDetailContainer room={room} />
             <div>Reviews go here</div>
           </div>
           <div className="room-booking">

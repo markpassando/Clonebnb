@@ -9,13 +9,13 @@ const ModalFrame = ({ hideModal, visible, content }) => (
   </div>
 )
 
-const mSTP = ({modal: { visible, content }}) => ({
+const mapStateToProps = ({modal: { visible, content }}) => ({
   visible,
   content
 })
 
-const mDTP = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   hideModal: () => dispatch(hideModal())
 })
 
-export default connect(mSTP, mDTP)(ModalFrame);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalFrame);

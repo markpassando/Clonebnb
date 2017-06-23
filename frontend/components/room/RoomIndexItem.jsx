@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const RoomIndexItem = ({ room }) => (
   <li>
     <Link to={`/rooms/${room.id}`}>
-      <div><img src={ window.images.test } alt="Room Placeholder" /></div>
+      <div><img src={ room.main_pic_url } alt="Room Placeholder" /></div>
 
       <div>
         <div className="room-index-title">

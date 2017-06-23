@@ -7,7 +7,10 @@ const RoomDetail = ({ room }) => {
       <div className="rm-detail-title rm-detail-bottom">
         <h2>{room.title}</h2>
         <p>{room.address}</p>
-        {room.host_id}
+        <div>
+          <img src={room.host.avatar_url} />
+          {room.host.username}
+        </div>
       </div>
 
       <div className="rm-detail-bottom">
@@ -45,6 +48,13 @@ const RoomDetail = ({ room }) => {
             <li className={room.kitchen ? "" : "no-amen"}>{room.kitchen ? <i className="fa fa-cutlery" aria-hidden="true"></i> : ""} Kitchen</li>
             <li className={room.ac ? "" : "no-amen"}>{room.ac ? <i className="fa fa-snowflake-o" aria-hidden="true"></i> : ""} Air conditioning</li>
             <li className={room.tv ? "" : "no-amen"}>{room.tv ? <i className="fa fa-television" aria-hidden="true"></i> : ""} TV</li>
+          </ul>
+
+          <ul>
+            <li className={room.wifi ? "" : "no-amen"}>{room.wifi ? <i className="fa fa-paw" aria-hidden="true"></i> : ""} Pets allowed</li>
+            <li className={room.kitchen ? "" : "no-amen"}>{room.kitchen ? <i className="fa fa-fire" aria-hidden="true"></i> : ""} Indoor fireplace</li>
+            <li className={room.ac ? "" : "no-amen"}>{room.ac ? <i className="fa fa-bath" aria-hidden="true"></i> : ""} Bathtub</li>
+            <li className={room.tv ? "" : "no-amen"}>{room.tv ? <i className="fa fa-gamepad" aria-hidden="true"></i> : ""} Game console</li>
           </ul>
         </div>
       </div>
