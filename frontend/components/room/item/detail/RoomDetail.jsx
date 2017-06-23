@@ -4,57 +4,77 @@ const RoomDetail = ({ room }) => {
 
   return (
     <div>
-      <h2>{room.title}</h2>
-      {room.address}
-      {room.host_id}
+      <div className="rm-detail-title rm-detail-bottom">
+        <h2>{room.title}</h2>
+        <p>{room.address}</p>
+        {room.host_id}
+      </div>
 
-      <div>
+      <div className="rm-detail-bottom">
         <h3>About this listing</h3>
         <p>{room.description}</p>
       </div>
 
-      <div>
-        <h3>The space</h3>
-        <ul>
-          <li>Accommodates: <strong>{room.num_guests}</strong></li>
-          <li>Bathrooms: <strong>{room.bathrooms}</strong></li>
-          <li>Bedrooms: <strong>{room.bedrooms}</strong></li>
-          <li>Beds: <strong>{room.beds}</strong></li>
-          <li>Check In: <strong>ADD TO DB</strong></li>
-          <li>Check Out: <strong>ADD TO DB</strong></li>
-          <li>Property type: <strong>{room.prop_type}</strong></li>
-          <li>Room type: <strong>{room.room_type}</strong></li>
-        </ul>
+      <div className="rm-detail-box">
+        <div>
+          <h4>The space</h4>
+        </div>
+        <div className="rm-detail-list">
+          <ul>
+            <li>Accommodates: <strong>{room.num_guests}</strong></li>
+            <li>Bathrooms: <strong>{room.bathrooms}</strong></li>
+            <li>Bedrooms: <strong>{room.bedrooms}</strong></li>
+            <li>Beds: <strong>{room.beds}</strong></li>
+          </ul>
+          <ul>
+            <li>Check In: <strong>ADD TO DB</strong></li>
+            <li>Check Out: <strong>ADD TO DB</strong></li>
+            <li>Property type: <strong>{room.prop_type}</strong></li>
+            <li>Room type: <strong>{room.room_type}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="rm-detail-box">
+        <div>
+          <h4>Amenities</h4>
+        </div>
+        <div className="rm-detail-list rm-detail-amen">
+          <ul>
+            <li className={room.wifi ? "" : "no-amen"}>{room.wifi ? <i className="fa fa-wifi" aria-hidden="true"></i> : ""} Wireless Internet</li>
+            <li className={room.kitchen ? "" : "no-amen"}>{room.kitchen ? <i className="fa fa-cutlery" aria-hidden="true"></i> : ""} Kitchen</li>
+            <li className={room.ac ? "" : "no-amen"}>{room.ac ? <i className="fa fa-snowflake-o" aria-hidden="true"></i> : ""} Air conditioning</li>
+            <li className={room.tv ? "" : "no-amen"}>{room.tv ? <i className="fa fa-television" aria-hidden="true"></i> : ""} TV</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="rm-detail-box">
+        <div>
+          <h4>Prices</h4>
+        </div>
+        <div>
+          <ul>
+            <li>Extra people: <strong>No Charge</strong></li>
+            <li>Weekly Discount: <strong>10%</strong></li>
+            <li>Cleaning Fee: <strong>${ Math.floor(room.price / 8) }</strong></li>
+          </ul>
+          <strong>Always communicate through Clonebnb</strong>
+          <p>To protect your payment, never transfer money or communicate outside of the Clonebnb website or app.</p>
+        </div>
+      </div>
+
+      <div className="rm-detail-box">
+        <div>
+          <h4>Description</h4>
+        </div>
+        <div>
+          <p>{room.description}</p>
+        </div>
       </div>
 
       <div>
-        <h3>Amenities</h3>
-        <ul>
-          <li>Wireless Internet {room.wifi ? "yes" : "no"}</li>
-          <li>Kitchen {room.kitchen ? "yes" : "no"}</li>
-          <li>Air conditioning {room.ac ? "yes" : "no"}</li>
-          <li>TV {room.tv ? "yes" : "no"}</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Prices</h3>
-        <ul>
-          <li>Extra people: <strong>No Charge</strong></li>
-          <li>Weekly Discount: <strong>10%</strong></li>
-          <li>Cleaning Fee: <strong>${ Math.floor(room.price / 8) }</strong></li>
-        </ul>
-        <strong>Always communicate through Clonebnb</strong>
-        <p>To protect your payment, never transfer money or communicate outside of the Clonebnb website or app.</p>
-      </div>
-
-      <div>
-        <h3>Description</h3>
-        <p>{room.description}</p>
-      </div>
-
-      <div>
-        <h3>Safety features</h3>
+        <h4>Safety features</h4>
         <ul>
           <li>Smoke detector</li>
           <li>Carbon monoxide detector</li>

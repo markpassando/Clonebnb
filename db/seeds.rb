@@ -20,6 +20,8 @@ user10 = User.create({ username: "AceVentura", password: "123456"})
 user11 = User.create({ username: "CharlesXavier", password: "123456"})
 user12 = User.create({ username: "AuntMay", password: "123456"})
 user13 = User.create({ username: "TonyStark", password: "123456"})
+user14 = User.create({ username: "WilsonFisk", password: "123456"})
+user15 = User.create({ username: "DrStephenStrange", password: "123456"})
 
 Room.destroy_all
 room1 = Room.create({
@@ -148,4 +150,45 @@ room6 = Room.create({
   kitchen: true,
   ac: true,
   tv: true
+})
+
+room7 = Room.create({
+  host_id: user14.id,
+  title: "Fisk Towers",
+  address: "439 West 38th Street, New York, NY 10018",
+  lat: 40.756446,
+  lng: -73.995747,
+  price: 500,
+  num_guests: 10,
+  bedrooms: 5,
+  beds: 5,
+  bathrooms: 3,
+  description: "The Fisk Industries towers is a front for the Kingpin (Wilson Fisk)'s public ventures as well as a base of operations for his criminal activities. It is located at 439 West 38th Street (on the corner of West 38th Street and 5th Avenue), just north of the Empire State Building and a few blocks south east of the Bank of America tower. Despite it's inherently illegal activities and being damaged or destroyed numerous times in superhuman battles, the Fisk Towers put up a convincing ploy for Wilson Fisk to appear as any other legitimate business within Manhattan's Financial District while secretly using it for his crimes as the Kingpin.",
+  rules: "None",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true
+})
+
+room8 = Room.create({
+  host_id: user15.id,
+  title: "Sanctum Sanctorum",
+  address: "177A Bleecker Street, New York City, NY 10012-1406",
+  lat: 40.729076,
+  lng: -74.000653,
+  price: 200,
+  num_guests: 8,
+  bedrooms: 4,
+  beds: 4,
+  bathrooms: 3,
+  description: "The mansion of Doctor Stephen Strange's is located at 177A Bleecker Street, New York City, NY 10012-1406, on the corner of Bleecker Street and Fenno Place in the heart of Greenwich Village. Also known as the Sanctum Sanctorum, the townhouse has served as the personal residence of Doctor Strange and former as the headquarters of the Defenders and the New Avengers.",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: false,
+  kitchen: true,
+  ac: true,
+  tv: false
 })

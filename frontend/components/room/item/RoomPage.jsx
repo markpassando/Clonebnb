@@ -13,8 +13,15 @@ class RoomPage extends React.Component {
     return(
       <article>
         <div>Big ass picture goes here</div>
-        <RoomDetailContainer room={room}/>
-        <div>Reviews go here</div>
+        <div className="container room-page">
+          <div className="room-detail">
+            <RoomDetailContainer room={room}/>
+            <div>Reviews go here</div>
+          </div>
+          <div className="room-booking">
+
+          </div>
+        </div>
       </article>
     );
   }
