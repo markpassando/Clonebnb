@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting/GreetingContainer';
 import SearchBarContainer from './search/SearchBarContainer';
+import { Route } from 'react-router-dom';
 
 const NavBar = (props) => {
 

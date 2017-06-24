@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchRooms: () => dispatch(fetchRooms()),
-    updateFilter: (bounds) => dispatch(updateFilter(bounds))
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
   });
 };
 

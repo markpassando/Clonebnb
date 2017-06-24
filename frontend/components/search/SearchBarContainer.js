@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
+import { withRouter } from 'react-router-dom';
+import { changeFilter } from '../../actions/filter_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return ({
 
   });
 };
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = dispatch => {
   return ({
-
+    changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
   });
 };
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
