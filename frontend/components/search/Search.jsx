@@ -4,7 +4,7 @@ import React from 'react';
 import RoomIndex from '../room/RoomIndex';
 import RoomMap from './../room/map/RoomMap';
 
-const Search = ({ rooms, fetchRooms, updateFilter }) => (
+const Search = ({ rooms, fetchRooms, updateFilter, place }) => (
   <div className="search-page">
     <div>
       <RoomIndex
@@ -17,6 +17,7 @@ const Search = ({ rooms, fetchRooms, updateFilter }) => (
       <RoomMap
         rooms={rooms}
         updateFilter={updateFilter}
+        place={place}
       />
     </div>
   </div>

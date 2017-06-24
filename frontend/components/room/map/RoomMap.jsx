@@ -7,10 +7,16 @@ import MarkerManager from '../../../util/marker_manager';
 class RoomMap extends React.Component {
   componentDidMount() {
     // set the map to show SF
+    // debugger
+    const { lat, lng } = this.props.place;
     const mapOptions = {
-      center: { lat: 40.745267, lng: -73.993979 }, // this is SF
-      zoom: 13
+      center: { lat, lng }, // this is SF
+      zoom: 12
     };
+    // const mapOptions = {
+    //   center: { lat: 40.745267, lng: -73.993979 }, // this is SF
+    //   zoom: 13
+    // };
 
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
