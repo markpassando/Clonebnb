@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting/GreetingContainer';
+import SearchBarContainer from './search/SearchBarContainer';
 
 const NavBar = (props) => {
 
@@ -10,9 +11,7 @@ const NavBar = (props) => {
         <div className="logo">
           <Link to={"/"} ><img src={ window.images.logo } alt="Airbnb Logo" /></Link>
         </div>
-        <div className="search-container">
-          <input className="search-bar" placeholder="Search..."/>
-        </div>
+        <SearchBarContainer />
       </div>
 
       <nav className="right-nav">
