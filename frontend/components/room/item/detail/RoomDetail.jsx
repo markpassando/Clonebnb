@@ -9,9 +9,13 @@ const RoomDetail = ({ room }) => {
           <h2>{room.title}</h2>
           <p>{room.address}</p>
         </div>
-        <div>
-          <img src={room.host.avatar_url} />
-          <p>{room.host.username}</p>
+        <div className="host-container">
+          <div>
+            <img src={room.host.avatar_url} />
+          </div>
+          <div>
+            <p>{room.host.username}</p>
+          </div>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 class Room < ActiveRecord::Base
-  has_attached_file :main_pic, styles: { thumb: "639x426>" }, default_url: "placeholder_room.jpg"
+  has_attached_file :main_pic, styles: { thumb: "639x426#" }, default_url: "placeholder_room.jpg"
   validates_attachment_content_type :main_pic, content_type: /\Aimage\/.*\z/
 
   validates :host_id, :title, :address, :price, :num_guests, :bedrooms, :beds, :description,

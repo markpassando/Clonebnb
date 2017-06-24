@@ -21,6 +21,10 @@ h4 {
   }
 
   .rm-detail-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     h2 {
       font-size: 30px;
     }
@@ -28,6 +32,20 @@ h4 {
     p {
       color: $gray;
       font-size: 16px;
+    }
+  }
+
+  .host-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      border-radius: 30px;
+    }
+
+    p {
+      margin: 7px 0;
     }
   }
 
