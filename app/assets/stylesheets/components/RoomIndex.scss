@@ -15,7 +15,18 @@
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+
+    li {
+      width: 100%;
+      max-width: 333px;
+    }
   }
+
+  .room-index-img-box {
+    width: 100%;
+  }
+
+
 
   .room-index-title {
     color: $dark-gray;
@@ -43,4 +54,18 @@
     color: $pink;
     font-weight: bolder;
   }
+}
+
+.room-index-img {
+  padding-top: 67%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.room-page-img {
+  padding-top: 40%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

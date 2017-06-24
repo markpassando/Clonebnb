@@ -5,11 +5,13 @@ const RoomDetail = ({ room }) => {
   return (
     <div>
       <div className="rm-detail-title rm-detail-bottom">
-        <h2>{room.title}</h2>
-        <p>{room.address}</p>
+        <div>
+          <h2>{room.title}</h2>
+          <p>{room.address}</p>
+        </div>
         <div>
           <img src={room.host.avatar_url} />
-          {room.host.username}
+          <p>{room.host.username}</p>
         </div>
       </div>
 
