@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
   renderErrors() {
     if (this.props.errors) {
       return(
-        <ul>
+        <ul className="errors">
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container" onClick={(e) => e.stopPropagation()}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
+
           <div className="login-form">
             <label>
               <input type="text"
@@ -104,6 +104,8 @@ class SessionForm extends React.Component {
             <i className="fa fa-lock fa-lg side-icon" aria-hidden="true"></i>
 
             <br/>
+
+            {this.renderErrors()}
 
             <input className="btn pink" type="submit" value={this.props.formType === 'login' ? "Log in" : "Sign up"} />
           </div>

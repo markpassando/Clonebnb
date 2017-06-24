@@ -36,6 +36,9 @@ user14 = User.create({ username: "WilsonFisk", password: "123456",
 user15 = User.create({ username: "DrStephenStrange", password: "123456",
   avatar: File.open('app/assets/images/users/dr-strange.jpg'),
 })
+user16 = User.create({ username: "JessicaJones", password: "123456",
+  avatar: File.open('app/assets/images/users/dr-strange.jpg'),
+})
 
 Room.destroy_all
 room1 = Room.create({
@@ -84,7 +87,7 @@ room2 = Room.create({
 room3 = Room.create({
   host_id: user6.id,
   main_pic: File.open('app/assets/images/rooms/daredevil-apt.png'),
-  title: "Hell's Kitchen Loft with Room Access",
+  title: "Hell's Kitchen Loft with Roof Access",
   address: "480 W 42nd St, New York, NY 10036",
   lat: 40.759228,
   lng: -73.995221,
@@ -212,3 +215,50 @@ room8 = Room.create({
   ac: true,
   tv: false
 })
+
+room9 = Room.create({
+  host_id: user16.id,
+  main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
+  title: "Jessica Jones' Apartment/Office",
+  address: "485 W 46th St, New York, NY 10036",
+  lat: 40.762134,
+  lng: -73.993472,
+  price: 100,
+  num_guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "Jessica Jones' Apartment Building is a building located in the Hell's Kitchen neighborhood of New York City, that houses the office of the Alias Investigations private investigation agency.",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: false,
+  tv: false
+})
+
+room9 = Room.create({
+  host_id: user16.id,
+  main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
+  title: "Genghis Connie’s and Luke Cage’s Apartment",
+  address: "Broadway & W 171st St, New York, NY 10032",
+  lat: 40.843246,
+  lng: -73.939189,
+  price: 8,
+  num_guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "If you were looking for the location of Genghis Connie’s in Harlem – you would have a hard time. That’s because the restaurant is fictional and this block is actually located in Washington Heights, at the corner of 171st Street and Broadway. There, you’ll find the confluence of Citibank, Bank of America, and Rite Aid that you see in the reflections at Genghis Connie’s. The actual restaurant is La Dinastia Restaurant, serving Latin Chinese cuisine restaurantIn the show, Luke Cage’s apartment is located above the Chinese restaurant, which he rents from Connie (Jade Wu).",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: false,
+  tv: false
+})
+
+# pops barbershop
+# avengers mansion
+# dailybulge
+# Wayne Enterprises trump towerhttp://fiestahero.kinja.com/eleven-real-life-comic-book-locations-you-can-visit-in-1446391680

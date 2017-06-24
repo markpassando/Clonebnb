@@ -38,8 +38,27 @@
     margin-top: 16px;
     border-top: 1px solid $light-gray;
 
-    p, a {
+    p {
       font-size: 18px;
     }
+
+    button {
+      background-color: transparent;
+      border: 2px solid $teal;
+      border-radius: $border-radius;
+      color: $teal;
+      padding: 7px 12px;
+
+      &:focus {
+        outline: none;
+        border-color: $black;
+      }
+    }
+  }
+
+  .errors {
+    color: $dark-pink;
+    list-style: none;
+    padding: 0;
   }
 }
