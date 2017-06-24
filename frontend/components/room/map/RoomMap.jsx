@@ -35,6 +35,9 @@ class RoomMap extends React.Component {
   }
 
   componentDidUpdate() {
+    const { lat, lng } = this.props.place;
+    // debugger
+    this.map.setCenter(new google.maps.LatLng(lat, lng));
     this.MarkerManager.updateMarkers(this.props.rooms);
   }
 
