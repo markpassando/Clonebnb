@@ -1,0 +1,52 @@
+.room-booking {
+  width: 100%;
+  max-width: 315px;
+  margin-top: -49px;
+
+  .bk-price {
+    color: $white;
+    background-color: rgba(60,63,64,0.9);
+    padding: 13px 25px;
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    i {
+      color: $dark-yellow;
+      font-size: 18px;
+      margin-right: 5px;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  form {
+    padding: 15px;
+    box-sizing: border-box;
+
+    label {
+      padding-top: 10px; 
+    }
+
+    input[type=text] {
+      max-width: 270px;
+      width: 100%;
+      padding: 5px;
+      margin: 10px 0;
+    }
+
+    small {
+      color: $gray;
+      text-align: center;
+      margin: 15px 0;
+      font-size: 12px;
+      display: block;
+    }
+  }
+}

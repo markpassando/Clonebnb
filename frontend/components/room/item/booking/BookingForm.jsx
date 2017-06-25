@@ -58,14 +58,14 @@ class BookingForm extends React.Component {
 
 
           <label>Guests
-            <input type="text" onChange={this.update('num_guests')} />
+            <input type="text" placeholder="1" onChange={this.update('num_guests')} />
           </label>
 
           <br />
 
-          <input type="submit" value="Book"/>
+          <input className="btn pink" type="submit" value="Book"/>
+          <small>You won’t be charged yet</small>
         </form>
-        <p>You won’t be charged yet</p>
       </div>
     );
   }

@@ -19,16 +19,48 @@ const RoomDetail = ({ room }) => {
         </div>
       </div>
 
+      <div className="rm-detail-bottom rm-icon-list">
+        <div className="room-icon-item">
+          <img src={ window.images.icon_home } alt="Home Icon" />
+          <p>{room.room_type}</p>
+        </div>
+
+        <div className="room-icon-people">
+          <img src={ window.images.icon_people } alt="People Icon" />
+          <p>{room.num_guests} Guests</p>
+        </div>
+
+        <div className="room-icon-door">
+          <img src={ window.images.icon_door } alt="Door Icon" />
+          <p>{room.bedrooms} Bedrooms</p>
+        </div>
+
+        <div className="room-icon-bed">
+          <img src={ window.images.icon_bed } alt="Bed Icon" />
+          <p>{room.beds} Beds</p>
+        </div>
+      </div>
+
+      <div className="rm-detail-bottom rm-refund">
+        <div>
+          <img src={ window.images.icon_pig } alt="BPig Icon" />
+        </div>
+        <div>
+          <strong>100% refundable</strong>
+          <p>Cancel up to 5 days before your trip and get a full refund, including service fees.</p>
+        </div>
+      </div>
+
       <div className="rm-detail-bottom">
         <h3>About this listing</h3>
         <p>{room.description}</p>
       </div>
 
       <div className="rm-detail-box">
-        <div>
+        <div className="box-title">
           <h4>The space</h4>
         </div>
-        <div className="rm-detail-list">
+        <div className="box-info rm-detail-list">
           <ul>
             <li>Accommodates: <strong>{room.num_guests}</strong></li>
             <li>Bathrooms: <strong>{room.bathrooms}</strong></li>
@@ -36,8 +68,8 @@ const RoomDetail = ({ room }) => {
             <li>Beds: <strong>{room.beds}</strong></li>
           </ul>
           <ul>
-            <li>Check In: <strong>ADD TO DB</strong></li>
-            <li>Check Out: <strong>ADD TO DB</strong></li>
+            <li>Check In: <strong>Anytime after 3PM</strong></li>
+            <li>Check Out: <strong>11AM</strong></li>
             <li>Property type: <strong>{room.prop_type}</strong></li>
             <li>Room type: <strong>{room.room_type}</strong></li>
           </ul>
@@ -45,10 +77,10 @@ const RoomDetail = ({ room }) => {
       </div>
 
       <div className="rm-detail-box">
-        <div>
+        <div className="box-title">
           <h4>Amenities</h4>
         </div>
-        <div className="rm-detail-list rm-detail-amen">
+        <div className="box-info rm-detail-list rm-detail-amen">
           <ul>
             <li className={room.wifi ? "" : "no-amen"}>{room.wifi ? <i className="fa fa-wifi" aria-hidden="true"></i> : ""} Wireless Internet</li>
             <li className={room.kitchen ? "" : "no-amen"}>{room.kitchen ? <i className="fa fa-cutlery" aria-hidden="true"></i> : ""} Kitchen</li>
@@ -66,36 +98,52 @@ const RoomDetail = ({ room }) => {
       </div>
 
       <div className="rm-detail-box">
-        <div>
+        <div className="box-title">
           <h4>Prices</h4>
         </div>
-        <div>
+        <div className="box-info">
           <ul>
             <li>Extra people: <strong>No Charge</strong></li>
             <li>Weekly Discount: <strong>10%</strong></li>
             <li>Cleaning Fee: <strong>${ Math.floor(room.price / 8) }</strong></li>
           </ul>
-          <strong>Always communicate through Clonebnb</strong>
-          <p>To protect your payment, never transfer money or communicate outside of the Clonebnb website or app.</p>
+          <div className="price-disclaimer">
+            <strong>Always communicate through Clonebnb</strong>
+            <p>To protect your payment, never transfer money or communicate outside of the Clonebnb website or app.</p>
+          </div>
         </div>
       </div>
 
       <div className="rm-detail-box">
-        <div>
+        <div className="box-title">
           <h4>Description</h4>
         </div>
-        <div>
+        <div className="box-info">
           <p>{room.description}</p>
         </div>
       </div>
 
-      <div>
-        <h4>Safety features</h4>
-        <ul>
-          <li>Smoke detector</li>
-          <li>Carbon monoxide detector</li>
-        </ul>
+      <div className="rm-detail-box">
+        <div className="box-title">
+          <h4>Safety features</h4>
+        </div>
+        <div className="box-info">
+          <ul>
+            <li>Smoke detector</li>
+            <li>Carbon monoxide detector</li>
+          </ul>
+        </div>
       </div>
+
+      <div className="rm-detail-box">
+        <div className="box-title">
+          <h4>House Rules</h4>
+        </div>
+        <div className="box-info">
+          <p>{room.rules}</p>
+        </div>
+      </div>
+
     </div>
   );
 };

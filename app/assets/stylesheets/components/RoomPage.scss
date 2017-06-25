@@ -8,7 +8,7 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .room-detail {
@@ -33,6 +33,34 @@ h4 {
       color: $gray;
       font-size: 16px;
     }
+
+  }
+
+  .rm-icon-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    p {
+      color: $gray;
+      margin: 6px 0 0 0;
+    }
+  }
+
+  .rm-refund {
+    display: flex;
+    padding: 10px 0;
+
+    img {
+      margin: 0 20px;
+    }
+
+    strong, p {font-size: 15px;}
   }
 
   .host-container {
@@ -54,18 +82,18 @@ h4 {
   .rm-detail-box {
     display: flex;
 
-    &:first-child {
+    .box-title {
       width: 200px;
-      background-color: red;
     }
 
-    &:nth-child(2) {
+    .box-info {
       flex: 1;
-      background-color: red;
     }
 
     ul {
       list-style: none;
+      padding: 0;
+      width: 50%;
 
       li {
         font-size: 17px;
@@ -79,7 +107,14 @@ h4 {
 
     .rm-detail-list {
       display: flex;
+      justify-content: space-between;
     }
+  }
+
+  .price-disclaimer {
+    font-size: 13px;
+
+    p {font-size: 13px}
   }
 
   .rm-detail-amen {
@@ -91,10 +126,4 @@ h4 {
     text-decoration: line-through;
   }
 
-}
-
-.room-booking {
-  width: 100%;
-  max-width: 315px;
-  background-color: $teal;
 }

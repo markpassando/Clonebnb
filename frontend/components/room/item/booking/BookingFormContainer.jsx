@@ -8,8 +8,8 @@ class BookingFormContainer extends React.Component {
   render() {
     return(
       <div>
-        <div>
-          <p><i className="fa fa-bolt" aria-hidden="true"></i>${this.props.room.price} per night</p>
+        <div className="bk-price">
+          <p><i className="fa fa-bolt" aria-hidden="true"></i><span> ${this.props.room.price}</span> per night</p>
         </div>
         <BookingForm {...this.props} />
       </div>
