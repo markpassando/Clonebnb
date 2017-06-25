@@ -17,7 +17,6 @@ export const fetchTrip = (id) => {
 };
 
 export const createTrip = (trip) => {
-  debugger
   return (
     $.ajax({
       method: 'POST',

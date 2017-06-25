@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const trip = this.state;
     // console.log(trip);
-    this.props.bookTrip({trip});
+    this.props.bookTrip({trip}).then(action => this.props.history.push(`/trips/${trip.id}`));
   }
 
   renderGuestList() {
@@ -70,4 +71,4 @@ class BookingForm extends React.Component {
   }
 }
 
-export default BookingForm;
+export default withRouter(BookingForm);
