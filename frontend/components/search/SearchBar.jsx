@@ -35,22 +35,26 @@ class SearchBar extends React.Component {
     // console.log(autocomplete);
     // let result = findLatLng(this.state.place).then((res) => console.log(res) );
     // let result = findLatLng(this.state.place).then((res) => { res.results[0].geometry.location });
- var that = this.props;
-
-    findLatLng.bind(this)(this.input.value)
+    let currentInput = this.input.value;
+    // this.setState({ place: '' });
+    e.target.firstChild.value = '';
+    // const searchInput = document.getElementById('searchTextField');
+    // debugger
+    findLatLng.bind(this)(currentInput)
       .then(res => this.props.changeFilter('place', res.results[0].geometry.location))
       .then(action => {
-        let url = encodeURIComponent(this.input.value);
+        let url = encodeURIComponent(currentInput);
         // debugger
         // return this.props.history.push(`s/${url}`)
-        return this.props.history.push('/s/' + encodeURIComponent(url));
+        // this.input.blur();
+        this.props.history.push('/s/' + encodeURIComponent(url));
       });
   }
 
   render() {
 
     return(
-      <form className="search-container" onSubmit={this.handleSubmit}>
+      <form className="search-container" ref={form => this.form = form} onSubmit={this.handleSubmit} onBlur={(e) => {console.log("onblur");e.target.value = '';}}>
         <input
           id="searchTextField"
           className="search-bar"

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     class_name: 'Room',
     foreign_key: :host_id
 
+  has_many :trips
 
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
+import isEmpty from 'lodash/isEmpty'
 
 import MarkerManager from '../../../util/marker_manager';
 
@@ -8,11 +9,18 @@ class RoomMap extends React.Component {
   componentDidMount() {
     // set the map to show SF
     // debugger
-    const { lat, lng } = this.props.place;
-    const mapOptions = {
-      center: { lat, lng }, // this is SF
-      zoom: 12
-    };
+    let lat, lng;
+    let mapOptions
+    if (this.props.place.lat === undefined) {
+      let pathname = this.props.location.pathname.slice(3);
+      debugger
+    } else {
+      let { lat, lng } = this.props.place;
+      mapOptions = {
+        center: { lat, lng }, // this is SF
+        zoom: 12
+      };
+    }
     // const mapOptions = {
     //   center: { lat: 40.745267, lng: -73.993979 }, // this is SF
     //   zoom: 13
@@ -35,10 +43,16 @@ class RoomMap extends React.Component {
   }
 
   componentDidUpdate() {
-    const { lat, lng } = this.props.place;
-    // debugger
-    this.map.setCenter(new google.maps.LatLng(lat, lng));
     this.MarkerManager.updateMarkers(this.props.rooms);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      // debugger
+      const { lat, lng } = this.props.place;
+      // debugger
+      this.map.setCenter(new google.maps.LatLng(lat, lng));
+    }
   }
 
   render() {

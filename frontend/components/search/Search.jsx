@@ -4,7 +4,22 @@ import React from 'react';
 import RoomIndex from '../room/RoomIndex';
 import RoomMap from './../room/map/RoomMap';
 
-const Search = ({ rooms, fetchRooms, updateFilter, place }) => (
+const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
+  const renderResults = () => {
+    // debugger
+    if (rooms.length === 0) {
+      return <div>No Results</div>
+    } else {
+      return (
+        <RoomIndex
+          rooms={rooms}
+          fetchRooms={fetchRooms}
+        />
+      );
+    }
+  }
+
+  return (
   <div className="search-page">
     <div>
       <RoomIndex
@@ -21,6 +36,6 @@ const Search = ({ rooms, fetchRooms, updateFilter, place }) => (
       />
     </div>
   </div>
-);
+)};
 
 export default Search;

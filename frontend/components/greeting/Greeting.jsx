@@ -34,11 +34,12 @@ class Greeting extends React.Component {
 
     const personalGreeting = (currentUser, logout) => (
     	<div className="login-signup">
+        <Link to={"/trips"}>Trips</Link>
         <button className="header-button" onClick={logout}>Log Out</button>
         <div>
           <img src={currentUser.avatar_url} alt="User Avatar" />
         </div>
-        <p className="header-name">{currentUser.username}</p>
+
     	</div>
     );
 
@@ -54,3 +55,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(null, mapDispatchToProps)(Greeting);
+// <p className="header-name">{currentUser.username}</p>
