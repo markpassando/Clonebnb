@@ -1,7 +1,7 @@
 body {
   color: $dark-gray;
   font-family: $font-stack;
-  font-weight: lighter;
+  // font-weight: lighter;
 }
 
 html,
@@ -28,16 +28,20 @@ a {
 
 p, li {
   font-size: 16px;
+  font-weight: 100;
+  font-family: $font-stack;
 }
 
-p, h2, h3, h4 {
+h1, h2, h3, h4 {
   font-family: $font-stack;
-  font-weight: lighter;
+  font-weight: 400;
+  // font-weight: lighter;
 }
 
 button, input {
   font-family: $font-stack;
-  font-weight: lighter;
+  font-weight: 400;
+  // font-weight: lighter;
 }
 
 button {

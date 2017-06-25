@@ -9,7 +9,7 @@ class BookingFormContainer extends React.Component {
     return(
       <div>
         <div>
-          <p>${this.props.room.price} per night</p>
+          <p><i className="fa fa-bolt" aria-hidden="true"></i>${this.props.room.price} per night</p>
         </div>
         <BookingForm {...this.props} />
       </div>

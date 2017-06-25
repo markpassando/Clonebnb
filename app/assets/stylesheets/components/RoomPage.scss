@@ -39,9 +39,11 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 25px 0;
 
     img {
-      border-radius: 30px;
+      border-radius: 50px;
+      width: 64px;
     }
 
     p {
