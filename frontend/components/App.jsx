@@ -13,7 +13,7 @@ import SessionFormContainer from './session_form/SessionFormContainer';
 import HomePage from './home/HomePage';
 import SearchContainer from './search/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
-import TripsContainer from './trip/TripsContainer';
+import TripsPageContainer from './trip/TripsPageContainer';
 import NavBar from './NavBar';
 import ModalFrame from './modal/ModalFrame';
 
@@ -26,7 +26,7 @@ const App = () => (
     <Route exact path="/" component={HomePage} />
     <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />
-    <ProtectedRoute path="/trips" component={TripsContainer} />
+    <ProtectedRoute path="/trips" component={TripsPageContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

@@ -1,6 +1,8 @@
 class Api::TripsController < ApplicationController
+  before_action :require_logged_in, only: [:create, :index]
+
   def index
-      @trips = Trip.all
+      @trips = current_user.trips
     render :index
   end
 

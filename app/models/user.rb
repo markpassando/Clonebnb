@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_attached_file :avatar, styles: { thumb: "50x50#" }, default_url: "placeholder_user.png"
+  has_attached_file :avatar, styles: { thumb: "65x65#" }, default_url: "placeholder_user.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	validates :username, :password_digest, :session_token, presence: true
