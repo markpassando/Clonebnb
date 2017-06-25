@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const TripItem = ({ trip }) => {
+const TripIndexItem = ({ trip }) => {
 
   return (
     <li>
@@ -11,9 +11,10 @@ const TripItem = ({ trip }) => {
         <p>Status: {trip.status}</p>
         <p>{trip.num_guests} Guests</p>
         <p>{trip.check_in} - {trip.check_out}</p>
+        <Link to={`/trips/${trip.id}`}>View Receipt</Link>
       </section>
     </li>
   );
 }
 
-export default TripItem;
+export default TripIndexItem;

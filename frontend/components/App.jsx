@@ -14,6 +14,7 @@ import HomePage from './home/HomePage';
 import SearchContainer from './search/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
 import TripsPageContainer from './trip/TripsPageContainer';
+import TripPageContainer from './trip/item/TripPageContainer';
 import NavBar from './NavBar';
 import ModalFrame from './modal/ModalFrame';
 
@@ -26,7 +27,8 @@ const App = () => (
     <Route exact path="/" component={HomePage} />
     <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />
-    <ProtectedRoute path="/trips" component={TripsPageContainer} />
+      <Route path="/trips/:tripId" component={TripPageContainer} />
+      <Route exact path="/trips" component={TripsPageContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

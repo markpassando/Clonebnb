@@ -1,7 +1,7 @@
 import React from 'react';
 import TripIndex from './TripIndex';
 
-class TripPage extends React.Component {
+class TripIndexPage extends React.Component {
 
   render() {
 
@@ -14,4 +14,4 @@ class TripPage extends React.Component {
   }
 }
 
-export default TripPage;
+export default TripIndexPage;

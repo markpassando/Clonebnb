@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTrips } from '../../actions/trip_actions';
-import TripPage from './TripPage';
+import TripsIndexPage from './TripsIndexPage';
 import { selectAllTrips } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TripPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TripsIndexPage);

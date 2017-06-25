@@ -1,5 +1,5 @@
 import React from 'react';
-import TripItem from './TripItem';
+import TripIndexItem from './TripIndexItem';
 
 class TripIndex extends React.Component {
   componentDidMount() {
@@ -8,7 +8,7 @@ class TripIndex extends React.Component {
 
   render() {
     const { trips } = this.props;
-    const tripItems = trips.map( trip => <TripItem key={trip.id} trip={trip} />);
+    const tripItems = trips.map( trip => <TripIndexItem key={trip.id} trip={trip} />);
 
     return(
       <article>
