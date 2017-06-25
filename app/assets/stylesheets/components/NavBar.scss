@@ -1,3 +1,7 @@
+header {
+  padding-top: 64px;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -5,6 +9,11 @@
   padding: 10px 25px;
   border-bottom: 1px solid $light-gray;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 5px;
+  background-color: $white;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  width: 100%;
 }
 
 .left-nav {
@@ -87,7 +96,7 @@
 .login-signup {
   display: flex;
   align-items: center;
-  
+
   img {
     border-radius: 30px;
         max-width: 35px;

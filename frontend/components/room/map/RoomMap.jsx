@@ -13,7 +13,7 @@ class RoomMap extends React.Component {
     let mapOptions
     if (this.props.place.lat === undefined) {
       let pathname = this.props.location.pathname.slice(3);
-      debugger
+      // debugger
     } else {
       let { lat, lng } = this.props.place;
       mapOptions = {

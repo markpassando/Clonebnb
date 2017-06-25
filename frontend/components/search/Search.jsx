@@ -21,14 +21,14 @@ const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
 
   return (
   <div className="search-page">
-    <div>
+    <div className="search-results">
       <RoomIndex
         rooms={rooms}
         fetchRooms={fetchRooms}
       />
     </div>
 
-    <div>
+    <div className="map-results">
       <RoomMap
         rooms={rooms}
         updateFilter={updateFilter}

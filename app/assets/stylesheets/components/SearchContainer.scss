@@ -1,16 +1,46 @@
 #map-container {
   width: 600px;
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 .search-page {
-  display: flex;
+  display: grid;
 
-  &:first-child {
-    flex: 1;
+  .search-results {
+    max-width: calc(100% - 600px);
+    // flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .room-index ul li {
+      max-width: 380px;
+    }
   }
 
-  &:nth-child(2) {
-    width: 70%;
+  .map-results {
+    width: 600px;
+    position: fixed;
+    top: 64;
+    right: 0;
+  }
+}
+
+@media (max-width: 1825px) {
+  .search-page {
+    .search-results {
+      .room-index ul li {
+        max-width: 333px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1685px) {
+  .search-page {
+    .search-results {
+      .room-index ul li {
+        max-width: 333px;
+      }
+    }
   }
 }
