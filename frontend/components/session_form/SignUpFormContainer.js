@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hideModal, showModal } from '../../actions/modal_actions';
-import { login, logout, signup } from '../../actions/session_actions';
+import { login, logout, signup, clearErrors } from '../../actions/session_actions';
 import SessionForm from './SessionForm';
 import LogInFormContainer from '../session_form/LogInFormContainer';
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, { formType }) => {
 
   return {
     processForm: user => dispatch(processForm(user)).then(() => dispatch(hideModal())),
+    clearErrors: () => dispatch(clearErrors()),
     formType,
     showLogIn: () => dispatch(showModal(<LogInFormContainer formType={'login'}/>))
   };

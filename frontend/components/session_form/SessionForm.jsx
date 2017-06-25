@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
+  componentWillUnmount() {
+      this.props.clearErrors();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
