@@ -42,6 +42,10 @@ class RoomMap extends React.Component {
 
   }
 
+  componentWillUnmount() {
+    google.maps.event.clearListeners(this.map, 'idle' );
+  }
+
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.rooms);
   }
