@@ -26,7 +26,7 @@ class Api::RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:bounds, :host_id, :main_pic, :title, :address, :lat, :lng, :price, :num_guests,
     :bedrooms, :beds, :bathrooms, :description, :rules, :prop_type, :room_type,
-    :wifi, :kitchen, :ac, :tv)
+    :wifi, :kitchen, :ac, :tv, :pets, :fireplace, :bathtub, :games)
   end
 
 end

@@ -5,7 +5,7 @@ class Room < ActiveRecord::Base
   validates :host_id, :title, :address, :price, :num_guests, :bedrooms, :beds, :description,
     :rules, :prop_type, :room_type,
     presence: true
-  validates :wifi, :kitchen, :ac, :tv, inclusion: { in: [true, false] }
+  validates :wifi, :kitchen, :ac, :tv, :pets, :fireplace, :bathtub, :games, inclusion: { in: [true, false] }
 
   belongs_to :host,
     class_name: 'User',

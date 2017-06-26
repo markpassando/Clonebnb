@@ -1,6 +1,6 @@
 import React from 'react';
 import BookingForm from './BookingForm';
-import { createTrip } from '../../../../actions/trip_actions';
+import { createTrip, showErrors } from '../../../../actions/trip_actions';
 import { connect } from 'react-redux';
 
 class BookingFormContainer extends React.Component {
@@ -17,11 +17,15 @@ class BookingFormContainer extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  bookingErrors: errors => dispatch(showErrors(errors))
+});
+
 const mapDispatchToProps = (dispatch) => ({
   bookTrip: trip => dispatch(createTrip(trip))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(BookingFormContainer);

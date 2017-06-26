@@ -2,6 +2,7 @@ import * as APIUtil from '../util/trip_api_util';
 
 export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
 export const RECEIVE_TRIP = 'RECEIVE_TRIP';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveTrips = trips => {
   return ({
@@ -15,10 +16,10 @@ export const receiveTrip = trip => ({
   trip
 });
 
-export const receiveErrors = errors => ({
+export const receiveErrors = errors => {debugger;return({
   type: RECEIVE_ERRORS,
   errors
-});
+})};
 
 export const fetchTrips = () => dispatch => (
   APIUtil.fetchTrips().then(trips => (
@@ -37,6 +38,6 @@ export const fetchTrip = id => dispatch => (
 export const createTrip = trip => dispatch => (
   APIUtil.createTrip(trip).then(trip => (
     dispatch(receiveTrip(trip)),
-    err => dispatch(receiveErrors(err.responseJSON))
+    err => {debugger; return dispatch(receiveErrors(err.responseJSON))}
   ))
 );

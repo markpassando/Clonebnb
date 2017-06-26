@@ -20,8 +20,23 @@ class BookingForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return(
+        <ul className="errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+
     const trip = this.state;
     // console.log(trip);
     this.props.bookTrip({trip}).then(action => this.props.history.push(`/trips/${trip.id}`));
@@ -38,7 +53,6 @@ class BookingForm extends React.Component {
   }
 
   render() {
-
 
     return(
       <div>

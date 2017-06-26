@@ -9,6 +9,7 @@ import {
 const defaultState = {
   entities: {},
   currentTrip: null,
+  errors: []
 };
 
 
@@ -29,8 +30,9 @@ const tripReducer = (state = defaultState, action) => {
 
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, nullUser, {
-        errors
+      debugger
+      return merge({}, state, {
+        errors: action.errors
       });
 
     default:

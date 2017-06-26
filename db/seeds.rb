@@ -37,7 +37,15 @@ user15 = User.create({ username: "DrStephenStrange", password: "123456",
   avatar: File.open('app/assets/images/users/dr-strange.jpg'),
 })
 user16 = User.create({ username: "JessicaJones", password: "123456",
-  avatar: File.open('app/assets/images/users/dr-strange.jpg'),
+  avatar: File.open('app/assets/images/users/jessica-jones.jpg'),
+})
+
+user17 = User.create({ username: "LukeCage", password: "123456",
+  avatar: File.open('app/assets/images/users/luke-cage.jpg'),
+})
+
+user18 = User.create({ username: "SusanStorm", password: "123456",
+  avatar: File.open('app/assets/images/users/susan-storm.jpg'),
 })
 
 Room.destroy_all
@@ -59,30 +67,34 @@ room1 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: false
+  tv: false,
+  pets: false,
+  fireplace: false,
+  bathtub: false,
+  games: false
 })
 
 
-room2 = Room.create({
-  host_id: user2.id,
-  title: "Modern Minimal Central Chelsea Apt",
-  address: "750 6th Ave, New York, NY 10010",
-  lat: 40.743719,
-  lng: -73.991801,
-  price: 230,
-  num_guests: 5,
-  bedrooms: 2,
-  beds: 2,
-  bathrooms: 1,
-  description: "Cozy apartment in a private house, located above Starbucks. Includes a living room/kitchenette, 2 bedrooms & bathroom. 15 minute walk to the world-famous Staten Island Ferry, which connects you to the rest of NYC.",
-  rules: "No pets",
-  prop_type: "Apartment",
-  room_type: "Entire Home",
-  wifi: true,
-  kitchen: true,
-  ac: true,
-  tv: true
-})
+# room2 = Room.create({
+#   host_id: user2.id,
+#   title: "Modern Minimal Central Chelsea Apt",
+#   address: "750 6th Ave, New York, NY 10010",
+#   lat: 40.743719,
+#   lng: -73.991801,
+#   price: 230,
+#   num_guests: 5,
+#   bedrooms: 2,
+#   beds: 2,
+#   bathrooms: 1,
+#   description: "Cozy apartment in a private house, located above Starbucks. Includes a living room/kitchenette, 2 bedrooms & bathroom. 15 minute walk to the world-famous Staten Island Ferry, which connects you to the rest of NYC.",
+#   rules: "No pets",
+#   prop_type: "Apartment",
+#   room_type: "Entire Home",
+#   wifi: true,
+#   kitchen: true,
+#   ac: true,
+#   tv: true
+# })
 
 room3 = Room.create({
   host_id: user6.id,
@@ -103,7 +115,11 @@ room3 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: false
+  tv: false,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: false
 })
 
 
@@ -126,7 +142,11 @@ room4 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: true
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
 })
 
 room5 = Room.create({
@@ -148,7 +168,11 @@ room5 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: true
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
 })
 
 room6 = Room.create({
@@ -170,7 +194,11 @@ room6 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: true
+  tv: true,
+  pets: true,
+  fireplace: true,
+  bathtub: true,
+  games: true
 })
 
 room7 = Room.create({
@@ -192,10 +220,89 @@ room7 = Room.create({
   wifi: true,
   kitchen: true,
   ac: true,
-  tv: true
+  tv: true,
+  pets: true,
+  fireplace: true,
+  bathtub: true,
+  games: false
 })
 
 room8 = Room.create({
+  host_id: user16.id,
+  main_pic: File.open('app/assets/images/rooms/jessica-jones.png'),
+  title: "Jessica Jones' Apartment/Office",
+  address: "485 W 46th St, New York, NY 10036",
+  lat: 40.762134,
+  lng: -73.993472,
+  price: 90,
+  num_guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "Jessica Jones' Apartment Building is a building located in the Hell's Kitchen neighborhood of New York City, that houses the office of the Alias Investigations private investigation agency.",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: false,
+  tv: false,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room9 = Room.create({
+  host_id: user17.id,
+  main_pic: File.open('app/assets/images/rooms/luke-cage.jpg'),
+  title: "Genghis Connie’s and Luke Cage’s Apartment",
+  address: "Broadway & W 171st St, New York, NY 10032",
+  lat: 40.843246,
+  lng: -73.939189,
+  price: 80,
+  num_guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "If you were looking for the location of Genghis Connie’s in Harlem – you would have a hard time. That’s because the restaurant is fictional and this block is actually located in Washington Heights, at the corner of 171st Street and Broadway. There, you’ll find the confluence of Citibank, Bank of America, and Rite Aid that you see in the reflections at Genghis Connie’s. The actual restaurant is La Dinastia Restaurant, serving Latin Chinese cuisine restaurantIn the show, Luke Cage’s apartment is located above the Chinese restaurant, which he rents from Connie (Jade Wu).",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: false,
+  tv: false,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room10 = Room.create({
+  host_id: user18.id,
+  main_pic: File.open('app/assets/images/rooms/baxter-building.png'),
+  title: "Baxter Building (Fantastic Four HQ)",
+  address: "42nd Street & Madison Avenue, New York, NY 10017",
+  lat: 40.752803,
+  lng: -73.979259,
+  price: 4444,
+  num_guests: 4,
+  bedrooms: 4,
+  beds: 4,
+  bathrooms: 4,
+  description: "The Baxter Building is a 35-story building located at 42nd Street and Madison Avenue, Manhattan, New York City in the United States of America just a few blocks from the United Nations Headquarters. It has been home to many individuals and organizations. The most famous being the Fantastic Four.",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: false,
+  tv: false,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room11 = Room.create({
   host_id: user15.id,
   main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
   title: "Sanctum Sanctorum",
@@ -213,52 +320,9 @@ room8 = Room.create({
   wifi: false,
   kitchen: true,
   ac: true,
-  tv: false
+  tv: false,
+  pets: false,
+  fireplace: true,
+  bathtub: true,
+  games: false
 })
-
-room9 = Room.create({
-  host_id: user16.id,
-  main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
-  title: "Jessica Jones' Apartment/Office",
-  address: "485 W 46th St, New York, NY 10036",
-  lat: 40.762134,
-  lng: -73.993472,
-  price: 100,
-  num_guests: 2,
-  bedrooms: 1,
-  beds: 1,
-  bathrooms: 1,
-  description: "Jessica Jones' Apartment Building is a building located in the Hell's Kitchen neighborhood of New York City, that houses the office of the Alias Investigations private investigation agency.",
-  prop_type: "Apartment",
-  room_type: "Entire House",
-  wifi: true,
-  kitchen: true,
-  ac: false,
-  tv: false
-})
-
-room9 = Room.create({
-  host_id: user16.id,
-  main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
-  title: "Genghis Connie’s and Luke Cage’s Apartment",
-  address: "Broadway & W 171st St, New York, NY 10032",
-  lat: 40.843246,
-  lng: -73.939189,
-  price: 8,
-  num_guests: 2,
-  bedrooms: 1,
-  beds: 1,
-  bathrooms: 1,
-  description: "If you were looking for the location of Genghis Connie’s in Harlem – you would have a hard time. That’s because the restaurant is fictional and this block is actually located in Washington Heights, at the corner of 171st Street and Broadway. There, you’ll find the confluence of Citibank, Bank of America, and Rite Aid that you see in the reflections at Genghis Connie’s. The actual restaurant is La Dinastia Restaurant, serving Latin Chinese cuisine restaurantIn the show, Luke Cage’s apartment is located above the Chinese restaurant, which he rents from Connie (Jade Wu).",
-  prop_type: "Apartment",
-  room_type: "Entire House",
-  wifi: true,
-  kitchen: true,
-  ac: false,
-  tv: false
-})
-
-# pops barbershop
-# avengers mansion
-# dailybulge
-# Wayne Enterprises trump towerhttp://fiestahero.kinja.com/eleven-real-life-comic-book-locations-you-can-visit-in-1446391680

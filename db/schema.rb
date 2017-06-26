@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623173756) do
+ActiveRecord::Schema.define(version: 20170626014856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20170623173756) do
     t.string   "main_pic_content_type"
     t.integer  "main_pic_file_size"
     t.datetime "main_pic_updated_at"
+    t.boolean  "pets",                  default: false
+    t.boolean  "fireplace",             default: false
+    t.boolean  "bathtub",               default: false
+    t.boolean  "games",                 default: false
   end
 
   add_index "rooms", ["host_id"], name: "index_rooms_on_host_id", using: :btree
