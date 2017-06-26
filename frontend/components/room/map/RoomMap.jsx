@@ -39,6 +39,11 @@ class RoomMap extends React.Component {
       this.props.updateFilter('bounds', bounds);
     });
 
+    var myoverlay = new google.maps.OverlayView();
+    myoverlay.draw = function () {
+        this.getPanes().markerLayer.id='markerLayer';
+    };
+    myoverlay.setMap(this.map);
 
   }
 

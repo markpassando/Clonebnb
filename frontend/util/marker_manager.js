@@ -30,11 +30,27 @@ export default class MarkerManager {
     //   map: this.map,
     //   title: room.description
     // });
+    const myIcon = window.images.gmap_icon;
     const position = new google.maps.LatLng(room.lat, room.lng);
     const marker = new google.maps.Marker({
       position,
+      // label: `$${room.price}`,
+      title: room.title,
+      label: {
+        text: `$${room.price}`,
+        fontFamily: 'Helvetica Neue',
+        fontWeight: 'bold'
+      },
+      icon: {
+        url: myIcon,
+        labelOrigin: new google.maps.Point(29, 13.5),
+      },
       map: this.map,
       roomId: room.id
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+       console.log(marker.roomId);
     });
 
     this.markers[marker.roomId] = marker;

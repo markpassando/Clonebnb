@@ -1,3 +1,14 @@
+// #markerLayer img {
+//     border: 2px solid red !important;
+//     // width: 85% !important;
+//     // height: 90% !important;
+//     border-radius: 5px;
+//   }
+
+.labels {
+  border: 2px solid green !important;
+}
+
 #map-container {
   width: 600px;
   height: calc(100vh - 64px);
@@ -22,6 +33,7 @@
     position: fixed;
     top: 64;
     right: 0;
+
   }
 }
 
