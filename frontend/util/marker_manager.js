@@ -6,13 +6,6 @@ export default class MarkerManager {
   }
 
   updateMarkers(rooms) {
-    console.log('time to update');
-    // rooms.forEach((room) => {
-    //   if (!this.markers.hasOwnProperty(room.id)) {
-    //     this.markers[room.id] = room;
-    //     this.createMarkerFromRoom(room);
-    //   }
-    // });
     const roomsObj = {};
     rooms.forEach(room => roomsObj[room.id] = room);
 

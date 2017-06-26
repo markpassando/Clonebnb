@@ -34,3 +34,6 @@ const RoomIndexItem = ({ room }) => {
 
 
 export default RoomIndexItem;
+
+// on hover
+// this.MarkerManager.markers["117"].setIcon('/assets/clonebnb-logo-737bdee696fb7b8a536283ec6b449a66db7b0be7451d535e6d0e9ee8aada0350.png')

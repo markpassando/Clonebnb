@@ -56,6 +56,7 @@ class SearchBar extends React.Component {
     return(
       <form className="search-container" ref={form => this.form = form} onSubmit={this.handleSubmit} onBlur={(e) => {console.log("onblur");e.target.value = '';}}>
         <input
+          type="search"
           id="searchTextField"
           className="search-bar"
           placeholder="Search..."

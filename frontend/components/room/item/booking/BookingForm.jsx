@@ -21,7 +21,8 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors) {
+    if (this.props.errors.length > 0) {
+      debugger
       return(
         <ul className="errors">
           {this.props.errors.map((error, i) => (
@@ -76,6 +77,8 @@ class BookingForm extends React.Component {
           </label>
 
           <br />
+
+          {this.renderErrors()}
 
           <input className="btn pink" type="submit" value="Book"/>
           <small>You won’t be charged yet</small>

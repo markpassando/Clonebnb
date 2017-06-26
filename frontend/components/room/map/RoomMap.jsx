@@ -28,7 +28,7 @@ class RoomMap extends React.Component {
 
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-  
+
     this.MarkerManager = new MarkerManager(this.map, this.props.history);
     this.MarkerManager.updateMarkers(this.props.rooms);
 
@@ -40,11 +40,11 @@ class RoomMap extends React.Component {
       this.props.updateFilter('bounds', bounds);
     });
 
-    var myoverlay = new google.maps.OverlayView();
-    myoverlay.draw = function () {
-        this.getPanes().markerLayer.id='markerLayer';
-    };
-    myoverlay.setMap(this.map);
+    // var myoverlay = new google.maps.OverlayView();
+    // myoverlay.draw = function () {
+    //     this.getPanes().markerLayer.id='markerLayer';
+    // };
+    // myoverlay.setMap(this.map);
 
   }
 
@@ -67,9 +67,7 @@ class RoomMap extends React.Component {
 
   render() {
     return (
-      <div id="map-container" className="map" ref={ map => this.mapNode = map }>
-        Map
-      </div>
+      <div id="map-container" className="map" ref={ map => this.mapNode = map }></div>
     );
   }
 }

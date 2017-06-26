@@ -13,12 +13,14 @@ class Api::TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id
-    # debugger
+
     if @trip.save
       render :show
     else
-      debugger
+      # debugger
       render json: @trip.errors.full_messages, status: 422
+      # render json: @trip.errors.messages
+      # render json: @trip.errors.messages, status: 422
     end
   end
 
