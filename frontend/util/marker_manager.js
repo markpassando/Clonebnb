@@ -1,6 +1,7 @@
 export default class MarkerManager {
-  constructor(map) {
+  constructor(map, history) {
     this.map = map;
+    this.reactHistory = history;
     this.markers = {};
   }
 
@@ -49,9 +50,12 @@ export default class MarkerManager {
       roomId: room.id
     });
 
-    google.maps.event.addListener(marker, 'click', function () {
+    const handleClick = () => {
        console.log(marker.roomId);
-    });
+       this.reactHistory.push(`/rooms/${room.id}`);
+    };
+
+    google.maps.event.addListener(marker, 'click', handleClick.bind(this) );
 
     this.markers[marker.roomId] = marker;
   }
