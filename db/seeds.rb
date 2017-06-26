@@ -1,5 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# The data can then be loaded with the rake db:seed (or create!d alongside the db with db:setup).
 #
 # Examples:
 #
@@ -7,49 +7,48 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-user1 = User.create({ username: "RonBurgundy", password: "123456",
+user1 = User.create!({ username: "RonBurgundy", password: "123456",
   avatar: File.open('app/assets/images/users/ron.jpg'),
 })
-user2 = User.create({ username: "BrianFantana", password: "123456"})
-user3 = User.create({ username: "BrickTamland", password: "123456"})
-user4 = User.create({ username: "ChampKind", password: "123456"})
-user5 = User.create({ username: "VeronicaCorningstone", password: "123456"})
-user6 = User.create({ username: "MathewMurdock", password: "123456",
+user2 = User.create!({ username: "BrianFantana", password: "123456"})
+user3 = User.create!({ username: "BrickTamland", password: "123456"})
+user4 = User.create!({ username: "ChampKind", password: "123456"})
+user5 = User.create!({ username: "VeronicaCorningstone", password: "123456"})
+user6 = User.create!({ username: "MathewMurdock", password: "123456",
   avatar: File.open('app/assets/images/users/matthew-murdock.jpg'),
 })
-user7 = User.create({ username: "PeterParker", password: "123456"})
-user8 = User.create({ username: "BruceWayne", password: "123456"})
-user9 = User.create({ username: "JessicaJones", password: "123456"})
-user10 = User.create({ username: "AceVentura", password: "123456"})
-user11 = User.create({ username: "CharlesXavier", password: "123456",
+user7 = User.create!({ username: "PeterParker", password: "123456"})
+user8 = User.create!({ username: "BruceWayne", password: "123456"})
+user10 = User.create!({ username: "AceVentura", password: "123456"})
+user11 = User.create!({ username: "CharlesXavier", password: "123456",
   avatar: File.open('app/assets/images/users/prof-x.jpg'),
 })
-user12 = User.create({ username: "AuntMay", password: "123456",
+user12 = User.create!({ username: "AuntMay", password: "123456",
   avatar: File.open('app/assets/images/users/aunt-may.png'),
 })
-user13 = User.create({ username: "TonyStark", password: "123456",
+user13 = User.create!({ username: "TonyStark", password: "123456",
   avatar: File.open('app/assets/images/users/tony-stark.png'),
 })
-user14 = User.create({ username: "WilsonFisk", password: "123456",
+user14 = User.create!({ username: "WilsonFisk", password: "123456",
   avatar: File.open('app/assets/images/users/fisk.jpg'),
 })
-user15 = User.create({ username: "DrStephenStrange", password: "123456",
+user15 = User.create!({ username: "DrStephenStrange", password: "123456",
   avatar: File.open('app/assets/images/users/dr-strange.jpg'),
 })
-user16 = User.create({ username: "JessicaJones", password: "123456",
+user16 = User.create!({ username: "JessicaJones", password: "123456",
   avatar: File.open('app/assets/images/users/jessica-jones.jpg'),
 })
 
-user17 = User.create({ username: "LukeCage", password: "123456",
+user17 = User.create!({ username: "LukeCage", password: "123456",
   avatar: File.open('app/assets/images/users/luke-cage.jpg'),
 })
 
-user18 = User.create({ username: "SusanStorm", password: "123456",
+user18 = User.create!({ username: "SusanStorm", password: "123456",
   avatar: File.open('app/assets/images/users/susan-storm.jpg'),
 })
 
 Room.destroy_all
-room1 = Room.create({
+room1 = Room.create!({
   host_id: user1.id,
   title: "App Academy NYC",
   address: "159 W 25th St, New York, NY 10001",
@@ -75,7 +74,7 @@ room1 = Room.create({
 })
 
 
-# room2 = Room.create({
+# room2 = Room.create!({
 #   host_id: user2.id,
 #   title: "Modern Minimal Central Chelsea Apt",
 #   address: "750 6th Ave, New York, NY 10010",
@@ -96,7 +95,7 @@ room1 = Room.create({
 #   tv: true
 # })
 
-room3 = Room.create({
+room3 = Room.create!({
   host_id: user6.id,
   main_pic: File.open('app/assets/images/rooms/daredevil-apt.png'),
   title: "Hell's Kitchen Loft with Roof Access",
@@ -123,7 +122,7 @@ room3 = Room.create({
 })
 
 
-room4 = Room.create({
+room4 = Room.create!({
   host_id: user11.id,
   main_pic: File.open('app/assets/images/rooms/x-men-mansion.jpg'),
   title: "Xavier's School For Gifted Youngsters",
@@ -149,7 +148,7 @@ room4 = Room.create({
   games: false
 })
 
-room5 = Room.create({
+room5 = Room.create!({
   host_id: user12.id,
   main_pic: File.open('app/assets/images/rooms/aunt-mays.jpg'),
   title: "Aunt May's House",
@@ -175,7 +174,7 @@ room5 = Room.create({
   games: true
 })
 
-room6 = Room.create({
+room6 = Room.create!({
   host_id: user13.id,
   title: "Stark Tower",
   main_pic: File.open('app/assets/images/rooms/stark-tower.jpg'),
@@ -201,7 +200,7 @@ room6 = Room.create({
   games: true
 })
 
-room7 = Room.create({
+room7 = Room.create!({
   host_id: user14.id,
   main_pic: File.open('app/assets/images/rooms/fisk-tower.png'),
   title: "Fisk Towers",
@@ -227,10 +226,10 @@ room7 = Room.create({
   games: false
 })
 
-room8 = Room.create({
+room8 = Room.create!({
   host_id: user16.id,
-  main_pic: File.open('app/assets/images/rooms/jessica-jones.png'),
   title: "Jessica Jones' Apartment/Office",
+  main_pic: File.open('app/assets/images/rooms/jessica-jones.png'),
   address: "485 W 46th St, New York, NY 10036",
   lat: 40.762134,
   lng: -73.993472,
@@ -240,6 +239,7 @@ room8 = Room.create({
   beds: 1,
   bathrooms: 1,
   description: "Jessica Jones' Apartment Building is a building located in the Hell's Kitchen neighborhood of New York City, that houses the office of the Alias Investigations private investigation agency.",
+  rules: "None",
   prop_type: "Apartment",
   room_type: "Entire House",
   wifi: true,
@@ -252,7 +252,7 @@ room8 = Room.create({
   games: false
 })
 
-room9 = Room.create({
+room9 = Room.create!({
   host_id: user17.id,
   main_pic: File.open('app/assets/images/rooms/luke-cage.jpg'),
   title: "Genghis Connie’s and Luke Cage’s Apartment",
@@ -265,6 +265,7 @@ room9 = Room.create({
   beds: 1,
   bathrooms: 1,
   description: "If you were looking for the location of Genghis Connie’s in Harlem – you would have a hard time. That’s because the restaurant is fictional and this block is actually located in Washington Heights, at the corner of 171st Street and Broadway. There, you’ll find the confluence of Citibank, Bank of America, and Rite Aid that you see in the reflections at Genghis Connie’s. The actual restaurant is La Dinastia Restaurant, serving Latin Chinese cuisine restaurantIn the show, Luke Cage’s apartment is located above the Chinese restaurant, which he rents from Connie (Jade Wu).",
+  rules: "No rules",
   prop_type: "Apartment",
   room_type: "Entire House",
   wifi: true,
@@ -277,7 +278,7 @@ room9 = Room.create({
   games: false
 })
 
-room10 = Room.create({
+room10 = Room.create!({
   host_id: user18.id,
   main_pic: File.open('app/assets/images/rooms/baxter-building.png'),
   title: "Baxter Building (Fantastic Four HQ)",
@@ -290,6 +291,7 @@ room10 = Room.create({
   beds: 4,
   bathrooms: 4,
   description: "The Baxter Building is a 35-story building located at 42nd Street and Madison Avenue, Manhattan, New York City in the United States of America just a few blocks from the United Nations Headquarters. It has been home to many individuals and organizations. The most famous being the Fantastic Four.",
+  rules: "No rules",
   prop_type: "Apartment",
   room_type: "Entire House",
   wifi: true,
@@ -302,7 +304,7 @@ room10 = Room.create({
   games: false
 })
 
-room11 = Room.create({
+room11 = Room.create!({
   host_id: user15.id,
   main_pic: File.open('app/assets/images/rooms/dr-strange.jpg'),
   title: "Sanctum Sanctorum",
@@ -315,6 +317,7 @@ room11 = Room.create({
   beds: 4,
   bathrooms: 3,
   description: "The mansion of Doctor Stephen Strange's is located at 177A Bleecker Street, New York City, NY 10012-1406, on the corner of Bleecker Street and Fenno Place in the heart of Greenwich Village. Also known as the Sanctum Sanctorum, the townhouse has served as the personal residence of Doctor Strange and former as the headquarters of the Defenders and the New Avengers.",
+  rules: "No rules",
   prop_type: "Apartment",
   room_type: "Entire House",
   wifi: false,
