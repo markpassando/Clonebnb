@@ -17,7 +17,8 @@ class ReviewIndex extends React.Component {
         <ul>
           { reviewItems }
         </ul>
-        <ReviewFormContainer />
+        <h3>Leave a Review</h3>
+        <ReviewFormContainer currentRoom={this.props.currentRoom} />
       </section>
     );
   }

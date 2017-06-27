@@ -5,7 +5,7 @@ import ReviewForm from './ReviewForm';
 
 
 const mapStateToProps = (state) => ({
-  // errors: state.trips.errors
+  errors: state.reviews.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
