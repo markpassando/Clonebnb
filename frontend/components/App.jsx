@@ -4,8 +4,7 @@ import {
   Route,
   Redirect,
   Switch,
-  Link,
-  HashRouter
+  Link
 } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -30,7 +29,7 @@ const App = () => (
 
     <ProtectedRoute path="/trips/:tripId" component={TripPageContainer} />
     <ProtectedRoute exact path="/trips" component={TripsPageContainer} />
-    
+
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

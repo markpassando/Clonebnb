@@ -2,6 +2,7 @@ import React from 'react';
 import RoomDetailContainer from './detail/RoomDetailContainer';
 import RoomImageContainer from './image/RoomImageContainer';
 import BookingContainer from './booking/BookingContainer';
+import ReviewIndexContainer from '../../review/ReviewIndexContainer';
 
 class RoomPage extends React.Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class RoomPage extends React.Component {
         <div className="container room-page">
           <div className="room-detail">
             <RoomDetailContainer room={room} />
-            <div>Reviews go here</div>
+            <ReviewIndexContainer currentRoom={room.id}/>
           </div>
           <div className="room-booking">
             <BookingContainer room={room} />

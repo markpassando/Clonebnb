@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchRooms } from '../../actions/room_actions';
-import RoomIndex from './RoomIndex';
 import { selectAllRooms } from '../../reducers/selectors';
+import RoomIndex from './RoomIndex';
 
 const mapStateToProps = (state) => {
   return ({

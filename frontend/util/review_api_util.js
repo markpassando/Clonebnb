@@ -1,8 +1,9 @@
-export const fetchReviews = () => {
+export const fetchReviews = (roomId) => {
   return (
     $.ajax({
       method: 'GET',
-      url: '/api/reviews',
+      url: `/api/reviews/`,
+      data: { review: { room_id: roomId } }
     })
   );
 }
@@ -37,13 +38,14 @@ export const deleteReview = (id) => (
 // $.ajax({
 //   method: 'POST',
 //   url: '/api/reviews',
-//   data: {review: { room_id: 118, rating: 4, body: "Not badd"
+//   data: {review: { room_id: 119, rating: 4, body: "different review"
 //  }}
 // }).then((res) => console.log(res), console.errors);
-//
+
 // $.ajax({
 //   method: 'GET',
 //   url: '/api/reviews',
+//   data: { review: { room_id: 118 } }
 // }).then((res) => console.log(res), console.errors);
 //
 // $.ajax({
