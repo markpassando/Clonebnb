@@ -5,7 +5,7 @@ const TripIndexItem = ({ trip }) => {
   const imgStyle = {
     height: "100%",
     width: "100%",
-    backgroundImage: `url(${trip.room.room_pic_url})`
+    backgroundImage: `url(${trip.room.main_pic_url})`
   };
 
   return (
@@ -15,7 +15,7 @@ const TripIndexItem = ({ trip }) => {
           <Link to={`/rooms/${trip.room.id}`}>
             <div className="room-index-img" style={imgStyle}></div>
             <div className="host-container">
-                <img src={trip.room.host_pic_url} />
+                <img src={trip.room.avatar_url} />
             </div>
           </Link>
         </div>

@@ -4,7 +4,8 @@ import RoomImageContainer from '../../room/item/image/RoomImageContainer';
 
 class TripPage extends React.Component {
   componentDidMount() {
-    this.props.fetchTrip(this.props.match.params.tripId);
+    if (!this.props.trip)
+      this.props.fetchTrip(this.props.match.params.tripId);
   }
 
   calculateDays(){
@@ -55,7 +56,7 @@ class TripPage extends React.Component {
     const imgStyle = {
       height: "100%",
       width: "100%",
-      backgroundImage: `url(${trip.room.room_pic_url})`
+      backgroundImage: `url(${trip.room.main_pic_url})`
     };
 
     return(
@@ -66,7 +67,7 @@ class TripPage extends React.Component {
               <Link to={`/rooms/${trip.room.id}`}>
                 <div className="room-index-img" style={imgStyle}></div>
                 <div className="host-container">
-                    <img src={trip.room.host_pic_url} />
+                    <img src={trip.room.avatar_url} />
                 </div>
               </Link>
             </div>
