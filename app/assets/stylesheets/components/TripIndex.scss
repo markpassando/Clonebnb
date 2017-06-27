@@ -5,54 +5,58 @@
   list-style: none;
   padding: 0;
 
-  .trip-item {
-    width: 100%;
+  li {
     max-width: 333px;
-    border: 1px solid $light-gray;
-    margin: 20px 5px;
+  }
+}
 
-    .host-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -50px;
+.trip-item {
+  width: 100%;
 
-      img {
-        border-radius: 50px;
-        width: 65px;
-        border: 2px solid $white;
+  border: 1px solid $light-gray;
+  margin: 20px 5px;
+
+  .host-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+
+    img {
+      border-radius: 50px;
+      width: 65px;
+      border: 2px solid $white;
+    }
+  }
+
+  .trip-info {
+    padding: 15px 20px;
+
+    &.item {
+      text-align: center;
+    }
+
+    .receipt-link {
+      color: $dark-gray;
+
+      &:hover {
+        color: $teal;
       }
     }
 
-    .trip-info {
-      padding: 15px 20px;
+    .trip-link {
+      color: $dark-gray;
+      font-weight: 400;
+      font-size: 16px;
 
-      &.item {
-        text-align: center;
+      &:hover {
+        color: $pink;
       }
+    }
 
-      .receipt-link {
-        color: $dark-gray;
-
-        &:hover {
-          color: $teal;
-        }
-      }
-
-      .trip-link {
-        color: $dark-gray;
-        font-weight: 400;
-        font-size: 16px;
-
-        &:hover {
-          color: $pink;
-        }
-      }
-
-      .receipt-box {
-        border-top: 1px solid $light-gray;
-        padding-top: 15px;
-      }
+    .receipt-box {
+      border-top: 1px solid $light-gray;
+      padding-top: 15px;
     }
   }
 }

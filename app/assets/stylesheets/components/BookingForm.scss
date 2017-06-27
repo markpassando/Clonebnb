@@ -29,9 +29,12 @@
   form {
     padding: 15px;
     box-sizing: border-box;
+    border-left: 1px solid $light-gray;
+    border-right: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
 
     label {
-      padding-top: 10px; 
+      padding-top: 10px;
     }
 
     input[type=text] {
@@ -48,5 +51,18 @@
       font-size: 12px;
       display: block;
     }
+  }
+}
+
+.price-table {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 auto;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
   }
 }
