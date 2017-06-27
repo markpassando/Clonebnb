@@ -12,7 +12,7 @@ class TripIndex extends React.Component {
 
     return(
       <article>
-        <ul>
+        <ul className="trip-index">
           { tripItems }
         </ul>
       </article>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RoomIndexItem = ({ room }) => {
-  let imgStyle = {
+    const imgStyle = {
     height: "100%",
     width: "100%",
     backgroundImage: `url(${room.main_pic_url})`
