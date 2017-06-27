@@ -4,29 +4,23 @@ import { withRouter } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty'
 
 import MarkerManager from '../../../util/marker_manager';
+import { findLatLng } from '../../../util/google_map_api_util';
 
 class RoomMap extends React.Component {
-  componentDidMount() {
-    // set the map to show SF
-    // debugger
-    let lat, lng;
-    let mapOptions
-    if (this.props.place.lat === undefined) {
-      let pathname = this.props.location.pathname.slice(3);
-      // debugger
-    } else {
-      let { lat, lng } = this.props.place;
-      mapOptions = {
-        center: { lat, lng }, // this is SF
-        zoom: 12
-      };
-    }
-    // const mapOptions = {
-    //   center: { lat: 40.745267, lng: -73.993979 }, // this is SF
-    //   zoom: 13
-    // };
+  constructor(props) {
+    super(props);
 
-    // wrap the mapDOMNode in a Google Map
+    this.map;
+    this.MarkerManager;
+  }
+
+  setupMap(coords) {
+    let { lat, lng } = coords;
+    let mapOptions = {
+      center: { lat, lng },
+      zoom: 12
+    };
+
     this.map = new google.maps.Map(this.mapNode, mapOptions);
 
     this.MarkerManager = new MarkerManager(this.map, this.props.history);
@@ -39,12 +33,19 @@ class RoomMap extends React.Component {
         southWest: { lat: south, lng: west } };
       this.props.updateFilter('bounds', bounds);
     });
+  }
+  componentDidMount() {
 
-    // var myoverlay = new google.maps.OverlayView();
-    // myoverlay.draw = function () {
-    //     this.getPanes().markerLayer.id='markerLayer';
-    // };
-    // myoverlay.setMap(this.map);
+    //if coming from a direct url
+    if (this.props.place.lat === undefined) {
+      let pathname = this.props.location.pathname.slice(3);
+      findLatLng(pathname)
+        .then(res => this.setupMap(res.results[0].geometry.location));
+    } else {
+      let { lat, lng } = this.props.place;
+
+      this.setupMap(this.props.place);
+    }
 
   }
 
@@ -53,7 +54,7 @@ class RoomMap extends React.Component {
   }
 
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.rooms);
+    // this.MarkerManager.updateMarkers(this.props.rooms);
   }
 
   componentWillReceiveProps(nextProps) {
