@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
     foreign_key: :host_id
 
   has_many :trips
+  has_many :reviews
 
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
