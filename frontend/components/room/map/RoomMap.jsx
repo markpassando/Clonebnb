@@ -18,7 +18,8 @@ class RoomMap extends React.Component {
     let { lat, lng } = coords;
     let mapOptions = {
       center: { lat, lng },
-      zoom: 12
+      zoom: 12,
+      streetViewControl: false
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -54,7 +55,7 @@ class RoomMap extends React.Component {
   }
 
   componentDidUpdate() {
-    // this.MarkerManager.updateMarkers(this.props.rooms);
+    this.MarkerManager.updateMarkers(this.props.rooms);
   }
 
   componentWillReceiveProps(nextProps) {

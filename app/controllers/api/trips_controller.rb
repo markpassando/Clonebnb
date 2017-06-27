@@ -18,7 +18,7 @@ class Api::TripsController < ApplicationController
       render :show
     else
       # debugger
-      render json: @trip.errors.full_messages, status: 422
+      render json: @trip.errors.messages, status: 422
       # render json: @trip.errors.messages
       # render json: @trip.errors.messages, status: 422
     end

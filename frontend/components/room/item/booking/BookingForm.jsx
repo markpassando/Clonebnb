@@ -70,8 +70,6 @@ class BookingForm extends React.Component {
 
           <br />
 
-
-
           <label>Guests
             <input type="text" placeholder="1" onChange={this.update('num_guests')} />
           </label>

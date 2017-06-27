@@ -27,11 +27,14 @@ const App = () => (
     <Route exact path="/" component={HomePage} />
     <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />
-      <Route path="/trips/:tripId" component={TripPageContainer} />
-      <Route exact path="/trips" component={TripsPageContainer} />
+      <ProtectedRoute path="/trips/:tripId" component={TripPageContainer} />
+      <ProtectedRoute exact path="/trips" component={TripsPageContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
 );
 
 export default App;
+
+// <Route path="/trips/:tripId" component={TripPageContainer} />
+// <Route exact="true" path="/trips" component={TripsPageContainer} / >
