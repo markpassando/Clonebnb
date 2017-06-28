@@ -1,4 +1,5 @@
 import React from 'react';
+import renderStars from '../../../helper/star';
 
 const RoomDetail = ({ room }) => {
 
@@ -8,6 +9,12 @@ const RoomDetail = ({ room }) => {
         <div>
           <h2>{room.title}</h2>
           <p>{room.address}</p>
+          <span>
+            <span className="star md sm-marg">
+              { room.rating ? renderStars(room.rating) : '' }
+            </span>
+            <span>{ ` ${room.reviews} ` + (room.reviews === 1 ? 'review' : 'reviews') }</span>
+          </span>
         </div>
         <div className="host-container">
           <div>

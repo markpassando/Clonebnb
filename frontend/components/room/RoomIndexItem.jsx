@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import renderStars from '../helper/star';
 
 const RoomIndexItem = ({ room }) => {
     const imgStyle = {
@@ -25,6 +26,11 @@ const RoomIndexItem = ({ room }) => {
             <span>{room.room_type}</span>
             <span aria-hidden="true"> · </span>
             <span>{room.beds} { room.beds === 1 ? "bed" : "beds" }</span>
+          </div>
+
+          <div>
+            <span className="star sm">{ room.rating ? renderStars(room.rating) : '' }</span>
+            <span className="review xsm">{ ` ${room.reviews} ` + (room.reviews === 1 ? 'review' : 'reviews') }</span>
           </div>
         </div>
       </Link>

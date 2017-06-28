@@ -47,35 +47,37 @@ class ReviewForm extends React.Component {
 
     return (
       <form className="review-form" onSubmit={this.handleSubmit} onMouseLeave={this.unhoverStar}>
-        <input type="radio" name="rating" value="1"
-          onMouseEnter={this.hoverStar}
-          onChange={this.update('rating')}
-          checked={this.state.rating === "1"}
-        /><i className={this.state.rating >= 1 || this.state.hoveredStar >= 1 ? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+        <div className="star xlg lg-marg">
+          <input type="radio" name="rating" value="1"
+            onMouseEnter={this.hoverStar}
+            onChange={this.update('rating')}
+            checked={this.state.rating === "1"}
+            /><i className={this.state.rating >= 1 || this.state.hoveredStar >= 1 ? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
 
-        <input type="radio" name="rating" value="2"
-          onMouseEnter={this.hoverStar}
-          onChange={this.update('rating')}
-          checked={this.state.rating === "2"}
-        /><i className={this.state.rating >= 2 || this.state.hoveredStar >= 2 ? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+          <input type="radio" name="rating" value="2"
+            onMouseEnter={this.hoverStar}
+            onChange={this.update('rating')}
+            checked={this.state.rating === "2"}
+            /><i className={this.state.rating >= 2 || this.state.hoveredStar >= 2 ? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
 
-        <input type="radio" name="rating" value="3"
-          onMouseEnter={this.hoverStar}
-          onChange={this.update('rating')}
-          checked={this.state.rating === "3"}
-        /><i className={this.state.rating >= 3 || this.state.hoveredStar >= 3 ? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+          <input type="radio" name="rating" value="3"
+            onMouseEnter={this.hoverStar}
+            onChange={this.update('rating')}
+            checked={this.state.rating === "3"}
+            /><i className={this.state.rating >= 3 || this.state.hoveredStar >= 3 ? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
 
-        <input type="radio" name="rating" value="4"
-          onMouseEnter={this.hoverStar}
-          onChange={this.update('rating')}
-          checked={this.state.rating === "4"}
-        /><i className={this.state.rating >= 4 || this.state.hoveredStar >= 4 ? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+          <input type="radio" name="rating" value="4"
+            onMouseEnter={this.hoverStar}
+            onChange={this.update('rating')}
+            checked={this.state.rating === "4"}
+            /><i className={this.state.rating >= 4 || this.state.hoveredStar >= 4 ? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
 
-        <input type="radio" name="rating" value="5"
-          onMouseEnter={this.hoverStar}
-          onChange={this.update('rating')}
-          checked={this.state.rating === "5" }
-        /><i className={this.state.rating >= 5 || this.state.hoveredStar >= 5? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+          <input type="radio" name="rating" value="5"
+            onMouseEnter={this.hoverStar}
+            onChange={this.update('rating')}
+            checked={this.state.rating === "5" }
+            /><i className={this.state.rating >= 5 || this.state.hoveredStar >= 5? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
+        </div>
 
         <br />
 

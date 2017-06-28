@@ -81,3 +81,55 @@ button {
   list-style: none;
   padding: 0;
 }
+
+.star {
+  color: $teal;
+
+  &.sm {
+    font-size: 14px;
+  }
+
+  &.md {
+    font-size: 16px;
+  }
+
+  &.lg {
+    font-size: 18px;
+  }
+
+  &.xlg {
+    font-size: 20px;
+  }
+
+  &.sm-marg i {
+    margin: 0 2px;
+  }
+
+  &.md-marg i {
+    margin: 0 3px;
+  }
+
+  &.lg-marg i {
+    margin: 0 5px;
+  }
+}
+
+.review {
+  color: $dark-gray;
+
+  &.xsm {
+    font-size: 12px;
+  }
+
+  &.sm {
+    font-size: 14px;
+  }
+
+  &.md {
+    font-size: 16px;
+  }
+
+  &.lg {
+    font-size: 18px;
+  }
+}

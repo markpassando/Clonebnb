@@ -15,8 +15,9 @@ class ReviewIndex extends React.Component {
       <section className="review-index">
         <h3>Reviews</h3>
         <ul>
-          { reviewItems }
+          { reviewItems.length === 0 ? <p>There are no reviews for this room.</p> : reviewItems }
         </ul>
+
         <h3>Leave a Review</h3>
         <ReviewFormContainer currentRoom={this.props.currentRoom} />
       </section>

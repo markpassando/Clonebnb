@@ -20,4 +20,13 @@ class Room < ActiveRecord::Base
         .where("lng > ?", bounds[:southWest][:lng])
         .where("lng < ?", bounds[:northEast][:lng])
   end
+
+  def rating
+    result = self.reviews.average(:rating)
+    if result
+      result.truncate(1).to_s('F')
+    else
+      nil
+    end
+  end
 end

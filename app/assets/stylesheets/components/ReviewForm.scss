@@ -3,15 +3,26 @@
     list-style: none;
     padding: 0;
   }
+
+  li {
+    border-top: 1px solid $light-gray;
+    padding: 20px 0;
+  }
+
+  .rating-reviewer {
+    display: flex;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      margin-right: 20px;
+      width: 50px;
+    }
+  }
+
 }
 
 .review-form {
-  .star {
-    color: $teal;
-    font-size: 18px;
-    margin: 0 5px
-  }
-
   textarea {
     max-width: 100%;
     width: 100%;
