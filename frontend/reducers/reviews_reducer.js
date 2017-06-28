@@ -3,13 +3,14 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_REVIEWS,
   RECEIVE_REVIEW,
-  RECEIVE_REVIEW_ERRORS
+  RECEIVE_REVIEW_ERRORS,
+  CLEAR_REVIEW_ERRORS
 } from '../actions/review_actions';
 
 const defaultState = {
   entities: {},
   currentReview: null,
-  errors: []
+  errors: {}
 };
 
 
@@ -23,7 +24,7 @@ const reviewsReducer = (state = defaultState, action) => {
       return merge({}, defaultState, { entities: action.reviews })
 
     case RECEIVE_REVIEW:
-      return merge( newState,{
+      return merge( newState, state, {
         entities: { [action.review.id]: action.review },
         currentReview: action.review.id
       });
@@ -33,6 +34,11 @@ const reviewsReducer = (state = defaultState, action) => {
       return merge({}, state, {
         errors: action.errors
       });
+
+    case CLEAR_REVIEW_ERRORS:
+      const newState =  merge({}, state);
+      newState.errors = {};
+      return newState;
 
     default:
       return state;

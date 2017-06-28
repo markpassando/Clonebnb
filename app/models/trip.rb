@@ -10,7 +10,7 @@ class Trip < ActiveRecord::Base
     through: :room,
     source: :host
 
-  has_one :customer,
+  belongs_to :customer,
     class_name: 'User',
     foreign_key: :user_id
 
@@ -21,7 +21,7 @@ class Trip < ActiveRecord::Base
   end
 
   def can_not_book_own_room
-    if host.id == self.user_id
+    if host.id == self.customer.id
       errors.add(:host, "You can not book your own room.")
     end
   end

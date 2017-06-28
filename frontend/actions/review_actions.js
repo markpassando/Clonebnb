@@ -3,6 +3,7 @@ import * as APIUtil from '../util/review_api_util';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 export const receiveReviews = reviews => {
   return ({
@@ -20,6 +21,13 @@ export const receiveReviewErrors = errors => ({
   type: RECEIVE_REVIEW_ERRORS,
   errors
 });
+
+export const clearReviewErrors = () => {
+  debugger
+  return ({
+    type: CLEAR_REVIEW_ERRORS
+  });
+};
 
 export const fetchReviews = (roomId) => dispatch => (
   APIUtil.fetchReviews(roomId).then(reviews => (

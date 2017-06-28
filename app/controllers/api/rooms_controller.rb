@@ -18,7 +18,7 @@ class Api::RoomsController < ApplicationController
     if @room.save
       render :show
     else
-      render json: @room.errors.full_messages, status: 422
+      render json: @room.errors, status: 422
     end
   end
 
