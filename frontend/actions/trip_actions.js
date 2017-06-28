@@ -3,6 +3,7 @@ import * as APIUtil from '../util/trip_api_util';
 export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
 export const RECEIVE_TRIP = 'RECEIVE_TRIP';
 export const RECEIVE_TRIP_ERRORS = 'RECEIVE_TRIP_ERRORS';
+export const CLEAR_TRIP_ERRORS = 'CLEAR_TRIP_ERRORS';
 
 export const receiveTrips = trips => {
   return ({
@@ -18,6 +19,11 @@ export const receiveTrip = trip => ({
 
 export const receiveTripErrors = errors => ({
   type: RECEIVE_TRIP_ERRORS,
+  errors
+});
+
+export const clearTripErrors = errors => ({
+  type: CLEAR_TRIP_ERRORS,
   errors
 });
 

@@ -27,13 +27,10 @@ class ReviewForm extends React.Component {
     e.preventDefault();
 
     const review = this.state;
-    // console.log(trip);
-    debugger
     this.props.createReview(review)
       .then(() => {
         this.setState({rating: '' });
         this.body.value = '';
-        debugger
         this.props.clearReviewErrors();
       });
   }
@@ -49,8 +46,8 @@ class ReviewForm extends React.Component {
   render() {
 
     return (
-      <form className="review-form" onSubmit={this.handleSubmit} onMouseLeave={this.unhoverStar}>
-        <div className="star xlg lg-marg">
+      <form className="review-form" onSubmit={this.handleSubmit}>
+        <div className="star xlg lg-marg" onMouseLeave={this.unhoverStar}>
           <input type="radio" name="rating" value="1"
             onMouseEnter={this.hoverStar}
             onChange={this.update('rating')}
@@ -87,9 +84,11 @@ class ReviewForm extends React.Component {
         <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')}></textarea>
 
         <br />
+
         { this.props.errors.samePerson ? renderError(this.props.errors.samePerson[0]) : '' }
         { this.props.errors.emptyForm ? renderError(this.props.errors.emptyForm[0]) : '' }
         { this.props.errors.user_id ? renderError(this.props.errors.user_id[0]) : '' }
+
         <input className="review-button" type="submit" value="Submit Review"/>
       </form>
     );

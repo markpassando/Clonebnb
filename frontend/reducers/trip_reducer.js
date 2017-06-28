@@ -3,7 +3,8 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_TRIPS,
   RECEIVE_TRIP,
-  RECEIVE_TRIP_ERRORS
+  RECEIVE_TRIP_ERRORS,
+  CLEAR_TRIP_ERRORS
 } from '../actions/trip_actions';
 
 const defaultState = {
@@ -33,6 +34,11 @@ const tripReducer = (state = defaultState, action) => {
       return merge({}, state, {
         errors: action.errors
       });
+
+    case CLEAR_TRIP_ERRORS:
+      const newState =  merge({}, state);
+      newState.errors = {};
+      return newState;
 
     default:
       return state;

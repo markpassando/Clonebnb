@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import renderError from '../../../helper/error';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class BookingForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearTripErrors();
   }
 
   update(field) {
@@ -40,7 +45,10 @@ class BookingForm extends React.Component {
 
     const trip = this.state;
     // console.log(trip);
-    this.props.bookTrip({trip}).then(action => this.props.history.push(`/trips/${trip.id}`));
+    this.props.bookTrip({trip}).then(action => {
+      this.props.clearTripErrors();
+      this.props.history.push(`/trips/${trip.id}`)
+    });
   }
 
   renderGuestList() {
@@ -71,8 +79,10 @@ class BookingForm extends React.Component {
           <br />
 
           <label>Guests
-            <input type="text" placeholder="1" onChange={this.update('num_guests')} />
+            <input type="text" placeholder="Number of Guests" onChange={this.update('num_guests')} />
           </label>
+          { this.props.errors.host ? renderError(this.props.errors.host[0]) : '' }
+          { this.props.errors.num_guests ? renderError(this.props.errors.num_guests[0]) : '' }
 
           <br />
 

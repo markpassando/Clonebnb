@@ -1,5 +1,6 @@
 class Trip < ActiveRecord::Base
-  validates :user_id, :room, :num_guests, presence: true
+  validates :user_id, :room, presence: true
+  validates :num_guests, presence: { message: "There must be at least 1 guest."}
   # validates :num_guests, numericality: { less_than_or_equal_to: room.num_guests }
 
   validate :does_not_exceed_capacity, :can_not_book_own_room
@@ -15,8 +16,10 @@ class Trip < ActiveRecord::Base
     foreign_key: :user_id
 
   def does_not_exceed_capacity
-    unless room.num_guests >= num_guests
-      errors.add(:num_guests, "Number of guests can not exceed capacity.")
+    if num_guests
+      unless room.num_guests >= num_guests
+        errors.add(:num_guests, "Number of guests can not exceed capacity.")
+      end
     end
   end
 
