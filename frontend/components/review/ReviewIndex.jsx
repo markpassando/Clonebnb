@@ -8,8 +8,12 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    const { reviews } = this.props;
+    const { reviews, currentUser } = this.props;
     const reviewItems = reviews.map( review => <ReviewIndexItem key={review.id} review={review} />);
+    const userReviewed = reviews.find((review) => review.user_id === currentUser.id);
+// debugger
+
+    // if (!reviews)return null;
 
     return (
       <section className="review-index">
@@ -18,8 +22,8 @@ class ReviewIndex extends React.Component {
           { reviewItems.length === 0 ? <p>There are no reviews for this room.</p> : reviewItems }
         </ul>
 
-        <h3>Leave a Review</h3>
-        <ReviewFormContainer currentRoom={this.props.currentRoom} />
+        <h3>{ userReviewed ? 'Edit your Review' : 'Leave a Review' }</h3>
+        <ReviewFormContainer currentRoom={this.props.currentRoom} editedForm={ Boolean(userReviewed) ? userReviewed : false } />
       </section>
     );
   }

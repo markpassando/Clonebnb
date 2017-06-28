@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in, only: [:create]
+  before_action :require_logged_in, only: [:create, :update]
 
   def index
     if review_params["room_id"]
@@ -18,6 +18,17 @@ class Api::ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
+      render :show
+    else
+      render json: @review.errors.messages, status: 422
+    end
+  end
+
+  def update
+    # debugger
+    @review = current_user.reviews.find(params[:id])
+
+    if @review.update(review_params)
       render :show
     else
       render json: @review.errors.messages, status: 422

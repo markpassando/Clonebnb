@@ -27,6 +27,17 @@ export const createReview = (review) => {
   );
 };
 
+export const updateReview = (review) => {
+  debugger
+  return (
+    $.ajax({
+      method: 'PATCH',
+      url: `/api/reviews/${review.id}`,
+      data: { review }
+    })
+  );
+};
+
 export const deleteReview = (id) => (
   $.ajax({
     method: 'DELETE',
@@ -36,9 +47,9 @@ export const deleteReview = (id) => (
 
 
 // $.ajax({
-//   method: 'POST',
-//   url: '/api/reviews',
-//   data: {review: { room_id: 119, rating: 4, body: "different review"
+//   method: 'PATCH',
+//   url: '/api/reviews/36',
+//   data: {review: { room_id: 119, rating: 4, body: "UPDATED!!!!! AGAINN"
 //  }}
 // }).then((res) => console.log(res), console.errors);
 

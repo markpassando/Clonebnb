@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RoomImageContainer from '../../room/item/image/RoomImageContainer';
+import ReviewFormContainer from '../../review/form/ReviewFormContainer';
 
 class TripPage extends React.Component {
   componentDidMount() {
@@ -81,6 +81,7 @@ class TripPage extends React.Component {
               <div className="receipt-box">
                 {this.renderReceipt()}
               </div>
+
             </div>
 
 
@@ -92,3 +93,6 @@ class TripPage extends React.Component {
 }
 
 export default TripPage;
+
+// <h3>Your Review</h3>
+// <ReviewFormContainer currentRoom={trip.room.id} />

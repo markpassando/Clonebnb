@@ -6,6 +6,7 @@ class ReviewForm extends React.Component {
     super(props);
 
     this.state = {
+      id: null,
       room_id: this.props.currentRoom,
       rating: null,
       body: null,
@@ -17,6 +18,27 @@ class ReviewForm extends React.Component {
     this.unhoverStar = this.unhoverStar.bind(this);
   }
 
+  // componentDidMount() {
+  //   debugger
+  // }
+
+  componentWillReceiveProps(newProps) {
+    const { editedForm } = newProps;
+    if (editedForm) {
+
+      // window.scrollTo(0,0);
+      this.body.value = editedForm.body;
+      this.setState( { id: editedForm.id, body: editedForm.body, rating: editedForm.rating });
+    }
+  }
+
+  // componentDidUpdate() {
+  //   const { editedForm } = this.props
+  //   if (editedForm) {
+  //     this.setState({ body: editedForm.body });
+  //   }
+  // }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -27,7 +49,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
 
     const review = this.state;
-    this.props.createReview(review)
+    this.props.processForm(review)
       .then(() => {
         this.setState({rating: '' });
         this.body.value = '';
@@ -44,6 +66,8 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+
+    const { editedForm } = this.props;
 
     return (
       <form className="review-form" onSubmit={this.handleSubmit}>
@@ -81,15 +105,14 @@ class ReviewForm extends React.Component {
 
         <br />
 
-        <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')}></textarea>
-
+        <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')}>{this.state.body}</textarea>
         <br />
 
         { this.props.errors.samePerson ? renderError(this.props.errors.samePerson[0]) : '' }
         { this.props.errors.emptyForm ? renderError(this.props.errors.emptyForm[0]) : '' }
         { this.props.errors.user_id ? renderError(this.props.errors.user_id[0]) : '' }
 
-        <input className="review-button" type="submit" value="Submit Review"/>
+        <input className="review-button" type="submit" value={ editedForm ?  'Edit Review' : 'Submit Review' } />
       </form>
     );
   }

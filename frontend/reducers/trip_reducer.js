@@ -10,7 +10,7 @@ import {
 const defaultState = {
   entities: {},
   currentTrip: null,
-  errors: []
+  errors: {}
 };
 
 
@@ -24,7 +24,7 @@ const tripReducer = (state = defaultState, action) => {
       return merge({}, defaultState, { entities: action.trips })
 
     case RECEIVE_TRIP:
-      return merge( newState,{
+      return merge( newState, state, {
         entities: { [action.trip.id]: action.trip },
         currentTrip: action.trip.id
       });
