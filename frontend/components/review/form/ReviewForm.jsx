@@ -77,9 +77,13 @@ class ReviewForm extends React.Component {
           checked={this.state.rating === "5" }
         /><i className={this.state.rating >= 5 || this.state.hoveredStar >= 5? "star fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
 
+        <br />
+
         <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')}></textarea>
 
-        <input type="submit" value="Rate"/>
+        <br />
+
+        <input className="review-button" type="submit" value="Submit Review"/>
       </form>
     );
   }

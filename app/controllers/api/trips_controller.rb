@@ -1,5 +1,5 @@
 class Api::TripsController < ApplicationController
-  before_action :require_logged_in, only: [:create, :index]
+  before_action :require_logged_in, only: [:index]
 
   def index
       @trips = current_user.trips
@@ -18,9 +18,9 @@ class Api::TripsController < ApplicationController
       render :show
     else
       # debugger
-      render json: @trip.errors.messages, status: 422
-      # render json: @trip.errors.messages
       # render json: @trip.errors.messages, status: 422
+      # render json: @trip.errors.messages
+      render json: @trip.errors.messages, status: 422
     end
   end
 

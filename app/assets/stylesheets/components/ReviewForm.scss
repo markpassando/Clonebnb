@@ -1,7 +1,32 @@
+.review-index {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
 .review-form {
   .star {
     color: $teal;
     font-size: 18px;
     margin: 0 5px
+  }
+
+  textarea {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    margin: 10px 0;
+  }
+
+  .review-button {
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 23px;
+    color: #fff;
+    cursor: pointer;
+    background-color: $teal;
   }
 }

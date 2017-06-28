@@ -2,7 +2,7 @@ class Trip < ActiveRecord::Base
   validates :user_id, :room, :num_guests, presence: true
   # validates :num_guests, numericality: { less_than_or_equal_to: room.num_guests }
 
-  validate :does_not_exceed_capacity
+  validate :does_not_exceed_capacity, :can_not_book_own_room
 
   belongs_to :room
 
@@ -17,6 +17,12 @@ class Trip < ActiveRecord::Base
   def does_not_exceed_capacity
     unless room.num_guests >= num_guests
       errors.add(:num_guests, "Number of guests can not exceed capacity.")
+    end
+  end
+
+  def can_not_book_own_room
+    if host.id == self.user_id
+      errors.add(:host, "You can not book your own room.")
     end
   end
 
