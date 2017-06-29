@@ -133,3 +133,44 @@ button {
     font-size: 18px;
   }
 }
+
+.hallow-button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 7px 12px;
+
+  &.teal {
+    border: 2px solid $teal;
+    color: $teal;
+  }
+
+  &.pink {
+    border: 2px solid $pink;
+    color: $pink;
+  }
+  &:focus {
+    outline: none;
+    border-color: $black;
+  }
+}
+
+.full-button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 7px 12px;
+  color: $white;
+
+  &.teal {
+    border: 2px solid $teal;
+    background-color: $teal;
+  }
+
+  &.pink {
+    border: 2px solid $pink;
+    background-color: $pink;
+  }
+  &:focus {
+    outline: none;
+    border-color: $black;
+  }
+}

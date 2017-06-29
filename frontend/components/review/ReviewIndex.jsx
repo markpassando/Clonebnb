@@ -42,10 +42,8 @@ class ReviewIndex extends React.Component {
         </ul>
 
         <h3>{ userReviewed ? 'Edit your Review' : 'Leave a Review' }</h3>
-        <p>{ userReviewed ? userReviewed.rating : '' }</p>
-        <p>{ userReviewed ? userReviewed.body : '' }</p>
 
-        { userReviewed ? <button onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button onClick={() => this.handleCreate()}>Create Review</button> }
+        { userReviewed ? <button className="full-button teal" onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button className="full-button teal" onClick={() => this.handleCreate()}>Create Review</button> }
 
 
       </section>

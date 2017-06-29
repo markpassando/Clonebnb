@@ -17,7 +17,7 @@ const ReviewIndexItem = ({ review, currentUser, userReviewed, showEditReview }) 
         <p className="star lg sm-marg">{ review.rating ? renderStars(review.rating) : '' }</p>
         <p>{review.body}</p>
       </div>
-      { myReview ? <button onClick={() => showEditReview(userReviewed)}>Edit</button> : '' }
+      { myReview ? <button className="hallow-button teal" onClick={() => showEditReview(userReviewed)}>Edit</button> : '' }
     </li>
   );
 }
