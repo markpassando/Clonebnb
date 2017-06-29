@@ -17,9 +17,6 @@ class Api::TripsController < ApplicationController
     if @trip.save
       render :show
     else
-      # debugger
-      # render json: @trip.errors.messages, status: 422
-      # render json: @trip.errors.messages
       render json: @trip.errors.messages, status: 422
     end
   end

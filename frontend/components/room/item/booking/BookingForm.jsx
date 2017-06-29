@@ -1,15 +1,18 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import renderError from '../../../helper/error';
+import { DateRangePicker } from 'react-dates';
 
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       room_id: this.props.room.id,
-      check_in: null,
-      check_out: null,
-      num_guests: null
+
+      num_guests: null,
+      startDate: null,
+      endDate: null,
+      focusedInput: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,10 +45,16 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const trip = this.state;
-    // console.log(trip);
-    this.props.bookTrip({trip}).then(action => {
+
+    let copyState = Object.assign({}, this.state);
+    copyState.check_in = copyState.startDate.format();
+    copyState.check_out = copyState.endDate.format();
+    copyState.startDate= null;
+    copyState.endDate = null;
+    // May need to come back to this when you do Date validations.
+
+    this.props.bookTrip({trip: copyState}).then(action => {
       this.props.clearTripErrors();
       this.props.history.push(`/trips/${trip.id}`)
     });
@@ -66,15 +75,16 @@ class BookingForm extends React.Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Check In
-            <input type="date" onChange={this.update('check_in')} />
-          </label>
 
-          <br />
+          <DateRangePicker
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+            focusedInput={this.state.focusedInput}
+            onFocusChange={focusedInput => this.setState({ focusedInput })}
+          />
 
-          <label>Check Out
-            <input type="date" onChange={this.update('check_out')} />
-          </label>
+
 
           <br />
 
@@ -97,3 +107,15 @@ class BookingForm extends React.Component {
 }
 
 export default withRouter(BookingForm);
+
+
+
+// <label>Check In
+//   <input type="date" onChange={this.update('check_in')} />
+// </label>
+//
+// <br />
+//
+// <label>Check Out
+//   <input type="date" onChange={this.update('check_out')} />
+// </label>
