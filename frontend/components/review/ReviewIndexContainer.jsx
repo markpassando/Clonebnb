@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchReviews } from '../../actions/review_actions';
 import { selectAllReviews } from '../../reducers/selectors';
 import { showModal } from '../../actions/modal_actions';
-import { createReview, updateReview, fetchReview, clearReviewErrors } from '../../actions/review_actions';
+import { createReview, updateReview, deleteReview, fetchReview, clearReviewErrors } from '../../actions/review_actions';
 import ReviewIndex from './ReviewIndex';
 import ReviewFormContainer from './form/ReviewFormContainer';
 import LogInFormContainer from '../session_form/LogInFormContainer';
@@ -25,6 +25,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     fetchReviews: (roomId) => dispatch(fetchReviews(roomId)),
+    deleteReview: (review) => dispatch(deleteReview(review)),
     showCreateReview: () => dispatch(showModal(
       <ReviewFormContainer currentRoom={ownProps.currentRoom} formType={'create'}/>
     )),

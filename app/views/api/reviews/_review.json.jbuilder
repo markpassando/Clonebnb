@@ -1,4 +1,4 @@
-json.extract! review, :id, :rating, :body, :room_id, :user_id
+json.extract! review, :id, :rating, :body, :room_id, :user_id, :created_at
 
 json.set! :reviewer do
   json.username review.user.username

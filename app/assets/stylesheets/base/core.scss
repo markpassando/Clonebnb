@@ -174,3 +174,8 @@ button {
     border-color: $black;
   }
 }
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}

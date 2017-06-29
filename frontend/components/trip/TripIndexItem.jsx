@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 const TripIndexItem = ({ trip }) => {
   const imgStyle = {
@@ -7,6 +8,9 @@ const TripIndexItem = ({ trip }) => {
     width: "100%",
     backgroundImage: `url(${trip.room.main_pic_url})`
   };
+
+  const check_in = moment(trip.check_in).format("MMM D");
+  const check_out = moment(trip.check_out).format("D, YYYY");
 
   return (
     <li className="trip-item">
@@ -22,7 +26,7 @@ const TripIndexItem = ({ trip }) => {
 
         <div className="trip-info item">
           <Link className="trip-link" to={`/rooms/${trip.room.id}`}>{trip.room.title}</Link>
-          <p>{trip.check_in} - {trip.check_out}</p>
+          <p>{check_in} - {check_out}</p>
           <p><strong>Status: </strong>{trip.status}</p>
           <p>{trip.num_guests} Guests</p>
 

@@ -21,13 +21,14 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    const { reviews, currentUser, userReviewed, showEditReview } = this.props;
+    const { reviews, currentUser, userReviewed, showEditReview, deleteReview } = this.props;
     const reviewItems = reviews.map( review => <ReviewIndexItem
                                                   key={review.id}
                                                   review={review}
                                                   currentUser={currentUser}
                                                   userReviewed={userReviewed}
                                                   showEditReview={showEditReview}
+                                                  deleteReview={deleteReview}
                                                 />);
     // const userReviewed = reviews.find((review) => review.user_id === currentUser.id);
 // debugger
@@ -43,8 +44,10 @@ class ReviewIndex extends React.Component {
 
         <h3>{ userReviewed ? 'Edit your Review' : 'Leave a Review' }</h3>
 
-        { userReviewed ? <button className="full-button teal" onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button className="full-button teal" onClick={() => this.handleCreate()}>Create Review</button> }
-
+        <div className="space-between">
+          { userReviewed ? <button className="full-button teal" onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button className="full-button teal" onClick={() => this.handleCreate()}>Create Review</button> }
+          { userReviewed ? <button className="full-button pink" onClick={() => this.props.deleteReview(userReviewed)}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete Review</button> : '' }
+        </div>
 
       </section>
     );

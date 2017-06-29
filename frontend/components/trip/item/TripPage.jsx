@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import ReviewFormContainer from '../../review/form/ReviewFormContainer';
 
 class TripPage extends React.Component {
@@ -59,6 +60,9 @@ class TripPage extends React.Component {
       backgroundImage: `url(${trip.room.main_pic_url})`
     };
 
+    const check_in = moment(trip.check_in).format("MMMM D");
+    const check_out = moment(trip.check_out).format("D, YYYY");
+
     return(
       <article>
         <section className="container">
@@ -74,7 +78,7 @@ class TripPage extends React.Component {
 
             <div className="trip-info item">
               <Link className="trip-link" to={`/rooms/${trip.room.id}`}>{trip.room.title}</Link>
-              <p>{trip.check_in} - {trip.check_out}</p>
+              <p>{check_in} - {check_out}</p>
               <p><strong>Status: </strong>{trip.status}</p>
               <p>{trip.num_guests} Guests</p>
 

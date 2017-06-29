@@ -1,7 +1,9 @@
 import React from 'react';
-import BookingForm from './BookingForm';
 import { createTrip, clearTripErrors } from '../../../../actions/trip_actions';
+import { showModal } from '../../../../actions/modal_actions';
 import { connect } from 'react-redux';
+import BookingForm from './BookingForm';
+import LogInFormContainer from '../../../session_form/LogInFormContainer';
 
 class BookingFormContainer extends React.Component {
 
@@ -18,12 +20,14 @@ class BookingFormContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  errors: state.trips.errors
+  errors: state.trips.errors,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
   bookTrip: trip => dispatch(createTrip(trip)),
-  clearTripErrors: () => dispatch(clearTripErrors())
+  clearTripErrors: () => dispatch(clearTripErrors()),
+  showLogIn: () => dispatch(showModal(<LogInFormContainer formType={'login'}/>))
 });
 
 export default connect(

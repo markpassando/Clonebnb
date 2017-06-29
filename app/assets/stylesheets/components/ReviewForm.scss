@@ -20,6 +20,17 @@
     }
   }
 
+  .reviwer-info {
+    p {
+      margin: 0;
+      font-weight: 400;
+    }
+    
+    time {
+      font-size: 12px;
+    }
+  }
+
   .my-review {
     background: linear-gradient(rgba(250,255,189,0.7), $white);
 
