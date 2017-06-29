@@ -52,7 +52,8 @@ class BookingForm extends React.Component {
     copyState.check_out = copyState.endDate.format();
     copyState.startDate= null;
     copyState.endDate = null;
-    // May need to come back to this when you do Date validations.
+    // May need to come back to this when you do Date validations. Refer to this link when you do that
+    //https://stackoverflow.com/questions/39972663/format-momentjs-to-rails-datetime
 
     this.props.bookTrip({trip: copyState}).then(action => {
       this.props.clearTripErrors();
@@ -76,6 +77,10 @@ class BookingForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
 
+          <div className="date-labels">
+            <label>Check In</label>
+            <label>Check Out</label>
+          </div>
           <DateRangePicker
             startDate={this.state.startDate}
             endDate={this.state.endDate}
@@ -83,8 +88,6 @@ class BookingForm extends React.Component {
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
           />
-
-
 
           <br />
 
