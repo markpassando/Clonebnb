@@ -10,7 +10,9 @@ User.destroy_all
 user1 = User.create!({ username: "RonBurgundy", password: "123456",
   avatar: File.open('app/assets/images/users/ron.jpg'),
 })
-user2 = User.create!({ username: "BrianFantana", password: "123456"})
+user2 = User.create!({ username: "BrianFantana", password: "123456",
+  avatar: File.open('app/assets/images/users/brian-fantana.jpg'),
+})
 user3 = User.create!({ username: "BrickTamland", password: "123456"})
 user4 = User.create!({ username: "ChampKind", password: "123456"})
 user5 = User.create!({ username: "VeronicaCorningstone", password: "123456"})
@@ -56,7 +58,7 @@ room1 = Room.create!({
   lng: -73.993990,
   price: 1000,
   num_guests: 59,
-  bedrooms: 4,
+  bedrooms: 8,
   bathrooms: 3,
   beds: 59,
   description: "The new space features hardwood floors and brick walls for a modern technology space with an aura for learning. App Academy is a twelve-week intensive computer programming school founded by Ned Ruggeri and Kush Patel.",
@@ -130,10 +132,10 @@ room4 = Room.create!({
   lat: 41.336532,
   lng: -73.597711,
   price: 30,
-  num_guests: 1,
-  bedrooms: 100,
-  beds: 1,
-  bathrooms: 30,
+  num_guests: 10,
+  bedrooms: 30,
+  beds: 50,
+  bathrooms: 10,
   description: "It is the base of operations and training site of the X-Men and the location of a school for mutant teenagers, and sometimes older aged mutants, the Xavier Institute for Higher Learning, formerly Xavier's School for Gifted Youngsters. The X-Mansion is also the worldwide headquarters of the X-Corporation.",
   rules: "No rules",
   prop_type: "House",
@@ -328,4 +330,136 @@ room11 = Room.create!({
   fireplace: true,
   bathtub: true,
   games: false
+})
+
+Review.destroy_all
+#app academy
+dd_review1 = Review.create!({
+  user_id: user2.id,
+  room_id: room1.id,
+  rating: 5,
+  body: "They’ve done studies, you know. 60 percent of the time, there's bugs in the code every time."
+})
+
+#DareDevil
+dd_review1 = Review.create!({
+  user_id: user1.id,
+  room_id: room3.id,
+  rating: 5,
+  body: "Super duper, gang! Super duper! That's nice! Way to go! Neat-o, gang."
+})
+
+dd_review2 = Review.create!({
+  user_id: user14.id,
+  room_id: room3.id,
+  rating: 1,
+  body: "This city doesn't deserve a better tomorrow! It deserves to drown in its filth! It deserves people like my father! People like you! "
+})
+
+#X men
+
+#Aunt Mays
+
+st_review1 = Review.create!({
+  user_id: user13.id,
+  room_id: room5.id,
+  rating: 4,
+  body: "So you’re this Spider-ling? Crime-fighting spider? Spider-Boy?"
+})
+
+#Stark Tower
+st_review1 = Review.create!({
+  user_id: user1.id,
+  room_id: room6.id,
+  rating: 5,
+  body: "Super duper, gang! Super duper! That's nice! Way to go! Neat-o, gang."
+})
+
+
+#Fisk Tower
+fisk_review1 = Review.create!({
+  user_id: user1.id,
+  room_id: room7.id,
+  rating: 1,
+  body: "I immediately regret this decision."
+})
+
+#Jessica Jones
+jj_review1 = Review.create!({
+  user_id: user17.id,
+  room_id: room8.id,
+  rating: 5,
+  body: "Sweet Christmas!"
+})
+
+jj_review2 = Review.create!({
+  user_id: user1.id,
+  room_id: room8.id,
+  rating: 1,
+  body: "It’s terrible. She has beautiful eyes, and her hair smells like cinnamon!"
+})
+
+#Luke Cage
+lc_review2 = Review.create!({
+  user_id: user16.id,
+  room_id: room9.id,
+  rating: 5,
+  body: 'New York may be "The City That Never Sleeps" but it sure sleeps around.'
+})
+
+#Baxter
+bax_review1 = Review.create!({
+  user_id: user1.id,
+  room_id: room10.id,
+  rating: 3,
+  body: "The human torch was denied a bank loan. Baxter, is that you? Baxter! Bark twice if you’re in Milwaukee."
+})
+
+#Dr Strange
+dr_review1 = Review.create!({
+  user_id: user1.id,
+  room_id: room11.id,
+  rating: 2,
+  body: "You know I don’t speak Spanish."
+})
+
+Trip.destroy_all
+trip1 = Trip.create!({
+  user_id: user1.id,
+  room_id: room11.id,
+  check_in: "2017-06-29T12:00:00-04:00",
+  check_out: "2017-06-30T12:00:00-04:00",
+  num_guests: 3
+})
+
+trip2 = Trip.create!({
+  user_id: user1.id,
+  room_id: room10.id,
+  check_in: "2017-06-15T12:00:00-04:00",
+  check_out: "2017-06-19T12:00:00-04:00",
+  num_guests: 2
+})
+
+trip3 = Trip.create!({
+  user_id: user1.id,
+  room_id: room9.id,
+  check_in: "2017-06-25T12:00:00-04:00",
+  check_out: "2017-06-26T12:00:00-04:00",
+  num_guests: 3
+})
+
+trip4 = Trip.create!({
+  user_id: user1.id,
+  room_id: room8.id,
+  check_in: "2017-06-11T12:00:00-04:00",
+  check_out: "2017-06-12T12:00:00-04:00",
+  num_guests: 1
+})
+
+trip5 = Trip.create!({
+  user_id: user1.id,
+  room_id: room7.id,
+  check_in: "2017-06-29T12:00:00-04:00",
+  check_out: "2017-06-30T12:00:00-04:00",
+  num_guests: 1
 })

@@ -3,7 +3,8 @@ class Api::ReviewsController < ApplicationController
 
   def index
     if review_params["room_id"]
-      @reviews = Review.where(room_id: review_params["room_id"])
+      @reviews = Review.where(room_id: review_params["room_id"]).order(created_at: :desc)
+      # debugger
     else
       @reviews = Review.all
     end

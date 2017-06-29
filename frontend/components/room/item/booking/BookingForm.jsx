@@ -53,19 +53,16 @@ class BookingForm extends React.Component {
 
       let copyState = Object.assign({}, this.state);
 
-      //if state for now to avoid error. Dates will be required in the DB
-      if (this.startDate && this.endDate) {
-        copyState.check_in = copyState.startDate.format();
-        copyState.check_out = copyState.endDate.format();
-        copyState.startDate= null;
-        copyState.endDate = null;
-        // May need to come back to this when you do Date validations. Refer to this link when you do that
-        //https://stackoverflow.com/questions/39972663/format-momentjs-to-rails-datetime
-      }
+      copyState.check_in = copyState.startDate.format();
+      copyState.check_out = copyState.endDate.format();
+      copyState.startDate= null;
+      copyState.endDate = null;
+      // May need to come back to this when you do Date validations. Refer to this link when you do that
+      //https://stackoverflow.com/questions/39972663/format-momentjs-to-rails-datetime
 
       this.props.bookTrip({trip: copyState}).then(action => {
-        this.props.clearTripErrors();
-        this.props.history.push(`/trips/${action.trip.id}`)
+      this.props.clearTripErrors();
+      this.props.history.push(`/trips/${action.trip.id}`)
       });
     }
   }
