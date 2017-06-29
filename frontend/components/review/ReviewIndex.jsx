@@ -3,8 +3,21 @@ import ReviewIndexItem from './ReviewIndexItem';
 import ReviewFormContainer from './form/ReviewFormContainer';
 
 class ReviewIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleCreate = this.handleCreate.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchReviews(this.props.currentRoom);
+  }
+
+  handleCreate() {
+    if (this.props.currentUser === null) {
+      this.props.showLogIn();
+    } else {
+      this.props.showCreateReview();
+    }
   }
 
   render() {
@@ -32,7 +45,7 @@ class ReviewIndex extends React.Component {
         <p>{ userReviewed ? userReviewed.rating : '' }</p>
         <p>{ userReviewed ? userReviewed.body : '' }</p>
 
-        { userReviewed ? <button onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button onClick={this.props.showCreateReview}>Create Review</button> }
+        { userReviewed ? <button onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button onClick={() => this.handleCreate()}>Create Review</button> }
 
 
       </section>
