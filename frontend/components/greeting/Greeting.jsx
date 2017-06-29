@@ -22,7 +22,7 @@ class Greeting extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
-    // debugger
+    
     const sessionLinks = () => (
       <div className="login-signup">
         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>

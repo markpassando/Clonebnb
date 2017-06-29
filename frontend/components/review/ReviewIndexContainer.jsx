@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
   if (state.session.currentUser) {
     userReviewed = selectAllReviews(state).find((review) => review.user_id === state.session.currentUser.id)
   }
-// debugger
+
   return ({
     reviews: selectAllReviews(state),
     userReviewed: userReviewed,

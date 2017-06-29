@@ -6,7 +6,7 @@ import RoomMap from './../room/map/RoomMap';
 
 const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
   const renderResults = () => {
-    // debugger
+    
     if (rooms.length === 0) {
       return <div>No Results</div>
     } else {

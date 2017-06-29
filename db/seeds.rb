@@ -341,6 +341,13 @@ dd_review1 = Review.create!({
   body: "They’ve done studies, you know. 60 percent of the time, there's bugs in the code every time."
 })
 
+dd_review2 = Review.create!({
+  user_id: user18.id,
+  room_id: room1.id,
+  rating: 5,
+  body: "Ron's place was perfect, precisely as described and in the greatest location. Comfy, quiet, cozy and clean. Nothing better."
+})
+
 #DareDevil
 dd_review1 = Review.create!({
   user_id: user1.id,
@@ -353,18 +360,40 @@ dd_review2 = Review.create!({
   user_id: user14.id,
   room_id: room3.id,
   rating: 1,
-  body: "This city doesn't deserve a better tomorrow! It deserves to drown in its filth! It deserves people like my father! People like you! "
+  body: "This city doesn't deserve a better tomorrow! It deserves to drown in its filth! It deserves people like my father! People like you!"
 })
 
+dd_review3 = Review.create!({
+  user_id: user15.id,
+  room_id: room3.id,
+  rating: 4,
+  body: "This place is exactly as described, probably better! Matt is an amazing host who made us feel right at home. We had plenty of room to sprawl out, and the house is close to the buses that take you into NYC."
+})
+
+
+
 #X men
+x_review1 = Review.create!({
+  user_id: user18.id,
+  room_id: room5.id,
+  rating: 5,
+  body: "Cozy and comfortable space, fullly prepared with essentials and family-friendly envirment. I'd recommend this place for sure! The host, Charles is really kind and warm."
+})
 
 #Aunt Mays
 
-st_review1 = Review.create!({
+may_review1 = Review.create!({
   user_id: user13.id,
   room_id: room5.id,
   rating: 4,
   body: "So you’re this Spider-ling? Crime-fighting spider? Spider-Boy?"
+})
+
+may_review2 = Review.create!({
+  user_id: user2.id,
+  room_id: room5.id,
+  rating: 3,
+  body: "The house was very clean and the rooms as described in the profile. Susan was fantastic and was very helpful. Responded very quickly to my text, met her a couple of times, and eager to provide information when needed."
 })
 
 #Stark Tower
@@ -384,6 +413,13 @@ fisk_review1 = Review.create!({
   body: "I immediately regret this decision."
 })
 
+fisk_review2 = Review.create!({
+  user_id: user18.id,
+  room_id: room7.id,
+  rating: 1,
+  body: "Accommodation was great .... clean , comfortable and close to Manhatten would recommend and certainly come back again."
+})
+
 #Jessica Jones
 jj_review1 = Review.create!({
   user_id: user17.id,
@@ -399,12 +435,19 @@ jj_review2 = Review.create!({
   body: "It’s terrible. She has beautiful eyes, and her hair smells like cinnamon!"
 })
 
+jj_review3 = Review.create!({
+  user_id: user12.id,
+  room_id: room8.id,
+  rating: 2,
+  body: "The place was a mess and the front door was broken. It is unsafe and I would never stay here again."
+})
+
 #Luke Cage
 lc_review2 = Review.create!({
   user_id: user16.id,
   room_id: room9.id,
   rating: 5,
-  body: 'New York may be "The City That Never Sleeps" but it sure sleeps around.'
+  body: 'A++'
 })
 
 #Baxter
@@ -421,6 +464,13 @@ dr_review1 = Review.create!({
   room_id: room11.id,
   rating: 2,
   body: "You know I don’t speak Spanish."
+})
+
+dr_review2 = Review.create!({
+  user_id: user12.id,
+  room_id: room11.id,
+  rating: 4,
+  body: "It was lovely."
 })
 
 Trip.destroy_all

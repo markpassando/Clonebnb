@@ -60,9 +60,9 @@ class RoomMap extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      // debugger
+      
       const { lat, lng } = this.props.place;
-      // debugger
+      
       this.map.setCenter(new google.maps.LatLng(lat, lng));
     }
   }

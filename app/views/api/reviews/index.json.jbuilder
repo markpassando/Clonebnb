@@ -4,3 +4,5 @@
     json.partial! "api/reviews/review", review: review
   end
 end
+
+# json.orderIds @reviews.map{ |review| review.id }

@@ -11,6 +11,8 @@ class Api::RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    # @room = Room.find(params[:id]).includes(:reviews).order('reviews.created_at DESC')
+    # one query
   end
 
   def create

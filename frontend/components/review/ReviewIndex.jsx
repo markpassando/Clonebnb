@@ -31,7 +31,7 @@ class ReviewIndex extends React.Component {
                                                   deleteReview={deleteReview}
                                                 />);
     // const userReviewed = reviews.find((review) => review.user_id === currentUser.id);
-// debugger
+
 
     // if (!reviews)return null;
 

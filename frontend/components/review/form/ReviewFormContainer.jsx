@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, { formType }) => {
-// debugger
+
   const processForm = (formType === 'create') ? createReview : updateReview;
   return({
     processForm: review => dispatch(processForm(review)).then(() => dispatch(hideModal())),
