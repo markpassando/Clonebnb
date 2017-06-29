@@ -5,12 +5,24 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      id: null,
-      room_id: this.props.currentRoom,
-      rating: null,
-      body: null,
-      hoveredStar: null
+    const { userReviewed } = this.props;
+
+    if ( userReviewed === undefined) {
+      this.state = {
+        id: null,
+        room_id: this.props.currentRoom,
+        rating: null,
+        body: '',
+        hoveredStar: null
+      }
+    } else {
+      this.state = {
+        id: userReviewed.id,
+        room_id: this.props.currentRoom,
+        rating: userReviewed.rating,
+        body: userReviewed.body,
+        hoveredStar: null
+      }
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,26 +30,9 @@ class ReviewForm extends React.Component {
     this.unhoverStar = this.unhoverStar.bind(this);
   }
 
-  // componentDidMount() {
-  //   debugger
-  // }
-
-  componentWillReceiveProps(newProps) {
-    const { editedForm } = newProps;
-    if (editedForm) {
-
-      // window.scrollTo(0,0);
-      this.body.value = editedForm.body;
-      this.setState( { id: editedForm.id, body: editedForm.body, rating: editedForm.rating });
-    }
+  componentWillUnmount() {
+      this.props.clearReviewErrors();
   }
-
-  // componentDidUpdate() {
-  //   const { editedForm } = this.props
-  //   if (editedForm) {
-  //     this.setState({ body: editedForm.body });
-  //   }
-  // }
 
   update(field) {
     return e => this.setState({
@@ -51,8 +46,6 @@ class ReviewForm extends React.Component {
     const review = this.state;
     this.props.processForm(review)
       .then(() => {
-        this.setState({rating: '' });
-        this.body.value = '';
         this.props.clearReviewErrors();
       });
   }
@@ -67,10 +60,10 @@ class ReviewForm extends React.Component {
 
   render() {
 
-    const { editedForm } = this.props;
+    const { userReviewed } = this.props;
 
     return (
-      <form className="review-form" onSubmit={this.handleSubmit}>
+      <form className="review-form" onSubmit={this.handleSubmit} onClick={(e) => e.stopPropagation()}>
         <div className="star xlg lg-marg" onMouseLeave={this.unhoverStar}>
           <input type="radio" name="rating" value="1"
             onMouseEnter={this.hoverStar}
@@ -105,22 +98,17 @@ class ReviewForm extends React.Component {
 
         <br />
 
-        <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')}>{this.state.body}</textarea>
+        <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')} value={this.state.body} ></textarea>
         <br />
 
         { this.props.errors.samePerson ? renderError(this.props.errors.samePerson[0]) : '' }
         { this.props.errors.emptyForm ? renderError(this.props.errors.emptyForm[0]) : '' }
         { this.props.errors.user_id ? renderError(this.props.errors.user_id[0]) : '' }
 
-        <input className="review-button" type="submit" value={ editedForm ?  'Edit Review' : 'Submit Review' } />
+        <input className="review-button" type="submit" value={ userReviewed ?  'Edit Review' : 'Submit Review' } />
       </form>
     );
   }
 }
 
 export default ReviewForm;
-//
-//
-// <input type="radio" name="rating" value="5"
-//   onChange={this.update('rating')}
-// /><i className={'fa' + this.state.rating >= 5 ? 'fa-star' : 'fa-star-o'} aria-hidden="true"></i>

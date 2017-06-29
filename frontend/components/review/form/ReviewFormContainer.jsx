@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { hideModal } from '../../../actions/modal_actions';
 import { createReview, updateReview, fetchReview, clearReviewErrors } from '../../../actions/review_actions';
 import ReviewForm from './ReviewForm';
 
@@ -8,11 +9,11 @@ const mapStateToProps = (state) => ({
   errors: state.reviews.errors
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, { formType }) => {
 // debugger
-  const processForm = (ownProps.editedForm) ? updateReview : createReview;
+  const processForm = (formType === 'create') ? createReview : updateReview;
   return({
-    processForm: review => dispatch(processForm(review)),
+    processForm: review => dispatch(processForm(review)).then(() => dispatch(hideModal())),
     clearReviewErrors: () => dispatch(clearReviewErrors()),
     fetchReview: (id) => dispatch(fetchReview())
   })

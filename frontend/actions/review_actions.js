@@ -23,7 +23,6 @@ export const receiveReviewErrors = errors => ({
 });
 
 export const clearReviewErrors = () => {
-  debugger
   return ({
     type: CLEAR_REVIEW_ERRORS
   });
