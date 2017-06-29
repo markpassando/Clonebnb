@@ -1,8 +1,8 @@
 import React from 'react';
 import renderStars from '../helper/star';
 
-const ReviewIndexItem = ({ review, currentUser, userReviewed }) => {
-  const myReview = currentUser.username === review.reviewer.username;
+const ReviewIndexItem = ({ review, currentUser, userReviewed, showEditReview }) => {
+  const myReview = currentUser !== null && currentUser.username === review.reviewer.username;
 
   return (
     <li className={ myReview ? 'my-review' : '' }>
@@ -17,7 +17,7 @@ const ReviewIndexItem = ({ review, currentUser, userReviewed }) => {
         <p className="star lg sm-marg">{ review.rating ? renderStars(review.rating) : '' }</p>
         <p>{review.body}</p>
       </div>
-
+      { myReview ? <button onClick={() => showEditReview(userReviewed)}>Edit</button> : '' }
     </li>
   );
 }

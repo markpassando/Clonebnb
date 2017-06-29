@@ -64,6 +64,8 @@ class ReviewForm extends React.Component {
 
     return (
       <form className="review-form" onSubmit={this.handleSubmit} onClick={(e) => e.stopPropagation()}>
+        <h3>{ userReviewed ?  'Edit your Review' : 'Create Review' }</h3>
+
         <div className="star xlg lg-marg" onMouseLeave={this.unhoverStar}>
           <input type="radio" name="rating" value="1"
             onMouseEnter={this.hoverStar}

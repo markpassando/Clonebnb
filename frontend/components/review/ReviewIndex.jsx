@@ -8,8 +8,14 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    const { reviews, currentUser, userReviewed } = this.props;
-    const reviewItems = reviews.map( review => <ReviewIndexItem key={review.id} review={review} currentUser={currentUser} userReviewed={userReviewed} />);
+    const { reviews, currentUser, userReviewed, showEditReview } = this.props;
+    const reviewItems = reviews.map( review => <ReviewIndexItem
+                                                  key={review.id}
+                                                  review={review}
+                                                  currentUser={currentUser}
+                                                  userReviewed={userReviewed}
+                                                  showEditReview={showEditReview}
+                                                />);
     // const userReviewed = reviews.find((review) => review.user_id === currentUser.id);
 // debugger
 
