@@ -1,10 +1,12 @@
 import React from 'react';
 import renderStars from '../helper/star';
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, currentUser, userReviewed }) => {
+  const myReview = currentUser.username === review.reviewer.username;
 
   return (
-    <li>
+    <li className={ myReview ? 'my-review' : '' }>
+      <i className="small-title">{ myReview ? 'Your Review' : '' }</i>
       <div className="rating-reviewer">
         <div>
           <img src={review.reviewer.avatar_url} />

@@ -9,7 +9,7 @@ class ReviewIndex extends React.Component {
 
   render() {
     const { reviews, currentUser, userReviewed } = this.props;
-    const reviewItems = reviews.map( review => <ReviewIndexItem key={review.id} review={review} />);
+    const reviewItems = reviews.map( review => <ReviewIndexItem key={review.id} review={review} currentUser={currentUser} userReviewed={userReviewed} />);
     // const userReviewed = reviews.find((review) => review.user_id === currentUser.id);
 // debugger
 
@@ -23,7 +23,8 @@ class ReviewIndex extends React.Component {
         </ul>
 
         <h3>{ userReviewed ? 'Edit your Review' : 'Leave a Review' }</h3>
-        <h3>{ userReviewed ? userReviewed.body : '' }</h3>
+        <p>{ userReviewed ? userReviewed.rating : '' }</p>
+        <p>{ userReviewed ? userReviewed.body : '' }</p>
 
         { userReviewed ? <button onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button onClick={this.props.showCreateReview}>Create Review</button> }
 

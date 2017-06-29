@@ -3,6 +3,7 @@
 //Changed CSS
 // .DateRangePicker__picker--direction-left
 // .DateInput
+// .DateRangePicker
 
 
 .CalendarDay {
@@ -453,7 +454,7 @@
   display: inline; }
 
 .DateInput {
-  font-weight: 200;
+  // font-weight: 200;
   // font-size: 18px;
   font-size: 15px;
   line-height: 24px;
@@ -533,7 +534,8 @@
 
 .DateRangePicker {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 15px; }
 
 .DateRangePicker__picker {
   z-index: 1;

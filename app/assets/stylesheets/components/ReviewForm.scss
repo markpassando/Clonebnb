@@ -20,6 +20,16 @@
     }
   }
 
+  .my-review {
+    background: linear-gradient(rgba(250,255,189,0.7), $white);
+
+    .small-title {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  }
+
 }
 
 .review-form {
