@@ -338,7 +338,7 @@ dd_review1 = Review.create!({
   user_id: user2.id,
   room_id: room1.id,
   rating: 5,
-  body: "They’ve done studies, you know. 60 percent of the time, there's bugs in everyone's code every time."
+  body: "They’ve done studies, you know. 60 percent of the time, there's bugs in production code every time."
 })
 
 dd_review2 = Review.create!({
