@@ -1,0 +1,181 @@
+body {
+  color: $dark-gray;
+  font-family: $font-stack;
+  // font-weight: lighter;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+  color: $teal;
+  text-decoration: none;
+  font-size: 14px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p, li {
+  font-size: 16px;
+  font-weight: 100;
+  font-family: $font-stack;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-stack;
+  font-weight: 400;
+  // font-weight: lighter;
+}
+
+button, input {
+  font-family: $font-stack;
+  font-weight: 400;
+  // font-weight: lighter;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  &.con-pad {
+      padding: 0 15px;
+  }
+}
+
+.btn {
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  border-radius: $border-radius;
+  padding: 14px 0;
+  margin-top: 16px;
+  color: #fff;
+  cursor: pointer;
+
+  &.teal {
+    background-color: $teal;
+  }
+
+  &.pink {
+    background-color: $pink;
+  }
+}
+
+.errors {
+  color: $dark-pink;
+  list-style: none;
+  padding: 0;
+}
+
+.star {
+  color: $teal;
+
+  &.sm {
+    font-size: 14px;
+  }
+
+  &.md {
+    font-size: 16px;
+  }
+
+  &.lg {
+    font-size: 18px;
+  }
+
+  &.xlg {
+    font-size: 20px;
+  }
+
+  &.sm-marg i {
+    margin: 0 2px;
+  }
+
+  &.md-marg i {
+    margin: 0 3px;
+  }
+
+  &.lg-marg i {
+    margin: 0 5px;
+  }
+}
+
+.review {
+  color: $dark-gray;
+
+  &.xsm {
+    font-size: 12px;
+  }
+
+  &.sm {
+    font-size: 14px;
+  }
+
+  &.md {
+    font-size: 16px;
+  }
+
+  &.lg {
+    font-size: 18px;
+  }
+}
+
+.hallow-button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 7px 12px;
+
+  &.teal {
+    border: 2px solid $teal;
+    color: $teal;
+  }
+
+  &.pink {
+    border: 2px solid $pink;
+    color: $pink;
+  }
+  &:focus {
+    outline: none;
+    border-color: $black;
+  }
+}
+
+.full-button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 7px 12px;
+  color: $white;
+
+  &.teal {
+    border: 2px solid $teal;
+    background-color: $teal;
+  }
+
+  &.pink {
+    border: 2px solid $pink;
+    background-color: $pink;
+  }
+  &:focus {
+    outline: none;
+    border-color: $black;
+  }
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}

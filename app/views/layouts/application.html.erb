@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clonebnb</title>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCED17wx81asldh8rNZ1NFtA_gflM4y2is&libraries=places" %>
+
+  <%= javascript_include_tag "https://use.fontawesome.com/f660b6bdba.js" %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="<%= image_path('favicon.ico') %>" type="image/x-icon">
+  <link rel="icon" href="<%= image_path('favicon.ico') %>" type="image/x-icon">
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
