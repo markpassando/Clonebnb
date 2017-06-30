@@ -338,7 +338,7 @@ dd_review1 = Review.create!({
   user_id: user2.id,
   room_id: room1.id,
   rating: 5,
-  body: "They’ve done studies, you know. 60 percent of the time, there's bugs in the code every time."
+  body: "They’ve done studies, you know. 60 percent of the time, there's bugs in everyone's code every time."
 })
 
 dd_review2 = Review.create!({
@@ -367,7 +367,14 @@ dd_review3 = Review.create!({
   user_id: user15.id,
   room_id: room3.id,
   rating: 4,
-  body: "This place is exactly as described, probably better! Matt is an amazing host who made us feel right at home. We had plenty of room to sprawl out, and the house is close to the buses that take you into NYC."
+  body: "This place is exactly as described, probably better! Matt is an amazing host who made us feel right at home. We had plenty of room to sprawl out."
+})
+
+dd_review3 = Review.create!({
+  user_id: user13.id,
+  room_id: room3.id,
+  rating: 4,
+  body: "This is an amazing little place, perfect for one or a couple visiting the city. The apartment is in the back of the building meaning you have a lot of privacy and also it is quiet. Perfect to sleep late. The apartment has a lot of natural light. I was very happy at this place."
 })
 
 
@@ -375,7 +382,7 @@ dd_review3 = Review.create!({
 #X men
 x_review1 = Review.create!({
   user_id: user18.id,
-  room_id: room5.id,
+  room_id: room4.id,
   rating: 5,
   body: "Cozy and comfortable space, fullly prepared with essentials and family-friendly envirment. I'd recommend this place for sure! The host, Charles is really kind and warm."
 })
@@ -402,6 +409,20 @@ st_review1 = Review.create!({
   room_id: room6.id,
   rating: 5,
   body: "Super duper, gang! Super duper! That's nice! Way to go! Neat-o, gang."
+})
+
+st_review2 = Review.create!({
+  user_id: user18.id,
+  room_id: room6.id,
+  rating: 5,
+  body: "great location, nice and quiet apartment, great host."
+})
+
+st_review3 = Review.create!({
+  user_id: user6.id,
+  room_id: room6.id,
+  rating: 5,
+  body: "Great location in midtown, close to subway, and our host was quick with anything we needed or wanted. We would highly recommend this place to family and friends. We felt like we were locals because we had our own apartment...very cool."
 })
 
 
@@ -473,6 +494,13 @@ dr_review2 = Review.create!({
   body: "It was lovely."
 })
 
+dr_review3 = Review.create!({
+  user_id: user13.id,
+  room_id: room11.id,
+  rating: 5,
+  body: "This place was fantastic! It's in such a convenient neighborhood, literally everything you could need is within 3 blocks. The food on the street alone is amazing."
+})
+
 Trip.destroy_all
 trip1 = Trip.create!({
   user_id: user1.id,
@@ -495,7 +523,7 @@ trip3 = Trip.create!({
   room_id: room9.id,
   check_in: "2017-06-25T12:00:00-04:00",
   check_out: "2017-06-26T12:00:00-04:00",
-  num_guests: 3
+  num_guests: 2
 })
 
 trip4 = Trip.create!({

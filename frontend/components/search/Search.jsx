@@ -6,9 +6,8 @@ import RoomMap from './../room/map/RoomMap';
 
 const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
   const renderResults = () => {
-    
     if (rooms.length === 0) {
-      return <div>No Results</div>
+      return <div>No Results...</div>
     } else {
       return (
         <RoomIndex
@@ -22,10 +21,7 @@ const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
   return (
   <div className="search-page">
     <div className="search-results">
-      <RoomIndex
-        rooms={rooms}
-        fetchRooms={fetchRooms}
-      />
+      {renderResults()}
     </div>
 
     <div className="map-results">
@@ -39,3 +35,12 @@ const Search = ({ rooms, fetchRooms, updateFilter, place }) => {
 )};
 
 export default Search;
+
+
+
+
+
+// <RoomIndex
+//   rooms={rooms}
+//   fetchRooms={fetchRooms}
+//   />
