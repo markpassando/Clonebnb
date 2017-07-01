@@ -1,28 +1,22 @@
-== README
+# Clonebnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Clonebnb - Heroku](https://clone-bnb.herokuapp.com/)
+Clonebnb is a full-stack web application inspired by Airbnb.
 
-Things you may want to cover:
+**The Technology Stack**
+* **Backend:** Ruby on Rails
+* **Database:** PostgreSQL
+* **FrontEnd:** React.js with Redux
 
-* Ruby version
+## Features
 
-* System dependencies
+### Rooms
 
-* Configuration
+### Book Trips
 
-* Database creation
+### Search Rooms with Google Maps
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Reviews
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Future
