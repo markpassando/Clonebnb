@@ -4,7 +4,9 @@ import { UPDATE_FILTER } from '../actions/filter_actions';
 
 const defaultFilters = Object.freeze({
   place: {},
-  bounds: {}
+  bounds: {},
+  minBeds: 1,
+  maxBeds: 99
 });
 
 const filtersReducer = (state = defaultFilters, action) => {

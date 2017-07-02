@@ -10,7 +10,7 @@ Clonebnb is a full-stack web application inspired by Airbnb.
 
 ## Features
 
-### Rooms
+### Roomsgit s
 
 ### Book Trips
 

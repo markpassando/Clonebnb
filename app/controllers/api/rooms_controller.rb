@@ -1,10 +1,14 @@
 class Api::RoomsController < ApplicationController
   def index
-    if params[:bounds]
-      @rooms = Room.in_bounds(params[:bounds])
-    else
-      @rooms = Room.all
+    rooms = params[:bounds] ? Room.in_bounds(params[:bounds]) : Room.all
+
+    # debugger
+    if (params[:minBeds] && params[:maxBeds])
+      # debugger
+      rooms = rooms.where(beds: (params[:minBeds]..params[:maxBeds]) )
     end
+
+    @rooms = rooms
 
     render :index
   end
@@ -28,7 +32,8 @@ class Api::RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:bounds, :host_id, :main_pic, :title, :address, :lat, :lng, :price, :num_guests,
     :bedrooms, :beds, :bathrooms, :description, :rules, :prop_type, :room_type,
-    :wifi, :kitchen, :ac, :tv, :pets, :fireplace, :bathtub, :games)
+    :wifi, :kitchen, :ac, :tv, :pets, :fireplace, :bathtub, :games,
+    :minBeds, :maxBeds)
   end
 
 end

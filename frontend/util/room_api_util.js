@@ -28,6 +28,15 @@ export const createRoom = (room) => {
 };
 
 // $.ajax({
+//   method: 'GET',
+//   url: '/api/rooms',
+//   data: {
+//     minBeds: 1,
+//     maxBeds: 2
+//   }
+// }).then((res) => console.log(res), () => console.log("nahhh"));
+
+// $.ajax({
 //   method: 'POST',
 //   url: '/api/rooms',
 //   data: {

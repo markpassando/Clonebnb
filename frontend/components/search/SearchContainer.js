@@ -7,7 +7,9 @@ import { updateFilter } from '../../actions/filter_actions';
 const mapStateToProps = (state) => {
   return ({
     rooms: selectAllRooms(state),
-    place: state.filters.place
+    place: state.filters.place,
+    minBeds: state.filters.minBeds,
+    maxBeds: state.filters.maxBeds
     // currentbench: selectSingleBench(state)
   });
 };
