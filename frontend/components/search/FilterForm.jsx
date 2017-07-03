@@ -1,5 +1,5 @@
 import React from 'react';
-
+// https://github.com/davidchin/react-input-range
 const handleChange = (filter, updateFilter) => e => (
   updateFilter(filter, e.currentTarget.value)
 );

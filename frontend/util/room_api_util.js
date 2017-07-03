@@ -32,7 +32,9 @@ export const createRoom = (room) => {
 //   url: '/api/rooms',
 //   data: {
 //     minBeds: 1,
-//     maxBeds: 2
+//     maxBeds: 99,
+//     minPrice: 1,
+//     maxPrice: 99
 //   }
 // }).then((res) => console.log(res), () => console.log("nahhh"));
 

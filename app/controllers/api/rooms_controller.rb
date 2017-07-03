@@ -4,9 +4,18 @@ class Api::RoomsController < ApplicationController
 
     # debugger
     if (params[:minBeds] && params[:maxBeds])
-      # debugger
       rooms = rooms.where(beds: (params[:minBeds]..params[:maxBeds]) )
     end
+
+    if (params[:minPrice] && params[:maxPrice])
+      rooms = rooms.where(price: (params[:minPrice]..params[:maxPrice]) )
+    end
+
+    # Room.all.where("price < ?", 40 )
+    # price
+    # if (params[:minPrice] && params[:maxPrice])
+    #   rooms = rooms.where(price: (params[:minPrice]..params[:maxPrice]) )
+    # end
 
     @rooms = rooms
 
