@@ -1,12 +1,13 @@
 import React from 'react';
-// https://github.com/davidchin/react-input-range
+
 const handleChange = (filter, updateFilter) => e => (
   updateFilter(filter, e.currentTarget.value)
 );
 
-const FilterForm = ({ minBeds, maxBeds, updateFilter }) => (
+const FilterForm = ({ minBeds, maxBeds, minPrice, maxPrice, updateFilter }) => (
   <div>
-    <span className="filter">Filter results:</span>
+    <span className="filter">Filter:</span>
+    
     <br/>
     <label>Minimum Beds</label>
     <input
@@ -15,11 +16,19 @@ const FilterForm = ({ minBeds, maxBeds, updateFilter }) => (
       onChange={handleChange('minBeds', updateFilter)}
     />
      <br/>
-    <label>Maximum Beds</label>
+
+  <label>Minimum Price</label>
     <input
       type="number"
-      value={maxBeds}
-      onChange={handleChange('maxBeds', updateFilter)}
+      value={minPrice}
+      onChange={handleChange('minPrice', updateFilter)}
+    />
+     <br/>
+    <label>Maximum Price</label>
+    <input
+      type="number"
+      value={maxPrice}
+      onChange={handleChange('maxPrice', updateFilter)}
     />
   </div>
 );

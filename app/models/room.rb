@@ -22,11 +22,21 @@ class Room < ActiveRecord::Base
   end
 
   def rating
-    result = self.reviews.average(:rating)
-    if result
-      result.truncate(1).to_s('F')
-    else
-      nil
+    reviewTotal = 0
+
+    self.reviews.each do |review|
+      reviewTotal += review.rating
     end
+
+    reviewTotal.to_f / self.reviews.count
   end
+
+  # def rating
+  #   result = self.reviews.average(:rating)
+  #   if result
+  #     result.truncate(1).to_s('F')
+  #   else
+  #     nil
+  #   end
+  # end
 end

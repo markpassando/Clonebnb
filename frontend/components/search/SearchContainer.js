@@ -9,7 +9,9 @@ const mapStateToProps = (state) => {
     rooms: selectAllRooms(state),
     place: state.filters.place,
     minBeds: state.filters.minBeds,
-    maxBeds: state.filters.maxBeds
+    maxBeds: state.filters.maxBeds,
+    minPrice: state.filters.minPrice,
+    maxPrice: state.filters.maxPrice
     // currentbench: selectSingleBench(state)
   });
 };
