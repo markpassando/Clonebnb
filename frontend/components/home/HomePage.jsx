@@ -1,5 +1,6 @@
 import React from 'react';
 import RoomIndexContainer from '../room/RoomIndexContainer';
+import Footer from '../layout/Footer';
 
 const HomePage = (props) => {
   return (
@@ -8,6 +9,7 @@ const HomePage = (props) => {
           <h1><strong>Clonebnb</strong> Book unique homes and experience a city like a local.</h1>
         </div>
         <RoomIndexContainer />
+        
     </div>
   );
 }
