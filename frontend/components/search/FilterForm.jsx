@@ -12,7 +12,7 @@ const FilterForm = ({ minGuests, minPrice, maxPrice, updateFilter }) => (
         type="number"
         value={minGuests}
         placeholder="Number"
-        onChange={handleChange('minBeds', updateFilter)}
+        onChange={handleChange('minGuests', updateFilter)}
         />
     </div>
 

@@ -8,8 +8,7 @@ const mapStateToProps = (state) => {
   return ({
     rooms: selectAllRooms(state),
     place: state.filters.place,
-    minBeds: state.filters.minBeds,
-    maxBeds: state.filters.maxBeds,
+    minGuests: state.filters.minBeds,
     minPrice: state.filters.minPrice,
     maxPrice: state.filters.maxPrice
     // currentbench: selectSingleBench(state)

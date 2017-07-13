@@ -7,16 +7,12 @@ import FilterForm from './FilterForm';
 
 const Search = ({ rooms, fetchRooms, updateFilter, place, minBeds, maxBeds }) => {
   const renderResults = () => {
-    if (rooms.length === 0) {
-      return <div>No Results...</div>
-    } else {
       return (
         <RoomIndex
           rooms={rooms}
           fetchRooms={fetchRooms}
         />
       );
-    }
   }
 
   return (

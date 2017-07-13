@@ -35,8 +35,8 @@ class RoomMap extends React.Component {
       this.props.updateFilter('bounds', bounds);
     });
   }
-  componentDidMount() {
 
+  componentDidMount() {
     //if coming from a direct url
     if (this.props.place.lat === undefined) {
       let pathname = this.props.location.pathname.slice(3);

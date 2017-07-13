@@ -7,8 +7,7 @@ const defaultFilters = Object.freeze({
   bounds: {},
   minGuests: "",
   minPrice: "",
-  maxPrice: "",
-  rating: ""
+  maxPrice: ""
 });
 
 const filtersReducer = (state = defaultFilters, action) => {
