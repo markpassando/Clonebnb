@@ -9,7 +9,7 @@ const HomePage = (props) => {
           <h1><strong>Clonebnb</strong> Book unique homes and experience a city like a local.</h1>
         </div>
         <RoomIndexContainer />
-        
+        <Footer />
     </div>
   );
 }

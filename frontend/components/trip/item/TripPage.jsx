@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import ReviewFormContainer from '../../review/form/ReviewFormContainer';
+import Footer from '../../layout/Footer';
 
 class TripPage extends React.Component {
   componentDidMount() {
@@ -66,7 +67,7 @@ class TripPage extends React.Component {
     return(
       <article>
         <section className="container">
-          <div className="trip-item">
+          <div className="trip-item page">
             <div className="room-index-img-box">
               <Link to={`/rooms/${trip.room.id}`}>
                 <div className="room-index-img" style={imgStyle}></div>
@@ -91,6 +92,8 @@ class TripPage extends React.Component {
 
           </div>
         </section>
+
+        <Footer />
       </article>
     );
   }

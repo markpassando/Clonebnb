@@ -1,0 +1,26 @@
+.footer {
+  border-top: 1px solid $light-gray;
+  padding-top: 20px;
+  margin-top: 15px;
+  text-align: center;
+
+  small {
+    color: $gray;
+  }
+
+
+}
+
+.icon-box {
+  margin:  20px 0;
+
+  i {
+    font-size: 2em;
+    margin: 0 8px;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+}

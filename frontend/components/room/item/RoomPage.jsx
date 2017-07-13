@@ -3,6 +3,7 @@ import RoomDetailContainer from './detail/RoomDetailContainer';
 import RoomImageContainer from './image/RoomImageContainer';
 import BookingContainer from './booking/BookingContainer';
 import ReviewIndexContainer from '../../review/ReviewIndexContainer';
+import Footer from '../../layout/Footer';
 
 class RoomPage extends React.Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class RoomPage extends React.Component {
             <BookingContainer room={room} />
           </div>
         </div>
+        <Footer />
       </article>
     );
   }

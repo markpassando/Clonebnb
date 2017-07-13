@@ -1,5 +1,6 @@
 import React from 'react';
 import TripIndexItem from './TripIndexItem';
+import Footer from '../layout/Footer';
 
 class TripIndex extends React.Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class TripIndex extends React.Component {
         <ul className="trip-index">
           { tripItems }
         </ul>
+        <Footer />
       </article>
     );
   }

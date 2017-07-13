@@ -10,6 +10,7 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/SessionFormContainer';
 import HomePage from './home/HomePage';
+import AboutPage from './layout/AboutPage';
 import SearchContainer from './search/SearchContainer';
 import RoomPageContainer from './room/item/RoomPageContainer';
 import TripsPageContainer from './trip/TripsPageContainer';
@@ -24,6 +25,7 @@ const App = () => (
     </header>
     <ModalFrame />
     <Route exact path="/" component={HomePage} />
+    <Route path="/about" component={AboutPage} />
     <Route path="/s" component={SearchContainer} />
     <Route path="/rooms/:roomId" component={RoomPageContainer} />
 

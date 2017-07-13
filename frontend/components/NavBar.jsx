@@ -16,7 +16,7 @@ const NavBar = (props) => {
       </div>
 
       <nav className="right-nav">
-        <Link to={"/"}>About</Link>
+        <Link to={"/about"}>About</Link>
         <GreetingContainer />
       </nav>
     </section>
