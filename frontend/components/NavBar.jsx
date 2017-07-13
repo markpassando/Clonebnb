@@ -16,8 +16,7 @@ const NavBar = (props) => {
       </div>
 
       <nav className="right-nav">
-        <Link to={"/"}>Become a Host</Link>
-        <Link to={"/"}>Help</Link>
+        <Link to={"/"}>About</Link>
         <GreetingContainer />
       </nav>
     </section>
@@ -25,3 +24,5 @@ const NavBar = (props) => {
 }
 
 export default NavBar;
+// When Adding Rooms
+// <Link to={"/"}>Become a Host</Link>

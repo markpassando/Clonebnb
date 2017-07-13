@@ -1,14 +1,11 @@
 class Api::RoomsController < ApplicationController
   def index
-
     rooms = params[:bounds] ? Room.in_bounds(params[:bounds]).includes(:reviews) : Room.includes(:reviews)
 
-    min_beds = params[:minBeds]
+    if (params[:minGuests])
+      params[:minGuests] = "1" if params[:minGuests] == ""
 
-    if (params[:minBeds])
-      params[:minBeds] = "1" if params[:minBeds] == ""
-
-      rooms = rooms.where("beds >= ?", params[:minBeds])
+      rooms = rooms.where("num_guests >= ?", params[:minGuests])
     end
 
     if (params[:minPrice] && params[:maxPrice])
@@ -43,7 +40,7 @@ class Api::RoomsController < ApplicationController
     params.require(:room).permit(:bounds, :host_id, :main_pic, :title, :address, :lat, :lng, :price, :num_guests,
     :bedrooms, :beds, :bathrooms, :description, :rules, :prop_type, :room_type,
     :wifi, :kitchen, :ac, :tv, :pets, :fireplace, :bathtub, :games,
-    :minBeds, :maxBeds)
+    :minGuests)
   end
 
 end
