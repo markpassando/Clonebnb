@@ -19,7 +19,10 @@ class RoomMap extends React.Component {
     let mapOptions = {
       center: { lat, lng },
       zoom: 12,
-      streetViewControl: false
+      disableDefaultUI: true,
+      zoomControl: true,
+      scaleControl: true,
+      fullscreenControl: true
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);

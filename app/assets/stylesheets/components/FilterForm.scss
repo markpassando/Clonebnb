@@ -1,6 +1,8 @@
 .filter-form {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 600px;
+  margin-left: 5px;
 
   label {
     color: $dark-gray;
