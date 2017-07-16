@@ -37,6 +37,7 @@
     "react-addons-shallow-compare": "^15.6.0",
     "react-dates": "^12.2.1",
     "react-dom": "^15.6.1",
+    "react-ga": "^2.2.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
