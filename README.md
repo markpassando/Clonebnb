@@ -10,7 +10,7 @@
 
   * [User Authentication](#user-authentication)
   * [Searching Rooms](#searching-rooms)
-  * [Viewing Rooms & Reviews](#viewing-rooms)
+  * [Viewing Rooms & Reviews](#viewing-rooms-&-reviews)
   * [Booking Trips](#booking-trips)
 
 ## About
@@ -97,8 +97,8 @@ Filters are conditionally checked for a null presence, in some cases a simple ge
 
   Users may visit an individual Room page to view the dynamic data. All room and user images are hosted on an AWS S3 server and the PostgreSQL Database holds a reference to that image.
 
-  ### Reviews
-    Non-logged in users may read reviews and all of the core CRUD functionalities are available for authenticated users. A user may only review a room once. After leaving a review, they only have the option to update their current review or to delete it and create a new one.
+### Reviews
+  Non-logged in users may read reviews and all of the core CRUD functionalities are available for authenticated users. A user may only review a room once. After leaving a review, they only have the option to update their current review or to delete it and create a new one.
 
 ## Booking Trips
   Users may book trips and select dates using [Airbnb's react-dates](https://github.com/airbnb/react-dates).
