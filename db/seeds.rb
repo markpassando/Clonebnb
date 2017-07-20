@@ -20,7 +20,9 @@ user6 = User.create!({ username: "MathewMurdock", password: "123456",
   avatar: File.open('app/assets/images/users/matthew-murdock.jpg'),
 })
 user7 = User.create!({ username: "PeterParker", password: "123456"})
-user8 = User.create!({ username: "BruceWayne", password: "123456"})
+user8 = User.create!({ username: "BruceWayne", password: "123456",
+  avatar: File.open('app/assets/images/users/bruce-wayne.jpg'),
+})
 user10 = User.create!({ username: "AceVentura", password: "123456"})
 user11 = User.create!({ username: "CharlesXavier", password: "123456",
   avatar: File.open('app/assets/images/users/prof-x.jpg'),
@@ -47,6 +49,58 @@ user17 = User.create!({ username: "LukeCage", password: "123456",
 
 user18 = User.create!({ username: "SusanStorm", password: "123456",
   avatar: File.open('app/assets/images/users/susan-storm.jpg'),
+})
+
+user19 = User.create!({ username: "BiggieSmalls", password: "123456",
+  avatar: File.open('app/assets/images/users/biggie.jpg'),
+})
+
+user20 = User.create!({ username: "ElliotAlderson", password: "123456",
+  avatar: File.open('app/assets/images/users/elliot.jpg'),
+})
+
+user21 = User.create!({ username: "NasirJones", password: "123456",
+  avatar: File.open('app/assets/images/users/nas.jpg'),
+})
+
+user22 = User.create!({ username: "FlightoftheConchords", password: "123456",
+  avatar: File.open('app/assets/images/users/flight-of-the-conchords.jpg'),
+})
+
+user23 = User.create!({ username: "BernieSanders", password: "123456",
+  avatar: File.open('app/assets/images/users/bernie.jpg'),
+})
+
+user24 = User.create!({ username: "JerrySienfeld", password: "123456",
+  avatar: File.open('app/assets/images/users/jerry-seinfeld.jpg'),
+})
+
+user25 = User.create!({ username: "CurtisJackson", password: "123456",
+  avatar: File.open('app/assets/images/users/50-cent.jpg'),
+})
+
+user27 = User.create!({ username: "Ghostbusters", password: "123456",
+  avatar: File.open('app/assets/images/users/ghostbusters.jpg'),
+})
+
+user28 = User.create!({ username: "RachelGreen", password: "123456",
+  avatar: File.open('app/assets/images/users/rachel.jpg'),
+})
+
+user29 = User.create!({ username: "PatrickBateman", password: "123456",
+  avatar: File.open('app/assets/images/users/patrick-bateman.jpg'),
+})
+
+user30 = User.create!({ username: "SonnyKoufax", password: "123456",
+  avatar: File.open('app/assets/images/users/sonny-koufax.jpg'),
+})
+
+user31 = User.create!({ username: "JeremyLin", password: "123456",
+  avatar: File.open('app/assets/images/users/jeremy-lin.jpg'),
+})
+
+user32 = User.create!({ username: "KristapsPorzingis", password: "123456",
+  avatar: File.open('app/assets/images/users/kristaps-porzingis.jpg'),
 })
 
 Room.destroy_all
@@ -331,6 +385,426 @@ room11 = Room.create!({
   bathtub: true,
   games: false
 })
+
+room12 = Room.create!({
+  host_id: user19.id,
+  main_pic: File.open('app/assets/images/rooms/biggie.jpg'),
+  title: "Notorious B.I.G.'s Apartment",
+  address: "226 Saint James Street #3L, Brooklyn, NY 11238",
+  lat: 40.683554,
+  lng: -73.964053,
+  price: 94,
+  num_guests: 7,
+  bedrooms: 3,
+  beds: 4,
+  bathrooms: 2,
+  description: "The Brooklyn apartment famed rapper Notorious B.I.G. once called his 'one-room shack' is on the market for a cool $725,000. The steep asking price for a crib — actually a three-bedroom apartment renovated with a modern kitchen and restored historic details — is a testament to the ongoing gentrification of once-hardscrabble central Brooklyn. 'I didn't factor his celebrity into the price, Judith Siegel Lief, the listing agent, told the Daily News. I ran comps in the neighborhood based on the size of the apartment and the light.'",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room13 = Room.create!({
+  host_id: user20.id,
+  main_pic: File.open('app/assets/images/rooms/elliot.jpg'),
+  title: "Mr.Robot's Apartment",
+  address: "217 E Broadway, New York, NY 10002",
+  lat: 40.714059,
+  lng: -73.987370,
+  price: 50,
+  num_guests: 1,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "Mr. Robot is one of the most—if not the most—visually stunning shows currently on TV. Creator/director Sam Esmail's unorthodox camera angles and stark wide shots set an unsettling mood in line with the mental state of the show's main character, a disturbed, drug-addled hacker named Elliot Alderson (Rami Malek).",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: false,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room14 = Room.create!({
+  host_id: user20.id,
+  main_pic: File.open('app/assets/images/rooms/arcade.jpg'),
+  title: "fsociety Headquarters",
+  address: "1215 Bowery St, Brooklyn, NY 11224",
+  lat: 40.575114,
+  lng: -73.980178,
+  price: 20,
+  num_guests: 10,
+  bedrooms: 1,
+  beds: 10,
+  bathrooms: 2,
+  description: "The cursed arcade where fsociety sets up its secret Coney Island headquarters is abandoned and dilapidated in the show. The real Eldorado Arcade, however, is very much up and running—no hacked servers to be found.",
+  rules: "No rules",
+  prop_type: "Commercial",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: false,
+  ac: true,
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: false,
+  games: true
+})
+
+room15 = Room.create!({
+  host_id: user20.id,
+  main_pic: File.open('app/assets/images/rooms/ecorp.jpg'),
+  title: "Evil Corp Building",
+  address: "135 East 57th Street, New York, NY 10022",
+  lat: 40.761409,
+  lng: -73.969223,
+  price: 250,
+  num_guests: 15,
+  bedrooms: 10,
+  beds: 10,
+  bathrooms: 5,
+  description: "This 31-story skyscraper serves as the exterior for E Corp (a.k.a. Evil Corp), the dastardly conglomerate at the center of Mr. Robot. The imposing circular structure at the entrance adds to the all-powerful conspiracy vibes.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: true,
+  bathtub: true,
+  games: true
+})
+
+room16 = Room.create!({
+  host_id: user21.id,
+  main_pic: File.open('app/assets/images/rooms/nas.jpg'),
+  title: "Nas' Apartment",
+  address: "21st Street and 40th Avenue, Queensbridge, NY 11101",
+  lat: 40.755189,
+  lng: -73.941731,
+  price: 94,
+  num_guests: 3,
+  bedrooms: 2,
+  beds: 3,
+  bathrooms: 1,
+  description: "Queensbridge Houses is the largest public housing development in North America. Owned by the New York City Housing Authority, the 3,142-unit complex is located in Community Board 1 and accommodates approximately 6,907 people within two separate complexes (North and South Houses), each accommodating about 3,450 residents. It is located in Long Island City in Queens and opened in 1939.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room17 = Room.create!({
+  host_id: user22.id,
+  main_pic: File.open('app/assets/images/rooms/flight-of-the-conchords.jpg'),
+  title: "Flight of the Conchords' Apartment",
+  address: "28 Henry St, New York, NY 10002",
+  lat: 40.712650,
+  lng: -73.996437,
+  price: 60,
+  num_guests: 3,
+  bedrooms: 1,
+  beds: 2,
+  bathrooms: 1,
+  description: "Flight of the Conchords is a New Zealand-based comedy duo composed of Bret McKenzie and Jemaine Clement. The duo's comedy and music became the basis of a BBC radio series and then an American television series that aired for two seasons on HBO. They used to refer to themselves as 'New Zealand's fourth most popular guitar-based digi-bongo acapella-rap-funk-comedy folk duo', but now speak of themselves as 'the almost award-winning fourth-most-popular folk duo in New Zealand.'",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: false,
+  pets: false,
+  fireplace: false,
+  bathtub: false,
+  games: false
+})
+
+room18 = Room.create!({
+  host_id: user8.id,
+  main_pic: File.open('app/assets/images/rooms/wayne.jpg'),
+  title: "Wayne Enterprises",
+  address: "725 5th Ave, New York, NY 10022",
+  lat: 40.762434,
+  lng: -73.973802,
+  price: 1939,
+  num_guests: 20,
+  bedrooms: 8,
+  beds: 14,
+  bathrooms: 4,
+  description: "Wayne Enterprises, Inc., also known as WayneCorp, is a fictional company appearing in American comic books published by DC Comics, commonly in association with the superhero Batman. The American diversified multinational conglomerate is owned and chaired by Bruce Wayne, who is also Batman. Wayne Enterprises is a green company based out of Gotham City and headquartered in Wayne Tower.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: true,
+  bathtub: true,
+  games: false
+})
+
+room19 = Room.create!({
+  host_id: user24.id,
+  main_pic: File.open('app/assets/images/rooms/jerry.jpg'),
+  title: "Jerry Seinfeld's Apartment",
+  address: "129 West 81st Street, Apartment 5A, New York, NY 10024",
+  lat: 40.783830,
+  lng: -73.975368,
+  price: 80,
+  num_guests: 4,
+  bedrooms: 2,
+  beds: 2,
+  bathrooms: 1,
+  description: "Jerry's apartment (129 West 81st Street, Apartment 5A) is where Jerry Seinfeld lives and is located in New York City. His apartment is usually a meeting ground for him and his friends George and Elaine. His next door neighbor, Kramer, also visits whenever he feels like it. This is one of the two main hubs, the other being Monk's Cafe. Early episodes show apartment 411 as well.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: false,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room20 = Room.create!({
+  host_id: user25.id,
+  main_pic: File.open('app/assets/images/rooms/50-cent.jpg'),
+  title: "50 Cent's House",
+  address: "140-52 161 St, Jamaica, NY 11434",
+  lat: 40.668710,
+  lng: -73.774673,
+  price: 50,
+  num_guests: 5,
+  bedrooms: 3,
+  beds: 4,
+  bathrooms: 2,
+  description: "South Jamaica (also commonly known as 'The Southside') is a residential neighborhood in the borough of Queens in New York City, located south of downtown Jamaica. It is part of Queens Community Board 12. Although a proper border has not been established, the neighborhood is an overall subset of the greater Jamaica area that faces the Long Island Rail Road Main Line tracks, Jamaica Avenue or Liberty Avenue to the north; the Van Wyck Expressway on the west; and Merrick Boulevard toward the east, adjoining the neighboring community of St. Albans. Other primary thoroughfares of South Jamaica include Baisley, Foch, Linden, Guy R. Brewer, Sutphin, and Rockaway Boulevards.",
+  rules: "No rules",
+  prop_type: "House",
+  room_type: "Entire House",
+  wifi: false,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room21 = Room.create!({
+  host_id: user23.id,
+  main_pic: File.open('app/assets/images/rooms/bernie.jpg'),
+  title: "Bernie Sander's House",
+  address: "1525 E 26th St, Midwood, Brooklyn, NY 11229",
+  lat: 40.613800,
+  lng: -73.948293,
+  price: 75,
+  num_guests: 5,
+  bedrooms: 3,
+  beds: 3,
+  bathrooms: 1,
+  description: "Sanders grew up in a rent-controlled apartment building on East 26th Street near Kings Highway in the 1940s and '50s, the son of Jewish immigrants from Poland. Talking to CBS's Scott Pelley, he recalled his mother yearning for a single-family home like the ones down the block. 'Not having enough money was a cause of constant tension,' he said. 'And when you are five or six years of age and your parents are yelling at each other, it's, you know—you think back on it now, you know—it's traumatic and it's hard.'",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: false,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: false,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room22 = Room.create!({
+  host_id: user27.id,
+  main_pic: File.open('app/assets/images/rooms/ghostbusters.jpg'),
+  title: "Ghostbusters Firehouse",
+  address: "14 N Moore St, New York, NY 10013",
+  lat: 40.719566,
+  lng: -74.006617,
+  price: 84,
+  num_guests: 5,
+  bedrooms: 3,
+  beds: 3,
+  bathrooms: 1,
+  description: "Ghostbusters is a 1984 American supernatural comedy film directed and produced by Ivan Reitman and written by Dan Aykroyd and Harold Ramis. The film stars Bill Murray, Aykroyd and Ramis as three eccentric parapsychologists who start a ghost-catching business and Ernie Hudson as the Ghostbusters' first recruit in New York City. Sigourney Weaver and Rick Moranis co-star as a client and her neighbor. Aykroyd conceived the film as a project for himself and fellow Saturday Night Live alumnus John Belushi, with the 'Ghostmashers' travelling through time and space in the future with magic wands. He and Ramis dramatically rewrote the script following Belushi's death and after Reitman deemed Aykroyd's initial vision financially impractical. Ghostbusters was released in the United States on June 8, 1984. It received a positive response from critics and audiences and grossed $242 million in the United States and more than $295 million worldwide. It was nominated for two Oscars at the 57th Academy Awards for Best Visual Effects and Best Original Song (for the eponymous theme song), but lost to Indiana Jones and the Temple of Doom and The Woman in Red respectively.",
+  rules: "No ghosts",
+  prop_type: "House",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: false
+})
+
+room23 = Room.create!({
+  host_id: user28.id,
+  main_pic: File.open('app/assets/images/rooms/friends.jpg'),
+  title: "Friends' Apartment",
+  address: "90 Bedford St, New York, NY 10014",
+  lat: 40.732399,
+  lng: -74.005325,
+  price: 94,
+  num_guests: 4,
+  bedrooms: 2,
+  beds: 2,
+  bathrooms: 1,
+  description: "Monica and Rachel get more light through the Western windows, but it’s basically confined to their bedrooms. That said, the double wide northern window and what looks like a second means of egress, rather than an awesome terrace, would definitely give the home a more open feeling than many comparable pre-wars of this size and type. Joey and Chandler do, however, have the bigger bathroom. That their windows are less substantial and the foyer doubles as a kitchen is not ideal. The boys also look like they’re compromising on space slightly compared to the girls.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room23 = Room.create!({
+  host_id: user29.id,
+  main_pic: File.open('app/assets/images/rooms/psycho.jpg'),
+  title: "American Psycho Apartment",
+  address: "W. 81st Street, Upper West Side, NY 10024",
+  lat: 40.784480,
+  lng: -73.977367,
+  price: 200,
+  num_guests: 2,
+  bedrooms: 1,
+  beds: 1,
+  bathrooms: 1,
+  description: "The American Felt Building at 114 East 13th Street once supplied the hammer and brushing felt to Steinway pianos. Converted from a loft building to residences in the mid 1980s, the full service building set the precursor to much of what is considered desirable in downtown New York real estate today: high ceilings, large windows, having a raw loft character, many apartments having terraces.",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room23 = Room.create!({
+  host_id: user30.id,
+  main_pic: File.open('app/assets/images/rooms/big-daddy.png'),
+  title: "Big Daddy Apartment",
+  address: "16 Mercer St, New York, NY 10013",
+  lat: 40.720504,
+  lng: -74.002046,
+  price: 99,
+  num_guests: 6,
+  bedrooms: 3,
+  beds: 4,
+  bathrooms: 2,
+  description: "16 Mercer was originally built in 1863 to shelter Union soldiers returning from the Civil War. Today, it’s a boutique rental building with mint-finished interiors and all the authentic loft features one expects in SoHo—exposed beams, large windows overlooking cobblestone streets, high ceilings (12 ft). The prices, however, are affordable by prime downtown New York standards for two reasons: 1) the building has no luxury amenities (no doorman, gym etc.) and 2) the location is closer to Canal Street than ideally preferred. These two features aside, you have some wonderful properties that include a four bedroom on the fourth floor which was recently rented out for just under $24,000 per month (approximately $80 per ft).",
+  rules: "No rules",
+  prop_type: "Apartment",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room24 = Room.create!({
+  host_id: user31.id,
+  main_pic: File.open('app/assets/images/rooms/barclays-center.jpg'),
+  title: "Barclays Center",
+  address: "620 Atlantic Ave, Brooklyn, NY 11217",
+  lat: 40.682501,
+  lng: -73.975040,
+  price: 40,
+  num_guests: 20,
+  bedrooms: 10,
+  beds: 20,
+  bathrooms: 5,
+  description: "Barclays Center is a multi-purpose indoor arena in the New York City borough of Brooklyn. The arena is part of a $4.9 billion future business and residential complex now known as Pacific Park. The site is located at Atlantic Avenue, adjacent to the renamed Atlantic Avenue–Barclays Center subway station on the 2 3 4 5 B Q D N R W routes, as well as directly above the LIRR's Atlantic Terminal. The arena is currently home to the Brooklyn Nets of the National Basketball Association and the New York Islanders of the National Hockey League. The arena also hosts concerts, conventions and other sporting and entertainment events. It competes with other facilities in the New York metropolitan area, including Madison Square Garden in Manhattan and Prudential Center in Newark.",
+  rules: "No rules",
+  prop_type: "Commercial",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+room25 = Room.create!({
+  host_id: user32.id,
+  main_pic: File.open('app/assets/images/rooms/madison-square-garden.jpg'),
+  title: "Madison Square Garden",
+  address: "4 Pennsylvania Plaza, New York, NY 10001",
+  lat: 40.750505,
+  lng: -73.993443,
+  price: 1879,
+  num_guests: 25,
+  bedrooms: 15,
+  beds: 25,
+  bathrooms: 5,
+  description: "Madison Square Garden, often called 'MSG' or simply 'The Garden', is a multi-purpose indoor arena in the New York City borough of Manhattan. Located in Midtown Manhattan between 7th and 8th Avenues from 31st to 33rd Streets, it is situated atop Pennsylvania Station. It is the fourth venue to bear the name 'Madison Square Garden', the first two (1879 and 1890) of which were located on Madison Square, on East 26th Street and Madison Avenue, with the third Madison Square Garden further uptown at Eighth Avenue and 50th Street. The Garden is used for professional basketball and ice hockey, as well as boxing, concerts, ice shows, circuses, professional wrestling and other forms of sports and entertainment. It is close to other midtown Manhattan landmarks, including the Empire State Building, Koreatown, and Macy's at Herald Square. It is home to the New York Rangers of the National Hockey League (NHL) and the New York Knicks of the National Basketball Association (NBA).",
+  rules: "No rules",
+  prop_type: "Commercial",
+  room_type: "Entire House",
+  wifi: true,
+  kitchen: true,
+  ac: true,
+  tv: true,
+  pets: true,
+  fireplace: false,
+  bathtub: true,
+  games: true
+})
+
+# friends
+# 30 Rock
+# barack obama apartment
 
 Review.destroy_all
 #app academy
