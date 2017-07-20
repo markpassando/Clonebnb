@@ -1,7 +1,7 @@
 class Api::RoomsController < ApplicationController
   def index
-    rooms = params[:bounds] ? Room.in_bounds(params[:bounds]).includes(:reviews) : Room.includes(:reviews)
-# debugger
+    rooms = params[:bounds] ? Room.in_bounds(params[:bounds]).includes(:reviews) : Room.includes(:reviews).limit(12).order(:id)
+
     if (params[:minGuests])
       params[:minGuests] = "1" if params[:minGuests] == ""
 
@@ -14,7 +14,6 @@ class Api::RoomsController < ApplicationController
       # rooms = rooms.where(price: (params[:minPrice]..params[:maxPrice]) )
 
       rooms = rooms.where("price >= ? AND price <= ?", params[:minPrice], params[:maxPrice] )
-
     end
 
 
