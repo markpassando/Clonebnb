@@ -18,7 +18,7 @@ class RoomMap extends React.Component {
     let { lat, lng } = coords;
     let mapOptions = {
       center: { lat, lng },
-      zoom: 12,
+      zoom: 13,
       disableDefaultUI: true,
       zoomControl: true,
       scaleControl: true,
