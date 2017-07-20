@@ -388,7 +388,7 @@ room11 = Room.create!({
 
 room12 = Room.create!({
   host_id: user19.id,
-  main_pic: File.open('app/assets/images/rooms/biggie.jpg'),
+  main_pic: File.open('app/assets/images/rooms/biggie-smalls.jpg'),
   title: "Notorious B.I.G.'s Apartment",
   address: "226 Saint James Street #3L, Brooklyn, NY 11238",
   lat: 40.683554,
