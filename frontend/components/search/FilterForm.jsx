@@ -5,7 +5,7 @@ class FilterForm extends React.Component {
     super(props);
   }
 
-  componentWillUnmount() {
+  componentWillMount() {
     this.props.updateFilter('minGuests', "");
     this.props.updateFilter('minPrice', "");
     this.props.updateFilter('maxPrice', "");
