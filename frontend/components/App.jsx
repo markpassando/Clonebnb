@@ -17,6 +17,9 @@ import TripsPageContainer from './trip/TripsPageContainer';
 import TripPageContainer from './trip/item/TripPageContainer';
 import NavBar from './NavBar';
 import ModalFrame from './modal/ModalFrame';
+import Analytics from './Analytics';
+
+
 
 const App = () => (
   <div>
@@ -24,6 +27,7 @@ const App = () => (
       <NavBar />
     </header>
     <ModalFrame />
+    <Route paht="/" component={Analytics} />
     <Route exact path="/" component={HomePage} />
     <Route path="/about" component={AboutPage} />
     <Route path="/s" component={SearchContainer} />
