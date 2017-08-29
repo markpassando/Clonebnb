@@ -1,5 +1,7 @@
 class Trip < ActiveRecord::Base
   validates :user_id, :room, presence: true
+  validates :check_in, presence: { message: "You must have a check in date."}
+  validates :check_out, presence: { message: "You must have a check out date."}
   validates :num_guests, presence: { message: "There must be at least 1 guest."}
   # validates :num_guests, numericality: { less_than_or_equal_to: room.num_guests }
 
@@ -28,6 +30,16 @@ class Trip < ActiveRecord::Base
   def can_not_book_own_room
     if host.id == self.customer.id
       errors.add(:host, "You can not book your own room.")
+    end
+  end
+
+  def start_end_dates
+    if room.check_in == nil
+      errors.add(:start, "You must have a check in date.")
+    end
+
+    if room.check_out == nil
+      errors.add(:end, "You must have a check out date.")
     end
   end
 

@@ -30,7 +30,7 @@ class BookingForm extends React.Component {
 
   renderErrors() {
     if (this.props.errors.length > 0) {
-      
+
       return(
         <ul className="errors">
           {this.props.errors.map((error, i) => (
@@ -45,17 +45,20 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearTripErrors();
 
     if (this.props.currentUser === null) {
       this.props.showLogIn();
     } else {
       const trip = this.state;
 
-      let copyState = Object.assign({}, this.state);
+      const copyState = Object.assign({}, this.state);
 
-      copyState.check_in = copyState.startDate.format();
-      copyState.check_out = copyState.endDate.format();
-      copyState.startDate= null;
+      if (copyState.startDate)
+        copyState.check_in = copyState.startDate.format();
+      if (copyState.endDate)
+        copyState.check_out = copyState.endDate.format();
+      copyState.startDate = null;
       copyState.endDate = null;
       // May need to come back to this when you do Date validations. Refer to this link when you do that
       //https://stackoverflow.com/questions/39972663/format-momentjs-to-rails-datetime
@@ -94,11 +97,12 @@ class BookingForm extends React.Component {
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
           />
-
+        { this.props.errors.check_in ? renderError(this.props.errors.check_in[0]) : '' }
+          { this.props.errors.check_out ? renderError(this.props.errors.check_out[0]) : '' }
           <br />
 
           <label>Guests
-            <input type="text" placeholder="Number of Guests" onChange={this.update('num_guests')} />
+            <input type="number" placeholder="Number of Guests" onChange={this.update('num_guests')} />
           </label>
           { this.props.errors.host ? renderError(this.props.errors.host[0]) : '' }
           { this.props.errors.num_guests ? renderError(this.props.errors.num_guests[0]) : '' }
