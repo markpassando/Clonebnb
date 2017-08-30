@@ -9,6 +9,7 @@ class ReviewForm extends React.Component {
 
     if ( userReviewed === undefined) {
       this.state = {
+        loading: false,
         id: null,
         room_id: this.props.currentRoom,
         rating: null,
@@ -17,6 +18,7 @@ class ReviewForm extends React.Component {
       }
     } else {
       this.state = {
+        loading: false,
         id: userReviewed.id,
         room_id: this.props.currentRoom,
         rating: userReviewed.rating,
@@ -43,9 +45,11 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearReviewErrors();
+    this.setState({loading: true});
 
     const review = this.state;
-    this.props.processForm(review);
+    this.props.processForm(review)
+      .then(this.setState({loading: false}));
   }
 
   hoverStar(e) {
@@ -59,6 +63,14 @@ class ReviewForm extends React.Component {
   render() {
 
     const { userReviewed } = this.props;
+    const loading = this.state.loading;
+
+    let button = null;
+    if (userReviewed) {
+      button = loading ? <span><i className="fa fa-spinner fa-pulse fa-fw loading"></i> Editing Review</span> : <span>Edit Review</span>;
+    } else {
+      button = loading ? <span><i className="fa fa-spinner fa-pulse fa-fw loading"></i> Submitting Review</span> : <span>Submit Review</span>;
+    }
 
     return (
       <form className="review-form" onSubmit={this.handleSubmit} onClick={(e) => e.stopPropagation()}>
@@ -95,18 +107,20 @@ class ReviewForm extends React.Component {
             checked={this.state.rating === "5" }
             /><i className={this.state.rating >= 5 || this.state.hoveredStar >= 5? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
         </div>
-        { this.props.errors.rating ? renderError(this.props.errors.rating[0]) : '' }
-
-        <br />
+        { this.props.errors.rating && renderError(this.props.errors.rating[0]) }
 
         <textarea ref={ (body) => this.body = body } name="body" onChange={this.update('body')} value={this.state.body} ></textarea>
-        <br />
 
-        { this.props.errors.samePerson ? renderError(this.props.errors.samePerson[0]) : '' }
-        { this.props.errors.body ? renderError(this.props.errors.body[0]) : '' }
-        { this.props.errors.user_id ? renderError(this.props.errors.user_id[0]) : '' }
+        { this.props.errors.samePerson && renderError(this.props.errors.samePerson[0]) }
+        { this.props.errors.body && renderError(this.props.errors.body[0]) }
+        { this.props.errors.user_id && renderError(this.props.errors.user_id[0]) }
 
-        <input className="review-button" type="submit" value={ userReviewed ?  'Edit Review' : 'Submit Review' } />
+        <button
+          className="review-button"
+          type="submit"
+          disabled={ loading && "disabled" }>
+            { button }
+        </button>
       </form>
     );
   }
