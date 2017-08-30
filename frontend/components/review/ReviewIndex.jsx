@@ -42,11 +42,10 @@ class ReviewIndex extends React.Component {
           { reviewItems.length === 0 ? <p>There are no reviews for this room.</p> : reviewItems }
         </ul>
 
-        <h3>{ userReviewed ? 'Edit your Review' : 'Leave a Review' }</h3>
+        <h3>{ !userReviewed && 'Leave a Review' }</h3>
 
         <div className="space-between">
-          { userReviewed ? <button className="full-button teal" onClick={() => this.props.showEditReview(userReviewed)}>Edit Review</button> : <button className="full-button teal" onClick={() => this.handleCreate()}>Create Review</button> }
-          { userReviewed ? <button className="full-button pink" onClick={() => this.props.deleteReview(userReviewed)}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete Review</button> : '' }
+          { !userReviewed && <button className="full-button teal" onClick={() => this.handleCreate()}>Create Review</button> }
         </div>
 
       </section>
