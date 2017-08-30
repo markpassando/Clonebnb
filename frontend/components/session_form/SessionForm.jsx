@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                placeholder="Email Address"
+                placeholder="Username or Email Address"
                 className="login-input"
               />
             <i className="fa fa-envelope-o fa-lg side-icon" aria-hidden="true"></i>
