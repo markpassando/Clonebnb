@@ -42,12 +42,10 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearReviewErrors();
 
     const review = this.state;
-    this.props.processForm(review)
-      .then(() => {
-        this.props.clearReviewErrors();
-      });
+    this.props.processForm(review);
   }
 
   hoverStar(e) {
@@ -97,6 +95,7 @@ class ReviewForm extends React.Component {
             checked={this.state.rating === "5" }
             /><i className={this.state.rating >= 5 || this.state.hoveredStar >= 5? "fa fa-star" : "star fa fa-star-o"} aria-hidden="true"></i>
         </div>
+        { this.props.errors.rating ? renderError(this.props.errors.rating[0]) : '' }
 
         <br />
 
@@ -104,7 +103,7 @@ class ReviewForm extends React.Component {
         <br />
 
         { this.props.errors.samePerson ? renderError(this.props.errors.samePerson[0]) : '' }
-        { this.props.errors.emptyForm ? renderError(this.props.errors.emptyForm[0]) : '' }
+        { this.props.errors.body ? renderError(this.props.errors.body[0]) : '' }
         { this.props.errors.user_id ? renderError(this.props.errors.user_id[0]) : '' }
 
         <input className="review-button" type="submit" value={ userReviewed ?  'Edit Review' : 'Submit Review' } />

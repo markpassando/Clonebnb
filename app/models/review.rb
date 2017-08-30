@@ -2,7 +2,9 @@ class Review < ActiveRecord::Base
   validates :user, :room, presence: true
 
   validates :user_id, uniqueness: { scope: :room_id, message: "You may only review a room once." }
-  validate :can_not_review_own_room, :comment_or_rate
+  validates :rating, presence: { message: "You must leave a rating."}
+  validates :body, presence: { message: "You must write a comment."}
+  validate :can_not_review_own_room, :min_comment_length
 
   belongs_to :user
   belongs_to :room
@@ -13,10 +15,9 @@ class Review < ActiveRecord::Base
     end
   end
 
-  def comment_or_rate
-    # debugger
-    if self.body == "" && self.rating.nil?
-      errors.add(:emptyForm, "You must at least rate or comment to review.")
+  def min_comment_length
+    if self.body.length < 4
+      errors.add(:body, "Your comment must be at least 4 characters long.")
     end
   end
 
