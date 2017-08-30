@@ -7,8 +7,8 @@ class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
       room_id: this.props.room.id,
-
       num_guests: null,
       startDate: null,
       endDate: null,
@@ -50,8 +50,8 @@ class BookingForm extends React.Component {
     if (this.props.currentUser === null) {
       this.props.showLogIn();
     } else {
+      this.setState({loading: true});
       const trip = this.state;
-
       const copyState = Object.assign({}, this.state);
 
       if (copyState.startDate)
@@ -63,10 +63,9 @@ class BookingForm extends React.Component {
       // May need to come back to this when you do Date validations. Refer to this link when you do that
       //https://stackoverflow.com/questions/39972663/format-momentjs-to-rails-datetime
 
-      this.props.bookTrip({trip: copyState}).then(action => {
-      this.props.clearTripErrors();
-      this.props.history.push(`/trips/${action.trip.id}`)
-      });
+      this.props.bookTrip({trip: copyState})
+        .then(action => {this.props.history.push(`/trips/${action.trip.id}`)})
+        .then(this.setState({loading: false}));
     }
   }
 
@@ -81,6 +80,8 @@ class BookingForm extends React.Component {
   }
 
   render() {
+
+    const { errors } = this.props;
 
     return(
       <div>
@@ -97,21 +98,22 @@ class BookingForm extends React.Component {
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
           />
-        { this.props.errors.check_in ? renderError(this.props.errors.check_in[0]) : '' }
-          { this.props.errors.check_out ? renderError(this.props.errors.check_out[0]) : '' }
-          <br />
+          { errors.check_in && renderError(errors.check_in[0]) }
+          { errors.check_out && renderError(errors.check_out[0]) }
 
           <label>Guests
             <input type="number" placeholder="Number of Guests" onChange={this.update('num_guests')} />
           </label>
-          { this.props.errors.host ? renderError(this.props.errors.host[0]) : '' }
-          { this.props.errors.num_guests ? renderError(this.props.errors.num_guests[0]) : '' }
+          { errors.host && renderError(errors.host[0]) }
+          { errors.num_guests && renderError(errors.num_guests[0]) }
 
-          <br />
+          <button className="btn pink" type="submit" disabled={ this.state.loading && "disabled" }>
+            { this.state.loading
+              ? <span><i className="fa fa-spinner fa-pulse fa-fw loading"></i> Booking</span>
+              : <span>Book</span>
+            }
+          </button>
 
-          {this.renderErrors()}
-
-          <input className="btn pink" type="submit" value="Book"/>
           <small>You won’t be charged yet</small>
         </form>
       </div>
